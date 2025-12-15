@@ -10,9 +10,7 @@ import NewInStore from "../components/layout/NewInStoreSection.vue";
 
 <template>
   <div class="d-flex flex-column">
-    <p class="main-title text-center mt-4 mb-4 mb-lg-5 px-3">
-      Svaštaonica Za Bebe
-    </p>
+    <p class="main-title text-center mt-4 mb-4 mb-lg-5 px-3">Svaštaonica</p>
 
     <Hero />
 

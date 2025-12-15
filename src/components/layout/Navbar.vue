@@ -45,7 +45,7 @@ function closeMobileNavbar() {
         class="navbar-brand"
         v-bind:class="isMobile ? 'navbar-brand-mobile' : ''"
         href="#"
-        >Svaštaonica Za Bebe</a
+        >Svaštaonica</a
       >
       <button
         class="navbar-toggler"

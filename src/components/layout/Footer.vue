@@ -82,7 +82,7 @@ import { RouterLink } from "vue-router";
       </div>
 
       <div class="text-center p-3 footer-copyright-text">
-        © 2020 Copyright: Svaštaonica za Bebe
+        © 2020 Copyright: Svaštaonica
       </div>
     </footer>
   </div>

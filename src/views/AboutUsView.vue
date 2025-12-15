@@ -29,11 +29,11 @@ import VLazyImage from "v-lazy-image";
 
         <div class="mt-4 mt-lg-0 col col-lg-8 px-4">
           <p class="aboutus-description">
-            Svaštaonica za bebe nastala je kao nastavak dugogodišnjeg hobija, a
-            zatim smo rasli i sazrijevali u svojoj kreativi zahvaljujući
-            ponajprije svima vama, divnim i vjernim kupcima, koji ste nas
-            inspirirali, nadahnjivali i davali vjetar u leđa svakom svojom
-            idejom i narudžbom!
+            Svaštaonica je nastala kao nastavak dugogodišnjeg hobija, a zatim
+            smo rasli i sazrijevali u svojoj kreativi zahvaljujući ponajprije
+            svima vama, divnim i vjernim kupcima, koji ste nas inspirirali,
+            nadahnjivali i davali vjetar u leđa svakom svojom idejom i
+            narudžbom!
           </p>
         </div>
       </div>

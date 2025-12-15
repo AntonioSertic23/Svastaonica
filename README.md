@@ -1,8 +1,8 @@
-# Svaštaonica Za Bebe
+# Svaštaonica
 
-## Website for Svaštaonica Za Bebe
+## Website for Svaštaonica
 
-The Svaštaonica Za Bebe website is a small passion-driven project through which I expanded my knowledge of Vue.js and wanted to showcase my creativity. It was also created for the client's needs to showcase all their products in one place.
+The Svaštaonica website is a small passion-driven project through which I expanded my knowledge of Vue.js and wanted to showcase my creativity. It was also created for the client's needs to showcase all their products in one place.
 
 The website was built as a **Single Page Application**, using the latest **Vue.js 3** with the **Composition API** and **Bootstrap 5.0.2** for design.
 
