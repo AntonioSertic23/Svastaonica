@@ -1,5 +1,8 @@
 <script setup>
 import { RouterLink } from "vue-router";
+import { useI18n } from "@/i18n/useI18n";
+
+const { t } = useI18n();
 </script>
 
 <template>
@@ -12,25 +15,33 @@ import { RouterLink } from "vue-router";
           >
             <div class="">
               <h6 class="text-uppercase">
-                <RouterLink class="nav-link" to="/">Početna</RouterLink>
+                <RouterLink class="nav-link site-link" to="/">{{
+                  t("nav.home")
+                }}</RouterLink>
               </h6>
             </div>
 
             <div class="">
               <h6 class="text-uppercase">
-                <RouterLink class="nav-link" to="/gallery">Galerija</RouterLink>
+                <RouterLink class="nav-link site-link" to="/gallery">{{
+                  t("nav.gallery")
+                }}</RouterLink>
               </h6>
             </div>
 
             <div class="">
               <h6 class="text-uppercase">
-                <RouterLink class="nav-link" to="/aboutus">O nama</RouterLink>
+                <RouterLink class="nav-link site-link" to="/aboutus">{{
+                  t("nav.about")
+                }}</RouterLink>
               </h6>
             </div>
 
             <div class="">
               <h6 class="text-uppercase">
-                <RouterLink class="nav-link" to="/contact">Kontakt</RouterLink>
+                <RouterLink class="nav-link site-link" to="/contact">{{
+                  t("nav.contact")
+                }}</RouterLink>
               </h6>
             </div>
           </div>
@@ -41,48 +52,39 @@ import { RouterLink } from "vue-router";
         <section class="mb-4">
           <div class="row d-flex justify-content-center">
             <div class="col-lg-8 px-4">
-              <p class="footer-text m-0">Obratite nam se putem:</p>
+              <p class="footer-text m-0">{{ t("footer.reachUs") }}</p>
             </div>
           </div>
         </section>
 
         <section class="my-0 social-media px-3 row g-3 justify-content-center">
-          <a href="http://m.me/svastaonicazabebe" class="">
-            <img src="/assets/img/sm-facebook-messenger.png" />
+          <a href="http://m.me/svastaonicazabebe">
+            <img src="/assets/img/sm-facebook-messenger.png" alt="Messenger" />
           </a>
 
-          <a href="https://api.whatsapp.com/send?phone=0919375976" class="">
-            <img src="/assets/img/sm-whatsapp.png" />
+          <a href="https://api.whatsapp.com/send?phone=0919375976">
+            <img src="/assets/img/sm-whatsapp.png" alt="WhatsApp" />
           </a>
 
-          <a href="https://www.facebook.com/svastaonicazabebe" class="">
-            <img src="/assets/img/sm-facebook.png" />
+          <a href="https://www.facebook.com/svastaonicaobrtzarukotvorine">
+            <img src="/assets/img/sm-facebook.png" alt="Facebook" />
           </a>
 
-          <a href="http://instagram.com/_u/svastaonica_za_bebe/" class="">
-            <img src="/assets/img/sm-instagram.png" />
+          <a href="https://www.instagram.com/svastaonica_rukotvorine/">
+            <img src="/assets/img/sm-instagram.png" alt="Instagram" />
           </a>
 
-          <!--             <a
-              href="viber://pa?chatURI=<URI> viber://chat?number=0919375976"
-              class=""
-            >
-              <img src="/assets/img/sm-viber.png" />
-            </a> -->
-
-          <a href="mailto:svastaonicazabebe@gmail.com" class="">
-            <img src="/assets/img/sm-google.png" />
+          <a href="mailto:svastaonicazabebe@gmail.com">
+            <img src="/assets/img/sm-google.png" alt="Email" />
           </a>
         </section>
 
-        <p class="my-3 footer-text">
-          Radujemo se svakom vašem upitu i narudžbi!
-        </p>
+        <p class="my-3 footer-text">{{ t("footer.glad") }}</p>
         <p class="mb-4 text-center madeineu">Made in EU</p>
       </div>
 
       <div class="text-center p-3 footer-copyright-text">
-        © 2020 Copyright: Svaštaonica
+        {{ t("footer.copyright") }}
       </div>
     </footer>
   </div>
@@ -90,11 +92,14 @@ import { RouterLink } from "vue-router";
 
 <style scoped>
 footer {
-  background-color: #cdb4db;
+  position: relative;
+  z-index: 2;
+  background-color: var(--color-lavender);
+  isolation: isolate;
 }
 
 .nav-link {
-  color: #222;
+  color: var(--color-text);
   font-size: 20px;
 }
 .nav-link:focus,
