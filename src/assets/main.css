@@ -1,36 +1,109 @@
 @font-face {
   font-family: "Poiret_One";
-  src: URL("/fonts/Poiret_One/PoiretOne-Regular.ttf") format("truetype");
+  src: url("/fonts/Poiret_One/PoiretOne-Regular.ttf") format("truetype");
+  font-display: swap;
 }
+
 @font-face {
   font-family: "Montserrat";
-  src: URL("/fonts/Montserrat/Montserrat-VariableFont_wght.ttf")
+  src: url("/fonts/Montserrat/Montserrat-VariableFont_wght.ttf")
     format("truetype");
   font-weight: 100 1000;
+  font-display: swap;
 }
-@font-face {
-  font-family: "Poppins";
-  src: URL("/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+
+:root {
+  --color-lavender: #cdb4db;
+  --color-lavender-hover: #a375bd;
+  --color-lavender-deep: #b391ca;
+  --color-pink: #ffafcc;
+  --color-pink-hover: #ff85b1;
+  --color-pink-soft: #ffc8dd;
+  --color-blue-soft: #bde0fe;
+  --color-blue: #a2d2ff;
+  --color-bg: #ede4f2;
+  --color-bg-card: #f7f2fa;
+  --color-thistle: #d8bfd8;
+  --color-text: #222;
+  --color-text-muted: #444;
+  --color-soldout: crimson;
+  --radius: 15px;
+  --shadow-soft: 0 4px 14px rgba(80, 50, 100, 0.12);
+  --shadow-card: 3px 3px 8px rgba(80, 50, 100, 0.15);
+  --font-body: "Montserrat", sans-serif;
+  --font-display: "Poiret_One", cursive;
+  --nav-height: 96px;
+  --nav-height-mobile: 88px;
+  --content-max: 1140px;
+  --side-decor-width: 72px;
 }
 
 .k1 {
-  font-family: Poiret_One;
+  font-family: var(--font-display);
 }
 .k2 {
-  font-family: Montserrat;
-}
-.k3 {
-  font-family: Poppins;
+  font-family: var(--font-body);
 }
 
-/* BOJE */
-/*
-  background-color: #cdb4db;
-  background-color: #ffc8dd;
-  background-color: #ffafcc;
-  background-color: #bde0fe;
-  background-color: #a2d2ff;
-*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.lock-scroll {
+  overflow: hidden;
+}
+
+#app {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  position: relative;
+}
+
+/* Soft atmospheric wash (includes intentional pink glow under the top of the page) */
+#app::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse 80% 50% at 50% 0%,
+      rgba(255, 200, 221, 0.35),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 60% 40% at 100% 40%,
+      rgba(189, 224, 254, 0.25),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 50% 35% at 0% 70%,
+      rgba(205, 180, 219, 0.3),
+      transparent 50%
+    ),
+    var(--color-bg);
+}
+
+.body-div {
+  position: relative;
+  z-index: 1;
+  margin-top: var(--nav-height);
+}
 
 .navbar-nav a:hover,
 .navbar-nav a.router-link-active,
@@ -38,82 +111,67 @@
   font-weight: 600;
 }
 
-/* html,
-body {
-  scroll-behavior: smooth;
-} */
-
-.lock-scroll {
-  overflow: hidden;
-}
-
-/* SingleItemView.vue -> ovo je globalno jer se nece prihavatit scoped css ako se koristi v-html*/
+/* SingleItemView.vue — global because of v-html */
 .item-description .important {
   font-weight: 500;
 }
 
-* {
-  font-family: Montserrat;
+/* Shared CTA button */
+.btn-cta {
+  display: inline-block;
+  color: var(--color-text);
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: var(--color-lavender);
+  border-radius: var(--radius);
+  padding: 1rem 1.5rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: var(--shadow-soft);
 }
 
-#app {
-  /*background-color: #ede4f2;*/
-  background-size: 100%;
+.btn-cta:hover {
+  background-color: var(--color-lavender-hover);
+  color: var(--color-text);
 }
 
-.pozadina-pocetna {
-  background-image: url("/assets/img/background.png");
-}
-.pozadina-galerija {
-  background-image: url("/assets/img/background-galerija.png");
-}
-.pozadina-onama {
-  background-image: url("/assets/img/background-onama.png");
-}
-.pozadina-kontakt {
-  background-image: url("/assets/img/background-kontakt.png");
-}
-.pozadina-pretraga {
-  background-image: url("/assets/img/background-pretraga.png");
-}
-.pozadina-notfound {
-  background-image: url("/assets/img/background-notfound.png");
-}
-.pozadina-singleitem {
-  background-image: url("/assets/img/background-singleitem.png");
+.quote-text {
+  font-family: var(--font-display);
+  text-align: center;
+  font-weight: 400;
+  line-height: 1.35;
+  font-size: clamp(1.25rem, 2.5vw, 1.95rem);
+  margin: 0;
 }
 
-@media (max-width: 991.98px) {
-  .pozadina-pocetna {
-    background-image: url("/assets/img/background-mobile.png");
-  }
-  .pozadina-galerija {
-    background-image: url("/assets/img/background-mobile-galerija.png");
-  }
-  .pozadina-onama {
-    background-image: url("/assets/img/background-mobile-onama.png");
-  }
-  .pozadina-kontakt {
-    background-image: url("/assets/img/background-mobile-kontakt.png");
-  }
-  .pozadina-pretraga {
-    background-image: url("/assets/img/background-mobile-pretraga.png");
-  }
-  .pozadina-notfound {
-    background-image: url("/assets/img/background-mobile-notfound.png");
-  }
-  .pozadina-singleitem {
-    background-image: url("/assets/img/background-mobile-singleitem.png");
-  }
+/* Subtle underline hover for nav/footer links */
+.site-link {
+  position: relative;
+  transition: color 0.2s ease;
 }
 
-/*
-        /76.28px
-        /61.03px
-3.052rem/48.83px
-2.441rem/39.06px
-1.953rem/31.25px
-1.563rem/25.00px
-1.25rem/20.00px
-1rem/16.00px
-*/
+.site-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0.1rem;
+  width: 0;
+  height: 2px;
+  background: var(--color-lavender-hover);
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: width 0.22s ease;
+}
+
+.site-link:hover {
+  color: var(--color-text) !important;
+}
+
+.site-link:hover::after,
+.site-link.router-link-active::after,
+.site-link.router-link-exact-active::after {
+  width: 65%;
+}
