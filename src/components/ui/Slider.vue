@@ -1,39 +1,36 @@
-<script setup></script>
+<script setup>
+const images = [
+  "/assets/img/cizme/1.jpg",
+  "/assets/img/gricke/1.jpg",
+  "/assets/img/kocke/1.jpg",
+  "/assets/img/krun/1.jpg",
+  "/assets/img/kugle/1.jpg",
+  "/assets/img/okviri/10.jpg",
+  "/assets/img/privj/1.jpg",
+  "/assets/img/set/6.jpg",
+  "/assets/img/shuze/1.jpg",
+  "/assets/img/slinceki/12.jpg",
+  "/assets/img/trake/1.jpg",
+  "/assets/img/vezice/12.jpg",
+];
+</script>
 
 <template>
-  <section>
+  <section class="slider">
     <div class="fading-left"></div>
     <article>
       <div>
         <ul>
-          <li>
-            <img src="/assets/img/cizme/1.jpg" />
+          <li v-for="(src, i) in images" :key="'a' + i">
+            <img :src="src" alt="" loading="lazy" decoding="async" />
           </li>
-          <li>
-            <img src="/assets/img/gricke/1.jpg" />
+        </ul>
+      </div>
+      <div aria-hidden="true">
+        <ul>
+          <li v-for="(src, i) in images" :key="'b' + i">
+            <img :src="src" alt="" loading="lazy" decoding="async" />
           </li>
-          <li><img src="/assets/img/kocke/1.jpg" /></li>
-          <li>
-            <img src="/assets/img/krun/1.jpg" />
-          </li>
-          <li>
-            <img src="/assets/img/kugle/1.jpg" />
-          </li>
-          <li><img src="/assets/img/okviri/10.jpg" /></li>
-          <li>
-            <img src="/assets/img/privj/1.jpg" />
-          </li>
-          <li>
-            <img src="/assets/img/set/6.jpg" />
-          </li>
-          <li><img src="/assets/img/shuze/1.jpg" /></li>
-          <li>
-            <img src="/assets/img/slinceki/12.jpg" />
-          </li>
-          <li>
-            <img src="/assets/img/trake/1.jpg" />
-          </li>
-          <li><img src="/assets/img/vezice/12.jpg" /></li>
         </ul>
       </div>
     </article>
@@ -44,7 +41,7 @@
 <style scoped>
 .fading-left {
   position: absolute;
-  left: 0px;
+  left: 0;
   top: 0;
   display: block;
   width: 70px;
@@ -53,26 +50,25 @@
   background-image: linear-gradient(
     to left,
     rgba(255, 255, 255, 0),
-    #ede4f2 100%
+    var(--color-bg) 100%
   );
 }
 .fading-right {
   position: absolute;
-  right: 0px;
+  right: 0;
   top: 0;
   display: block;
   width: 70px;
   height: 100%;
+  z-index: 1;
   background-image: linear-gradient(
     to right,
     rgba(255, 255, 255, 0),
-    #ede4f2 100%
+    var(--color-bg) 100%
   );
 }
 
-/* ------ */
-
-section {
+.slider {
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -87,18 +83,13 @@ img {
 
 article {
   display: flex;
-  width: 200%;
-  animation: bannermove 15s linear infinite;
+  width: max-content;
+  animation: bannermove 40s linear infinite;
   margin-bottom: 1rem;
 }
 
-article.paused {
-  -webkit-animation-play-state: paused;
-  animation-play-state: paused;
-}
-
-div {
-  width: 100%;
+article > div {
+  display: flex;
 }
 
 ul {
@@ -109,13 +100,13 @@ ul {
 }
 
 li {
-  width: 100%;
   margin-left: 1rem;
   margin-right: 1rem;
-  border-radius: 15px;
+  border-radius: var(--radius);
   overflow: hidden;
   width: 220px;
-  box-shadow: 4px 4px 4px lightgrey;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-soft);
 }
 
 @keyframes bannermove {
@@ -128,23 +119,22 @@ li {
 }
 
 @media (max-width: 991.98px) {
-  ul {
-    height: 300px;
-  }
-  div {
-    width: 500%;
-  }
-  article {
-    animation-duration: 15s;
+  img {
+    height: 220px;
   }
 
-  @keyframes bannermove {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-330%);
-    }
+  li {
+    width: 160px;
+  }
+
+  article {
+    animation-duration: 28s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  article {
+    animation: none;
   }
 }
 </style>
