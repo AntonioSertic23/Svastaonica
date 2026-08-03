@@ -1,0 +1,217 @@
+export const messages = {
+  hr: {
+    nav: {
+      home: "Početna",
+      gallery: "Galerija",
+      about: "O nama",
+      contact: "Kontakt",
+    },
+    lang: {
+      hr: "HR",
+      en: "EN",
+      label: "Jezik",
+    },
+    hero: {
+      welcome: "Dobrodošli na",
+      subtitle:
+        "sretno mjesto na internetu gdje se mogu pronaći razni poklončići za bebe!",
+      cta: "Galerija",
+      quote: "“Svi smo djeca. Jedina razlika je igračka koju imamo.”",
+      logoFlipHint: "Klikni za novi logo Svaštaonica",
+    },
+    home: {
+      quote1:
+        "Ono što dobijemo od djetinjstva nisu igračke, već uspomene. A sretne uspomene bolje su od bilo koje igračke.",
+      quote2: "Darujte djeci igračke koje pokreće njihova mašta, a ne baterije.",
+      quote3:
+        "Nitko nikada ne zaboravlja igračku koja ga je u djetinjstvu iznimno veselila.",
+      quote4: "Igračke su dječje riječi, a igra njihov jezik.",
+      viewAll: "Pogledaj sve",
+    },
+    order: {
+      title: "Proces narudžbe",
+      contact: "Kontakt",
+      contactText:
+        "Za sve informacije obratite nam se putem mreže po vašem izboru. Posjetite našu",
+      contactLink: "kontakt stranicu",
+      crafting: "Izrada",
+      craftingText:
+        "Vašu narudžbu izrađujemo u najkraćem mogućem roku, te po izradi dobivate fotografiju narudžbe prije samog slanja.",
+      delivery: "Dostava",
+      deliveryTextBefore: "Vašu narudžbu dostavljamo putem:",
+      deliveryPost: "Hrvatske pošte",
+      deliveryParcel: "Paketomata",
+      deliveryTisak: "Tiska",
+      deliveryAnd: ", a moguće je i",
+      deliveryPickup: "osobno preuzimanje",
+    },
+    stats: {
+      hours: "uloženih sati rada",
+      children: "razveseljene djece",
+      moms: "zadovoljnih mama",
+      products: "izrađenih proizvoda",
+    },
+    gallery: {
+      title: "Galerija",
+      trending: "U trendu",
+      new: "Novo u ponudi",
+      sale: "Akcija",
+      bundles: "Paketi",
+      searchPlaceholder: "Pretraži proizvode…",
+      empty: "Nažalost nismo pronašli niti jedan proizvod toga imena.",
+    },
+    contact: {
+      title: "Kontakt",
+      reachUs: "Obratite nam se putem:",
+      glad: "Radujemo se svakom vašem upitu i narudžbi!",
+      place: "Mjesto",
+      placeValue: "Našice, Hrvatska",
+      phone: "Telefon",
+      email: "Email",
+    },
+    footer: {
+      reachUs: "Obratite nam se putem:",
+      glad: "Radujemo se svakom vašem upitu i narudžbi!",
+      copyright: "© Since 2020 — Svaštaonica",
+    },
+    product: {
+      soldOut: "RASPRODANO",
+      comingSoon: "Uskoro u ponudi",
+      partOfBundle: "Ovaj proizvod je dio našeg promo paketa",
+      bundleItems: "Proizvodi koji se nalaze u paketu",
+      similar: "Slični proizvodi",
+      allPhotos: "Sve fotografije",
+      hidePhotos: "Sakrij pregled",
+      photosCount: "fotografija",
+      shareUnavailable:
+        "Nažalost mogućnost dijeljenja proizvoda nije moguća za vaš uređaj ili preglednik.",
+    },
+    about: {
+      title: "Ukratko o nama",
+      subheading: "mjesto gdje se susreću mašta, kreativa i pozitiva",
+      intro:
+        "Svaštaonica je nastala kao nastavak dugogodišnjeg hobija, a zatim smo rasli i sazrijevali u svojoj kreativi zahvaljujući ponajprije svima vama, divnim i vjernim kupcima, koji ste nas inspirirali, nadahnjivali i davali vjetar u leđa svakom svojom idejom i narudžbom!",
+      handmadePrefix: "Svaki proizvod je ",
+      handmade: "ručni rad",
+      handmadeSuffix:
+        ", proizašao iz malene radionice, napravljen s mnoštvom ljubavi i pažnje, te provjeren, poslikan i pojašnjen kupcu prije slanja, kako bi do Vas stigao točno onakav kakvog ste ga i zamislili.",
+    },
+    notFound: {
+      title: "Oops!",
+      message: "404 - Ova stranica nije pronađena",
+      back: "Povratak",
+      home: "Početna",
+    },
+    search: {
+      empty: "Nažalost nismo pronašli niti jedan proizvod toga imena.",
+    },
+  },
+  en: {
+    nav: {
+      home: "Home",
+      gallery: "Gallery",
+      about: "About us",
+      contact: "Contact",
+    },
+    lang: {
+      hr: "HR",
+      en: "EN",
+      label: "Language",
+    },
+    hero: {
+      welcome: "Welcome to",
+      subtitle:
+        "a happy place online where you can find all kinds of little gifts for babies!",
+      cta: "Gallery",
+      quote: "“We are all children. The only difference is the toy we have.”",
+      logoFlipHint: "Click to reveal the new Svaštaonica logo",
+    },
+    home: {
+      quote1:
+        "What we get from childhood is not toys, but memories. And happy memories are better than any toy.",
+      quote2:
+        "Give children toys powered by their imagination, not by batteries.",
+      quote3:
+        "No one ever forgets a toy that made them extraordinarily happy in childhood.",
+      quote4: "Toys are children's words, and play is their language.",
+      viewAll: "View all",
+    },
+    order: {
+      title: "Order process",
+      contact: "Contact",
+      contactText:
+        "For any information, reach out to us via the network of your choice. Visit our",
+      contactLink: "contact page",
+      crafting: "Crafting",
+      craftingText:
+        "We make your order as quickly as possible, and once it is ready you receive a photo of the order before shipping.",
+      delivery: "Delivery",
+      deliveryTextBefore: "We deliver your order via:",
+      deliveryPost: "Croatian Post",
+      deliveryParcel: "Parcel lockers",
+      deliveryTisak: "Tisak",
+      deliveryAnd: ", and",
+      deliveryPickup: "personal pickup",
+    },
+    stats: {
+      hours: "hours of work invested",
+      children: "happy children",
+      moms: "happy moms",
+      products: "handmade products",
+    },
+    gallery: {
+      title: "Gallery",
+      trending: "Trending",
+      new: "New in store",
+      sale: "Sale",
+      bundles: "Bundles",
+      searchPlaceholder: "Search products…",
+      empty: "Sorry, we could not find any product with that name.",
+    },
+    contact: {
+      title: "Contact",
+      reachUs: "Reach us via:",
+      glad: "We look forward to every inquiry and order!",
+      place: "Location",
+      placeValue: "Našice, Croatia",
+      phone: "Phone",
+      email: "Email",
+    },
+    footer: {
+      reachUs: "Reach us via:",
+      glad: "We look forward to every inquiry and order!",
+      copyright: "© Since 2020 — Svaštaonica",
+    },
+    product: {
+      soldOut: "SOLD OUT",
+      comingSoon: "Coming soon",
+      partOfBundle: "This product is part of our promo bundle",
+      bundleItems: "Products included in the bundle",
+      similar: "Similar products",
+      allPhotos: "All photos",
+      hidePhotos: "Hide gallery",
+      photosCount: "photos",
+      shareUnavailable:
+        "Sorry, sharing this product is not available on your device or browser.",
+    },
+    about: {
+      title: "About us in brief",
+      subheading: "where imagination, creativity and positivity meet",
+      intro:
+        "Svaštaonica began as a continuation of a long-time hobby, and then we grew and matured in our creativity thanks above all to all of you — wonderful and loyal customers — who inspired us, encouraged us, and gave us a boost with every idea and order!",
+      handmadePrefix: "Every product is ",
+      handmade: "handmade",
+      handmadeSuffix:
+        ", created in a small workshop with plenty of love and care, then checked, photographed and explained to the customer before shipping, so it arrives exactly as you imagined it.",
+    },
+    notFound: {
+      title: "Oops!",
+      message: "404 - This page was not found",
+      back: "Go back",
+      home: "Home",
+    },
+    search: {
+      empty: "Sorry, we could not find any product with that name.",
+    },
+  },
+};
