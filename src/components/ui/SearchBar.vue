@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import router from "@/router";
 import { useRoute } from "vue-router";
 
@@ -7,32 +7,66 @@ const emit = defineEmits(["findData"]);
 
 const props = defineProps({
   isForNavbar: Boolean,
+  /** Stay on current page and only emit the query (used on Gallery). */
+  inline: Boolean,
+  placeholder: {
+    type: String,
+    default: "",
+  },
 });
 
 const route = useRoute();
-var text = ref(route.params.search);
+const text = ref(
+  props.inline ? "" : route.params.search && route.params.search.trim()
+    ? route.params.search
+    : ""
+);
+
+watch(
+  () => route.params.search,
+  (val) => {
+    if (!props.inline) {
+      text.value = val && String(val).trim() ? val : "";
+    }
+  }
+);
 
 function Search() {
-  if (text.value != "") {
-    router.push({ path: "/search/" + text.value });
+  const query = (text.value || "").trim();
+  emit("findData", text);
+
+  if (props.inline) {
+    return;
+  }
+
+  if (query !== "") {
+    router.push({ path: "/search/" + query });
   } else {
     router.push({ path: "/search/ " });
   }
-  emit("findData", text);
+
   if (props.isForNavbar) {
     text.value = "";
+  }
+}
+
+function onInput() {
+  if (props.inline) {
+    emit("findData", text);
   }
 }
 </script>
 
 <template>
-  <div class="input-group search-div me-4">
+  <div class="input-group search-div" :class="{ 'me-4': isForNavbar }">
     <input
       type="text"
       class="form-control"
       v-model="text"
+      :placeholder="placeholder"
+      @input="onInput"
       @keyup.enter="Search()"
-      v-bind:class="isForNavbar ? '' : 'search-input-page'"
+      :class="isForNavbar ? '' : 'search-input-page'"
     />
     <button
       class="btn search-btn px-3"
@@ -43,7 +77,7 @@ function Search() {
       <i
         class="fa fa-search"
         aria-hidden="true"
-        v-bind:class="isForNavbar ? '' : 'search-btn-page'"
+        :class="isForNavbar ? '' : 'search-btn-page'"
       ></i>
     </button>
   </div>
@@ -51,8 +85,8 @@ function Search() {
 
 <style scoped>
 .search-div {
-  box-shadow: 4px 4px 4px lightgrey;
-  border-radius: 15px;
+  box-shadow: var(--shadow-soft);
+  border-radius: var(--radius);
   overflow: hidden;
 }
 
@@ -70,13 +104,13 @@ function Search() {
 }
 
 .search-btn {
-  background-color: rgb(205, 180, 219);
-  color: #222;
+  background-color: var(--color-lavender);
+  color: var(--color-text);
   border: none;
 }
 .search-btn:hover {
-  background-color: #a375bd;
-  color: #222;
+  background-color: var(--color-lavender-hover);
+  color: var(--color-text);
 }
 
 .search-input-page {
