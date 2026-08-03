@@ -239,20 +239,7 @@
     ],
     "textEn": ""
   },
-  "reviews": [
-    {
-      "image": "",
-      "name": "Netko",
-      "comment": "Lorem ipsum dolor.",
-      "commentEn": ""
-    },
-    {
-      "image": "",
-      "name": "Netko Nekić",
-      "comment": "Lorem ipsum dolor!",
-      "commentEn": ""
-    }
-  ],
+  "reviews": [],
   "similarItems": [
     5,
     4,

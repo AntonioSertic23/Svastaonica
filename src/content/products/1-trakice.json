@@ -65,20 +65,7 @@
     "careIcons": []
   },
   "soldout": false,
-  "reviews": [
-    {
-      "image": "",
-      "name": "Netko",
-      "comment": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur.",
-      "commentEn": ""
-    },
-    {
-      "image": "",
-      "name": "Netko Nekić",
-      "comment": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore amet dicta harum!",
-      "commentEn": ""
-    }
-  ],
+  "reviews": [],
   "id": 1,
   "categories": [
     3

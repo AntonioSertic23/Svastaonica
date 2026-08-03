@@ -138,20 +138,7 @@
     ],
     "textEn": ""
   },
-  "reviews": [
-    {
-      "image": "",
-      "name": "Netko",
-      "comment": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur.",
-      "commentEn": ""
-    },
-    {
-      "image": "",
-      "name": "Netko Nekić",
-      "comment": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore amet dicta harum!",
-      "commentEn": ""
-    }
-  ],
+  "reviews": [],
   "similarItems": [
     6,
     5,
