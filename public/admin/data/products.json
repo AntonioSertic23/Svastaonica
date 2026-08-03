@@ -1,0 +1,72 @@
+[
+  {
+    "value": 1,
+    "label": "Trakice",
+    "image": "/assets/img/products/trake/1.jpg"
+  },
+  {
+    "value": 2,
+    "label": "Pamučne gricke",
+    "image": "/assets/img/products/gricke/1.jpg"
+  },
+  {
+    "value": 3,
+    "label": "Okvir",
+    "image": "/assets/img/products/okviri/10.jpg"
+  },
+  {
+    "value": 4,
+    "label": "Krunice i desetice",
+    "image": "/assets/img/products/krun/1.jpg"
+  },
+  {
+    "value": 5,
+    "label": "Privjesci za ključeve",
+    "image": "/assets/img/products/privj/1.jpg"
+  },
+  {
+    "value": 6,
+    "label": "Patikice za nehodače",
+    "image": "/assets/img/products/shuze/1.jpg"
+  },
+  {
+    "value": 7,
+    "label": "Silikonska vezica",
+    "image": "/assets/img/products/vezice/12.jpg"
+  },
+  {
+    "value": 8,
+    "label": "Slinček",
+    "image": "/assets/img/products/slinceki/12.jpg"
+  },
+  {
+    "value": 9,
+    "label": "Didaktička Kocka",
+    "image": "/assets/img/products/kocke/1.jpg"
+  },
+  {
+    "value": 10,
+    "label": "Kugle",
+    "image": "/assets/img/products/kugle/1.jpg"
+  },
+  {
+    "value": 11,
+    "label": "Blagdanske čizme",
+    "image": "/assets/img/products/cizme/1.jpg"
+  },
+  {
+    "value": 12,
+    "label": "Uskoro u ponudi",
+    "image": "/assets/img/products/set/1.jpg"
+  },
+  {
+    "value": 13,
+    "label": "Zahvalnice za razne prigode",
+    "image": "/assets/img/products/zahvalnice/1.jpg"
+  },
+  {
+    "value": 14,
+    "label": "Test",
+    "image": "/assets/img/uploads/8gfybpf.png"
+  }
+]

@@ -8,9 +8,17 @@ function adminStaticPlugin() {
   return {
     name: "admin-static",
     configureServer(server) {
-      server.middlewares.use((req, _res, next) => {
+      server.middlewares.use((req, res, next) => {
         const url = req.url?.split("?")[0] ?? "";
-        if (url === "/admin" || url === "/admin/") {
+        // Decap resolves config.yml relative to the URL path. Without a
+        // trailing slash, /admin loads /config.yml (404) instead of /admin/config.yml.
+        if (url === "/admin") {
+          res.statusCode = 302;
+          res.setHeader("Location", "/admin/");
+          res.end();
+          return;
+        }
+        if (url === "/admin/") {
           req.url = "/admin/index.html";
         }
         next();

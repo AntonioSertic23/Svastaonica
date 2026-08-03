@@ -6,7 +6,10 @@
     "build": "vite build",
     "preview": "vite preview --port 4173",
     "cms": "npx --yes decap-server",
-    "dev:cms": "npx --yes concurrently -k -n web,cms -c magenta,cyan \"npm run dev\" \"npm run cms\""
+    "cms:index": "node scripts/generate-cms-product-index.mjs",
+    "backup:products": "node scripts/backup-products.mjs",
+    "dev:cms": "npm run cms:index && npx --yes concurrently -k -n web,cms -c magenta,cyan \"npm run dev\" \"npm run cms\"",
+    "prebuild": "npm run cms:index"
   },
   "dependencies": {
     "v-lazy-image": "^2.1.1",

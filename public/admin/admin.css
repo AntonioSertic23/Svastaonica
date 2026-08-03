@@ -43,16 +43,17 @@ body {
 
 .local-auth-note {
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
   z-index: 9999;
-  padding: 0.75rem 1rem;
+  padding: 0.55rem 1rem;
   background: #3d2a4a;
   color: #fff;
-  font-size: 0.9rem;
-  line-height: 1.4;
+  font-size: 0.85rem;
+  line-height: 1.35;
   text-align: center;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.12);
 }
 
 .local-auth-note code {
@@ -67,8 +68,121 @@ body:has([data-slate-editor]) .admin-splash {
   display: none;
 }
 
-/* Soften Decap chrome toward brand colors when available */
-.css-1gj57a3-AppHeaderContent,
-[class*="AppHeader"] {
-  background: rgba(237, 228, 242, 0.95) !important;
+/* Keep Decap’s default chrome — only fix Quick Add dropdown contrast if needed */
+[class*="QuickAddMenu"] a,
+[class*="QuickAddMenu"] button,
+[class*="DropdownList"] a,
+[class*="DropdownList"] button,
+[class*="AppHeader"] [role="menuitem"] {
+  color: #222 !important;
+}
+
+[class*="QuickAddMenu"] a:hover,
+[class*="QuickAddMenu"] button:hover,
+[class*="DropdownList"] a:hover,
+[class*="DropdownList"] button:hover,
+[class*="AppHeader"] [role="menuitem"]:hover {
+  background: #f3f0f5 !important;
+  color: #111 !important;
+}
+
+/* Collection grid ("Mreža"): taller images, ~3 cards per row */
+li[class*="GridCard"],
+li[class*="GridCard-card"] {
+  flex: 0 0 300px !important;
+  width: 300px !important;
+  max-width: 300px !important;
+  height: 350px !important;
+  overflow: hidden !important;
+}
+
+li[class*="GridCard"] [class*="StyledImage"],
+div[class*="StyledImage"] {
+  height: 260px !important;
+  background-size: cover !important;
+  background-position: center center !important;
+}
+
+li[class*="GridCard"] [class*="CardBody"] {
+  min-height: auto !important;
+}
+
+/* Keep editor / collection pane above the local-mode banner */
+[class*="ControlPaneContainer"] {
+  padding-bottom: 50px !important;
+}
+
+/* Custom icon-multiselect widget */
+.sv-icon-multiselect {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  padding: 0.75rem !important;
+  min-height: auto !important;
+}
+
+.sv-icon-multiselect__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  width: 96px;
+  padding: 0.55rem 0.4rem;
+  border: 2px solid #d5c8df;
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  font: inherit;
+  color: #333;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.sv-icon-multiselect__item:hover {
+  border-color: var(--sv-lavender-deep);
+  background: #faf7fc;
+}
+
+.sv-icon-multiselect__item.is-selected {
+  border-color: var(--sv-lavender-deep);
+  background: #f3eaf8;
+  box-shadow: 0 0 0 2px rgba(163, 117, 189, 0.25);
+}
+
+.sv-icon-multiselect__img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
+}
+
+.sv-icon-multiselect__label {
+  font-size: 0.7rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.sv-icon-multiselect-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.sv-icon-multiselect-preview img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+/* Product picker (similar items) */
+.sv-product-multiselect__item {
+  width: 120px;
+}
+
+.sv-product-multiselect__img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  background: #f0eaf5;
 }

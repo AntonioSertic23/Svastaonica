@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>Svaštaonica — Admin</title>
-    <link rel="icon" href="/svastaonica-logo-2.jpg" />
+    <link rel="icon" href="/assets/img/brand/svastaonica-logo-2.jpg" />
     <link rel="stylesheet" href="./admin.css" />
   </head>
   <body>
     <div class="admin-splash">
       <img
-        src="/svastaonica-logo-1.png"
+        src="/assets/img/brand/svastaonica-logo-1.png"
         alt="Svaštaonica"
         class="admin-splash-logo"
       />
@@ -19,12 +19,30 @@
     </div>
 
     <div id="local-auth-note" class="local-auth-note" hidden>
-      <strong>Lokalni način:</strong> prijava je namjerno otvorena (bez lozinke)
-      dok radi <code>npm run cms</code>. Na produkciji se prijavljuješ GitHub
-      računom (samo collaboratori s write pristupom na repo).
+      <strong>Lokalni način</strong> — bez prijave dok radi
+      <code>npm run cms</code>. Produkcija: GitHub login.
     </div>
 
+    <script>
+      // Decap defaults to list view; prefer grid ("Mreža") before the CMS boots.
+      // One-time migration so existing LIST preference becomes GRID once.
+      (function () {
+        var KEY = "decap-cms.entries.viewStyle";
+        var FLAG = "svastaonica.cms.defaultGrid.v1";
+        if (!localStorage.getItem(FLAG)) {
+          localStorage.setItem(KEY, "VIEW_STYLE_GRID");
+          localStorage.setItem(FLAG, "1");
+        } else if (!localStorage.getItem(KEY)) {
+          localStorage.setItem(KEY, "VIEW_STYLE_GRID");
+        }
+      })();
+    </script>
+    <script>
+      window.CMS_MANUAL_INIT = true;
+    </script>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script src="./widgets/icon-multiselect.js"></script>
+    <script src="./widgets/product-multiselect.js"></script>
     <script>
       (function () {
         const isLocal =
@@ -32,6 +50,39 @@
           location.hostname === "127.0.0.1";
         const note = document.getElementById("local-auth-note");
         if (isLocal && note) note.hidden = false;
+
+        // Auto-increment product id on create (hidden field defaults to 0).
+        var NEXT_ID_KEY = "svastaonica.cms.nextProductId";
+        var SEED_NEXT = 15; // maxExistingId (14) + 1
+
+        function ensureNextIdSeed() {
+          var raw = localStorage.getItem(NEXT_ID_KEY);
+          var n = Number(raw);
+          if (!Number.isFinite(n) || n < SEED_NEXT) {
+            localStorage.setItem(NEXT_ID_KEY, String(SEED_NEXT));
+          }
+        }
+
+        function allocateNextId() {
+          ensureNextIdSeed();
+          var next = Number(localStorage.getItem(NEXT_ID_KEY)) || SEED_NEXT;
+          localStorage.setItem(NEXT_ID_KEY, String(next + 1));
+          return next;
+        }
+
+        CMS.registerEventListener({
+          name: "preSave",
+          handler: function ({ entry }) {
+            var data = entry.get("data");
+            var id = data.get("id");
+            if (id == null || id === "" || Number(id) === 0) {
+              return data.set("id", allocateNextId());
+            }
+            return data;
+          },
+        });
+
+        CMS.init();
       })();
     </script>
   </body>

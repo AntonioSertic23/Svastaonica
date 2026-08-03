@@ -9,7 +9,7 @@ backend:
   repo: AntonioSertic23/Svastaonica
   branch: main
 
-logo_url: /svastaonica-logo-1.png
+logo_url: /assets/img/brand/svastaonica-logo-1.png
 
 media_folder: public/assets/img/uploads
 public_folder: /assets/img/uploads
@@ -20,7 +20,9 @@ collections:
   - name: products
     label: Proizvodi
     label_singular: Proizvod
-    description: Svaki proizvod je zasebna datoteka — ovdje vidiš cijeli katalog.
+    description: >-
+      Svaki proizvod je zasebna datoteka. Brisanje se može vratiti iz GitHub
+      povijesti (commit) — vidi public/admin/README.md (Backup & restore).
     folder: src/content/products
     create: true
     delete: true
@@ -29,22 +31,32 @@ collections:
     slug: "{{id}}-{{slug}}"
     identifier_field: name
     summary: "{{name}} (ID {{id}})"
+    sortable_fields: [name, id]
     editor:
       preview: false
     fields:
       - label: ID
         name: id
-        widget: number
-        value_type: int
-        min: 1
-        hint: Jedinstveni broj. Novi proizvod = id veći od postojećih.
+        widget: hidden
+        default: 0
 
       - label: Naziv
         name: name
         widget: string
 
+      - label: Naziv (EN)
+        name: nameEn
+        widget: string
+        required: false
+        hint: Engleski naziv — prikazuje se kad je jezik EN.
+
       - label: Podnaslov
         name: subheading
+        widget: string
+        required: false
+
+      - label: Podnaslov (EN)
+        name: subheadingEn
         widget: string
         required: false
 
@@ -52,7 +64,17 @@ collections:
         name: description
         widget: text
         required: false
-        hint: Možeš koristiti HTML (npr. <br>, <span class='important'>…).
+        hint: >-
+          HTML je dozvoljen (npr. <br>, <b>, <i>, <span class='important'>…).
+          Za bold/italic možeš koristiti online editor
+          https://html-online.com/editor/ pa zalijepiti kod ovdje.
+
+      - label: Opis (EN)
+        name: descriptionEn
+        widget: text
+        required: false
+        hint: >-
+          Engleski opis (HTML kao i gore). Prazno = prikaži hrvatski opis.
 
       - label: Thumbnail
         name: thumbnail
@@ -83,9 +105,14 @@ collections:
 
       - label: Veličine
         name: sizes
-        widget: list
+        widget: select
+        multiple: true
         required: false
-        hint: Unesi veličine odvojene zarezom (npr. S, L, XL).
+        options:
+          - { label: "XS", value: "XS" }
+          - { label: "S", value: "S" }
+          - { label: "M", value: "M" }
+          - { label: "L", value: "L" }
 
       - label: Deklaracija
         name: declaration
@@ -93,38 +120,53 @@ collections:
         required: false
         collapsed: true
         fields:
-          - label: Materijali / napomene
-            name: materials
-            widget: list
+          - label: Tekst deklaracije
+            name: text
+            widget: text
             required: false
-            hint: Stavke odvojene zarezom.
-          - label: Standardi
-            name: standards
-            widget: list
+            hint: Slobodan tekst ili HTML za sadržaj deklaracije.
+          - label: Tekst deklaracije (EN)
+            name: textEn
+            widget: text
             required: false
-            summary: "{{fields.name}}"
-            fields:
-              - { label: Naziv, name: name, widget: string }
-              - { label: Slika, name: image, widget: image, choose_url: true, required: false }
+            hint: Engleski tekst deklaracije. Prazno = prikaži hrvatski.
+          - label: Prikaži sliku standarda (OEKO-TEX)
+            name: showStandardsImage
+            widget: boolean
+            default: false
+            required: false
           - label: Ikone njege
-            name: icons
-            widget: list
+            name: careIcons
+            widget: icon-multiselect
             required: false
-            fields:
-              - { label: Ikona, name: icon, widget: image, choose_url: true }
-              - { label: Opis, name: text, widget: string, required: false }
+            options:
+              - { label: "Pranje (općenito)", value: tc-wash }
+              - { label: "Pranje (1)", value: tc-wash-one }
+              - { label: "Pranje (2)", value: tc-wash-two }
+              - { label: "Glačanje (2)", value: tc-ironing-two }
+              - { label: "Bez glačanja", value: tc-no-ironing }
+              - { label: "Sušenje u bubnju", value: tc-tumble-dry }
+              - { label: "Kemijsko čišćenje", value: tc-dry-clean }
+              - { label: "Bijeljenje", value: tc-bleach }
 
-      - label: Slični proizvodi (ID-evi)
+      - label: Slični proizvodi
         name: similarItems
-        widget: list
+        widget: product-multiselect
         required: false
-        hint: ID brojevi odvojeni zarezom (npr. 7, 9, 4).
+        hint: Odaberi proizvode koji se prikazuju kao slični. Pokreni npm run cms:index nakon novih proizvoda ako ih ne vidiš.
 
       - label: Bedževi
         name: badges
-        widget: list
+        widget: icon-multiselect
         required: false
-        hint: Nazivi bedževa odvojeni zarezom (npr. badge1, badge4).
+        hint: Klikni bedževe koji se prikazuju na kartici proizvoda.
+        options:
+          - { label: "Novo u ponudi", value: badge1 }
+          - { label: "U trendu", value: badge2 }
+          - { label: "Preporuka", value: badge3 }
+          - { label: "Akcija", value: badge4 }
+          - { label: "Paket", value: badge5 }
+          - { label: "Sigurnost", value: badge6 }
 
       - label: Rasprodano
         name: soldout
@@ -140,47 +182,67 @@ collections:
 
       - label: Kategorije
         name: categories
-        widget: select
-        multiple: true
+        widget: icon-multiselect
         required: false
         options:
-          - { label: "U trendu", value: 1 }
-          - { label: "Novo u ponudi", value: 2 }
-          - { label: "Akcija", value: 3 }
-          - { label: "Paketi", value: 4 }
+          - { label: "U trendu", value: 1, image: /assets/img/ui/badge2.png }
+          - { label: "Novo u ponudi", value: 2, image: /assets/img/ui/badge1.png }
+          - { label: "Akcija", value: 3, image: /assets/img/ui/badge4.png }
+          - { label: "Paketi", value: 4, image: /assets/img/ui/box.png }
 
       - label: Ključne riječi / ikone
         name: keywords
         widget: list
         required: false
+        label_singular: ključna riječ
         summary: "{{fields.text}}"
+        allow_add: true
+        allow_delete: true
+        allow_reorder: true
         fields:
-          - { label: Tekst, name: text, widget: string }
-          - { label: Ikona, name: icon, widget: image, choose_url: true }
+          - label: Tekst
+            name: text
+            widget: string
+            hint: Tekst ispod ikone na stranici proizvoda.
+          - label: Ikona
+            name: icon
+            widget: icon-multiselect
+            multiple: false
+            required: false
+            hint: Odaberi jednu ikonu.
+            options:
+              - { label: "Ručna izrada", value: "/assets/img/ui/sewing.png", image: "/assets/img/ui/sewing.png" }
+              - { label: "Poklon", value: "/assets/img/ui/gift.png", image: "/assets/img/ui/gift.png" }
+              - { label: "S ljubavlju", value: "/assets/img/ui/give-love.png", image: "/assets/img/ui/give-love.png" }
+              - { label: "Planet", value: "/assets/img/ui/planet-earth.png", image: "/assets/img/ui/planet-earth.png" }
+              - { label: "Igra", value: "/assets/img/ui/playtime.png", image: "/assets/img/ui/playtime.png" }
+              - { label: "Handmade", value: "/assets/img/ui/hand-made.png", image: "/assets/img/ui/hand-made.png" }
+              - { label: "Obrt", value: "/assets/img/ui/handcraft.png", image: "/assets/img/ui/handcraft.png" }
+              - { label: "Zvijezde", value: "/assets/img/ui/stars.png", image: "/assets/img/ui/stars.png" }
+              - { label: "Štit", value: "/assets/img/ui/shield.png", image: "/assets/img/ui/shield.png" }
+              - { label: "Medalja 1", value: "/assets/img/ui/medal1.png", image: "/assets/img/ui/medal1.png" }
+              - { label: "Medalja 2", value: "/assets/img/ui/medal2.png", image: "/assets/img/ui/medal2.png" }
+              - { label: "Medalja 3", value: "/assets/img/ui/medal3.png", image: "/assets/img/ui/medal3.png" }
+              - { label: "Novo u ponudi", value: "/assets/img/ui/badge1.png", image: "/assets/img/ui/badge1.png" }
+              - { label: "U trendu", value: "/assets/img/ui/badge2.png", image: "/assets/img/ui/badge2.png" }
+              - { label: "Preporuka", value: "/assets/img/ui/badge3.png", image: "/assets/img/ui/badge3.png" }
+              - { label: "Akcija", value: "/assets/img/ui/badge4.png", image: "/assets/img/ui/badge4.png" }
+              - { label: "Paket", value: "/assets/img/ui/badge5.png", image: "/assets/img/ui/badge5.png" }
+              - { label: "Sigurnost", value: "/assets/img/ui/badge6.png", image: "/assets/img/ui/badge6.png" }
+              - { label: "Kutija", value: "/assets/img/ui/box.png", image: "/assets/img/ui/box.png" }
 
       - label: Je paket (bundle)
         name: isBundle
         widget: boolean
         default: false
         required: false
+        hint: Uključi ako je ovaj proizvod paket / set.
 
-      - label: Stavke u paketu (ID-evi)
+      - label: Stavke u paketu
         name: bundleItems
-        widget: list
+        widget: product-multiselect
         required: false
-        hint: ID brojevi odvojeni zarezom.
-
-      - label: Dio je paketa
-        name: isPartOfBundle
-        widget: boolean
-        default: false
-        required: false
-
-      - label: Pripada paketima (ID-evi)
-        name: bundle
-        widget: list
-        required: false
-        hint: ID brojevi odvojeni zarezom.
+        hint: Proizvodi koji ulaze u ovaj paket. Pripadnost paketu na stavkama računa se automatski.
 
       - label: Recenzije
         name: reviews
@@ -191,24 +253,14 @@ collections:
         fields:
           - { label: Ime, name: name, widget: string }
           - { label: Komentar, name: comment, widget: text }
-          - { label: Foto, name: image, widget: image, choose_url: true, required: false }
-
-  - name: blogs
-    label: Blogovi
-    label_singular: Blog
-    folder: src/content/blogs
-    create: true
-    delete: true
-    extension: json
-    format: json
-    slug: "{{id}}-{{slug}}"
-    identifier_field: title
-    summary: "{{title}} (ID {{id}})"
-    editor:
-      preview: false
-    fields:
-      - { label: ID, name: id, widget: number, value_type: int }
-      - { label: Naslov, name: title, widget: string }
-      - { label: Opis, name: description, widget: text }
-      - { label: Datum, name: date, widget: string }
-      - { label: Thumbnail, name: thumbnail, widget: image, choose_url: true, required: false }
+          - label: Komentar (EN)
+            name: commentEn
+            widget: text
+            required: false
+            hint: Engleski komentar. Prazno = prikaži hrvatski.
+          - label: Slika proizvoda
+            name: image
+            widget: image
+            choose_url: true
+            required: false
+            hint: Fotografija proizvoda uz recenziju (ne profilna slika kupca).
