@@ -1,76 +1,104 @@
 <script setup>
-import sourceData from "@/data.json";
+import sourceData from "@/catalog.js";
 import { useRoute, RouterLink } from "vue-router";
 import VLazyImage from "v-lazy-image";
-import { onMounted, ref } from "vue";
+import { computed, onMounted, onUnmounted, ref } from "vue";
+import { useI18n } from "@/i18n/useI18n";
 
+const { t } = useI18n();
 const route = useRoute();
-const paramId = parseInt(route.params.id);
+const paramId = parseInt(route.params.id, 10);
 
-var data = ref(sourceData.data.find((d) => d.id === paramId));
+const data = ref(sourceData.data.find((d) => d.id === paramId));
 
-var aBundles = [];
-if (data.value.isPartOfBundle) {
+const aBundles = [];
+if (data.value?.isPartOfBundle) {
   data.value.bundle.forEach((id) => {
-    var bundle = sourceData.data.find((d) => d.id === id);
-    aBundles.push(bundle);
+    aBundles.push(sourceData.data.find((d) => d.id === id));
   });
 }
 
-var aItems = [];
-if (data.value.isBundle) {
+const aItems = [];
+if (data.value?.isBundle) {
   data.value.bundleItems.forEach((id) => {
-    var item = sourceData.data.find((d) => d.id === id);
-    aItems.push(item);
+    aItems.push(sourceData.data.find((d) => d.id === id));
   });
 }
 
-var aSimilarItems = [];
-data.value.similarItems.forEach((id) => {
-  var item = sourceData.data.find((d) => d.id === id);
-  aSimilarItems.push(item);
+const aSimilarItems = [];
+data.value?.similarItems?.forEach((id) => {
+  aSimilarItems.push(sourceData.data.find((d) => d.id === id));
 });
 
-// modal
+const lightboxOpen = ref(false);
+const lightboxSrc = ref("");
 
-var currentImageToOpen = ref("");
-function ChangeCurrentImageToOpen(path) {
-  currentImageToOpen.value = path;
+function openLightbox(path, index) {
+  lightboxSrc.value = path;
+  lightboxOpen.value = true;
+  document.body.classList.add("lock-scroll");
+  if (typeof index === "number") {
+    currentIndex.value = index + 1;
+    data.value?.images?.forEach((img, i) => {
+      img.isActive = i === index;
+    });
+  }
 }
 
-function getCurrentImageToOpen() {
-  return currentImageToOpen.value;
+function closeLightbox() {
+  lightboxOpen.value = false;
+  lightboxSrc.value = "";
+  document.body.classList.remove("lock-scroll");
 }
 
-// carousel
-
-var totalImages = ref(1);
-var currentIndex = ref(1);
+function onKeydown(e) {
+  if (e.key === "Escape" && lightboxOpen.value) {
+    closeLightbox();
+  }
+}
 
 onMounted(() => {
-  totalImages.value = $(".carousel-item").length;
+  window.addEventListener("keydown", onKeydown);
 });
 
-function updateNumber() {
-  currentIndex.value = $(".active").index() + 1;
+onUnmounted(() => {
+  window.removeEventListener("keydown", onKeydown);
+  document.body.classList.remove("lock-scroll");
+});
+
+const totalImages = computed(() => data.value?.images?.length || 1);
+const currentIndex = ref(
+  Math.max(
+    1,
+    (data.value?.images?.findIndex((img) => img.isActive) ?? 0) + 1
+  )
+);
+const galleryExpanded = ref(false);
+
+function updateNumber(direction) {
+  const total = totalImages.value;
+  if (direction === "prev") {
+    currentIndex.value = currentIndex.value <= 1 ? total : currentIndex.value - 1;
+  } else if (direction === "next") {
+    currentIndex.value = currentIndex.value >= total ? 1 : currentIndex.value + 1;
+  }
 }
 
-// share
-const share = (e) => {
-  if (navigator.share) {
-    navigator
-      .share({
-        title: "Product share",
-        text: data.value.name,
-        url: "https://svastaonica.netlify.app" + route.fullPath,
-      })
-      .then(() => console.log("thanks for share"))
-      .catch((error) =>
-        alert(
-          "Nažalost mogućnost dijeljenja proizvoda nije moguća za vaš uređaj ili preglednika."
-        )
-      );
-  }
+function toggleGallery() {
+  galleryExpanded.value = !galleryExpanded.value;
+}
+
+const share = () => {
+  if (!navigator.share) return;
+  navigator
+    .share({
+      title: data.value.name,
+      text: data.value.name,
+      url: "https://svastaonica.netlify.app" + route.fullPath,
+    })
+    .catch(() => {
+      alert(t("product.shareUnavailable"));
+    });
 };
 </script>
 
@@ -84,7 +112,7 @@ const share = (e) => {
         <div class="col col-lg-6 item-info order-4 order-lg-1">
           <div class="left-side mx-4 col col-lg-9 ms-lg-auto me-lg-5">
             <div v-if="data.soldout" class="mb-5 text-center soldout-text">
-              <p>RASPRODANO</p>
+              <p>{{ t("product.soldOut") }}</p>
             </div>
 
             <p class="menu-title mb-2">{{ data.name }}</p>
@@ -106,7 +134,7 @@ const share = (e) => {
             <!-- basic item -->
             <div class="bundle-section" v-if="data.isPartOfBundle">
               <p class="heading text-center mb-4">
-                Ovaj proizvod je dio našeg promo paketa
+                {{ t("product.partOfBundle") }}
               </p>
 
               <div class="row row-cols-1 row-cols-lg-3 justify-content-center">
@@ -158,7 +186,7 @@ const share = (e) => {
             <!-- bundle item -->
             <div class="bundle-section" v-if="data.isBundle">
               <p class="heading text-center mb-4">
-                Proizvodi koji se nalaze u paketu
+                {{ t("product.bundleItems") }}
               </p>
 
               <div class="row row-cols-1 row-cols-lg-3 justify-content-center">
@@ -271,7 +299,7 @@ const share = (e) => {
                 type="button"
                 data-bs-target="#singleItemCarousel"
                 data-bs-slide="prev"
-                v-on:click="updateNumber()"
+                @click="updateNumber('prev')"
               >
                 <img src="/assets/img/left-chevron.png" alt="" />
                 <span class="visually-hidden">Previous</span>
@@ -291,11 +319,12 @@ const share = (e) => {
                     class="carousel-item"
                   >
                     <img
-                      class="d-block"
-                      v-bind:src="image.path"
-                      data-bs-toggle="modal"
-                      data-bs-target="#imageModal"
-                      @click="ChangeCurrentImageToOpen(image.path)"
+                      class="d-block carousel-main-img"
+                      :src="image.path"
+                      :alt="data.name"
+                      loading="lazy"
+                      decoding="async"
+                      @click="openLightbox(image.path)"
                     />
 
                     <div class="share-section">
@@ -304,11 +333,11 @@ const share = (e) => {
                         :href="image.path"
                         :download="data.name + currentIndex"
                       >
-                        <img src="/assets/img/download.png" alt="" />
+                        <img src="/assets/img/download.png" alt="Preuzmi" />
                       </a>
 
                       <a class="shareBtn" @click="share()">
-                        <img src="/assets/img/share3.png" alt="" />
+                        <img src="/assets/img/share3.png" alt="Podijeli" />
                       </a>
                     </div>
                   </div>
@@ -320,7 +349,7 @@ const share = (e) => {
                 type="button"
                 data-bs-target="#singleItemCarousel"
                 data-bs-slide="next"
-                v-on:click="updateNumber()"
+                @click="updateNumber('next')"
               >
                 <img src="/assets/img/chevron.png" alt="" />
                 <span class="visually-hidden">Next</span>
@@ -335,10 +364,52 @@ const share = (e) => {
       </div>
 
       <div
+        class="all-photos-section px-4 px-lg-5 my-4 my-lg-5"
+        v-if="data.images && data.images.length > 1"
+      >
+        <button
+          type="button"
+          class="gallery-toggle"
+          @click="toggleGallery"
+          :aria-expanded="galleryExpanded"
+        >
+          <span>
+            {{
+              galleryExpanded ? t("product.hidePhotos") : t("product.allPhotos")
+            }}
+          </span>
+          <span class="gallery-toggle-meta"
+            >{{ totalImages }} {{ t("product.photosCount") }}</span
+          >
+          <span class="gallery-chevron" :class="{ open: galleryExpanded }"
+            >▼</span
+          >
+        </button>
+
+        <div v-show="galleryExpanded" class="photo-grid">
+          <button
+            v-for="(image, index) in data.images"
+            :key="image.id || index"
+            type="button"
+            class="photo-thumb"
+            :class="{ active: currentIndex === index + 1 }"
+            @click="openLightbox(image.path, index)"
+          >
+            <img
+              :src="image.path"
+              :alt="data.name + ' ' + (index + 1)"
+              loading="lazy"
+              decoding="async"
+            />
+          </button>
+        </div>
+      </div>
+
+      <div
         class="row similar-items-div px-4 px-lg-0 align-items-center"
         v-if="aSimilarItems.length > 0"
       >
-        <p class="title">Slični proizvodi</p>
+        <p class="title">{{ t("product.similar") }}</p>
         <div
           class="col-11 col-lg-2 similar-item p-0"
           v-for="item in aSimilarItems"
@@ -374,28 +445,25 @@ const share = (e) => {
     </div>
   </section>
 
-  <!-- Modal -->
-  <div
-    class="modal fade"
-    id="imageModal"
-    tabindex="-1"
-    aria-labelledby="imageModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
-      <div class="modal-content mx-auto">
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-        <div class="modal-body p-0">
-          <img :src="getCurrentImageToOpen()" />
-        </div>
-      </div>
+  <Teleport to="body">
+    <div
+      v-if="lightboxOpen"
+      class="lightbox"
+      role="dialog"
+      aria-modal="true"
+      @click.self="closeLightbox"
+    >
+      <button
+        type="button"
+        class="lightbox-close"
+        aria-label="Close"
+        @click="closeLightbox"
+      >
+        ✕
+      </button>
+      <img class="lightbox-image" :src="lightboxSrc" :alt="data.name" />
     </div>
-  </div>
+  </Teleport>
 </template>
 
 <style scoped>
@@ -412,38 +480,52 @@ const share = (e) => {
   font-size: 20px;
 }
 
-.btn-close {
-  position: absolute;
-  z-index: 1;
-  background-color: white;
-  opacity: 1;
-  padding: 1rem;
-  border-radius: 15px;
-  right: 20px;
-  top: 20px;
-}
-.btn-close:hover {
-  background-color: #aaa;
-  filter: invert(1);
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 20000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(20, 12, 28, 0.78);
+  cursor: zoom-out;
 }
 
-.modal-dialog {
-  max-width: none;
-}
-.modal-body {
-  height: 100%;
-}
-.modal-body img {
-  width: 100%;
-  height: 100%;
+.lightbox-image {
+  max-width: min(92vw, 1100px);
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  cursor: default;
 }
 
-.modal-content {
+.lightbox-close {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 20001;
+  width: 48px;
+  height: 48px;
   border: none;
-  border-radius: 15px;
-  overflow: hidden;
-  height: 90vh;
-  width: fit-content;
+  border-radius: 50%;
+  background: white;
+  color: var(--color-text);
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+}
+
+.lightbox-close:hover {
+  background: var(--color-lavender);
+}
+
+.carousel-main-img {
+  cursor: zoom-in;
 }
 
 .reviews-div .title {
@@ -460,10 +542,99 @@ const share = (e) => {
   justify-content: center;
   gap: 25px;
 }
+
+.all-photos-section {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  border: none;
+  background-color: var(--color-lavender);
+  color: var(--color-text);
+  border-radius: var(--radius);
+  padding: 0.9rem 1.25rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.gallery-toggle:hover {
+  background-color: var(--color-lavender-hover);
+}
+
+.gallery-toggle-meta {
+  opacity: 0.75;
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+.gallery-chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-left: 0.15rem;
+  font-size: 0.85rem;
+  line-height: 1;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  transition: transform 0.25s ease;
+}
+
+.gallery-chevron.open {
+  transform: rotate(180deg);
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.photo-thumb {
+  border: 2px solid transparent;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  aspect-ratio: 1;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.photo-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-thumb:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-lavender);
+}
+
+.photo-thumb.active {
+  border-color: var(--color-lavender-hover);
+}
 .similar-items-div .similar-item {
-  background-color: rgb(205, 180, 219);
+  background-color: var(--color-lavender);
   height: 250px;
-  border-radius: 15px;
+  border-radius: var(--radius);
 }
 
 .similar-items-div .title {
@@ -540,7 +711,7 @@ const share = (e) => {
   transform: scale(1.2);
 }
 
-/* for real */
+/* Product detail layout */
 
 .menu-title {
   font-size: 48.83px;
@@ -572,7 +743,7 @@ const share = (e) => {
 }
 
 .age-div .age {
-  background-color: rgb(205, 180, 219);
+  background-color: var(--color-lavender);
   width: 75px;
   height: 75px;
   padding: 1rem;
@@ -588,7 +759,7 @@ const share = (e) => {
   gap: 15px;
 }
 .sizes-div ul li {
-  background-color: rgb(205, 180, 219);
+  background-color: var(--color-lavender);
   width: 70px;
   height: 70px;
   padding: 1rem;
@@ -675,10 +846,16 @@ const share = (e) => {
 
 /* right */
 
+.slider-div {
+  position: sticky;
+  top: 100px;
+  align-self: flex-start;
+}
+
 .carousel {
   height: 650px;
-  box-shadow: 0px 5px 18px grey;
-  border-radius: 15px;
+  box-shadow: var(--shadow-soft);
+  border-radius: var(--radius);
   overflow: hidden;
 }
 
@@ -695,11 +872,6 @@ const share = (e) => {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.slider-div {
-  position: sticky;
-  top: 100px;
 }
 
 .carousel-prev {
@@ -724,13 +896,13 @@ const share = (e) => {
   padding: 12px;
   border: none;
   transition: transform 0.5s;
-  background-color: #ffafcc;
-  box-shadow: 0 0.25rem 1rem 0 grey;
+  background-color: var(--color-pink);
+  box-shadow: var(--shadow-soft);
 }
 
 .carousel-prev:hover,
 .carousel-next:hover {
-  background-color: #ff85b1;
+  background-color: var(--color-pink-hover);
   transform: scale(1.2);
 }
 
@@ -753,23 +925,17 @@ const share = (e) => {
   display: flex;
   column-gap: 20px;
 }
-.share-section-down {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 1;
-}
 
 .shareBtn {
-  background-color: rgb(205, 180, 219);
-  border-radius: 15px;
+  background-color: var(--color-lavender);
+  border-radius: var(--radius);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0.9rem;
 }
 .shareBtn:hover {
-  background-color: #a375bd;
+  background-color: var(--color-lavender-hover);
   cursor: pointer;
 }
 .shareBtn img {
@@ -867,13 +1033,17 @@ const share = (e) => {
     flex-direction: column;
   }
 
-  .modal.show {
-    display: flex !important;
-    justify-content: center;
-    align-items: center;
+  .photo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
   }
-  .modal-content {
-    height: fit-content;
+
+  .lightbox {
+    padding: 1rem;
+  }
+
+  .lightbox-close {
+    top: 0.75rem;
+    right: 0.75rem;
   }
 
   .menu-title-mobile {
@@ -885,10 +1055,6 @@ const share = (e) => {
     display: block;
     font-size: 25px;
     text-align: center;
-  }
-
-  .modal-dialog {
-    margin: 0 1rem;
   }
 
   .soldout-text {
