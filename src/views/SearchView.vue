@@ -1,11 +1,13 @@
 <script setup>
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import { useRoute } from "vue-router";
-import sourceData from "@/data.json";
+import sourceData from "@/catalog.js";
 import ProductCard from "../components/ui/ProductCard.vue";
 import SearchBar from "../components/ui/SearchBar.vue";
+import { useI18n } from "@/i18n/useI18n";
 
-var data = ref(sourceData.data);
+const { t } = useI18n();
+const data = ref(sourceData.data);
 const route = useRoute();
 data.value = sourceData.data.filter(function (el) {
   if (el.name.toLowerCase().includes(route.params.search.toLowerCase())) {
@@ -21,7 +23,7 @@ function FindData(text) {
   });
 }
 
-var isEmpty = data.value.length == 0;
+const isEmpty = computed(() => data.value.length === 0);
 </script>
 
 <template>
@@ -39,7 +41,7 @@ var isEmpty = data.value.length == 0;
         </div>
         <div class="message-div my-5 px-4 px-lg-0" v-if="isEmpty">
           <p class="message m-0">
-            Nažalost nismo pronašli niti jedan proizvod toga imena.
+            {{ t("search.empty") }}
           </p>
         </div>
       </div>

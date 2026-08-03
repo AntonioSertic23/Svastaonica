@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import sourceData from "@/data.json";
+import sourceData from "@/catalog.js";
 
 var data = ref(sourceData.blogs);
 </script>

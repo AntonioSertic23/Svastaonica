@@ -1,5 +1,5 @@
 <script setup>
-import sourceData from "@/data.json";
+import sourceData from "@/catalog.js";
 import { useRoute, RouterLink } from "vue-router";
 import VLazyImage from "v-lazy-image";
 import { onMounted, ref } from "vue";

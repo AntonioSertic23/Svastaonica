@@ -1,13 +1,18 @@
 <script setup>
-import sourceData from "@/data.json";
+import sourceData from "@/catalog.js";
 import { RouterLink } from "vue-router";
+import { useI18n } from "@/i18n/useI18n";
 
-/* TODO: dohvatiti zadnji id.. */
+const { t } = useI18n();
+
+/* TODO: fetch the latest product id dynamically */
 </script>
 
 <template>
   <div class="newinstore-section">
-    <p class="mt-5 mt-lg-3 mb-0 text-center section-heading">Novo u ponudi</p>
+    <p class="mt-5 mt-lg-3 mb-0 text-center section-heading">
+      {{ t("gallery.new") }}
+    </p>
 
     <div class="container my-4 my-lg-5">
       <div class="row">
@@ -25,9 +30,9 @@ import { RouterLink } from "vue-router";
               iste harum hic et esse dignissimos laboriosam vel suscipit neque
               explicabo.
             </p>
-            <RouterLink class="category-link mt-4 px-4" to="/singleitem/13"
-              >Otvori</RouterLink
-            >
+            <RouterLink class="category-link mt-4 px-4" to="/singleitem/13">{{
+              t("home.viewAll")
+            }}</RouterLink>
           </div>
         </div>
       </div>
@@ -89,7 +94,7 @@ import { RouterLink } from "vue-router";
   color: #222;
   text-decoration: none;
   text-transform: uppercase;
-  background-color: rgb(205, 180, 219);
+  background-color: var(--color-lavender);
   border-radius: 15px;
   padding: 1rem;
   font-weight: 500;
@@ -97,7 +102,7 @@ import { RouterLink } from "vue-router";
   width: fit-content;
 }
 .category-link:hover {
-  background-color: #a375bd;
+  background-color: var(--color-lavender-hover);
 }
 
 .icon {

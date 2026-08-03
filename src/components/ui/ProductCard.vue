@@ -1,12 +1,14 @@
 <script setup>
 import { RouterLink } from "vue-router";
 import VLazyImage from "v-lazy-image";
+import { useI18n } from "@/i18n/useI18n";
 
 const props = defineProps({
   cardData: Object,
 });
 
-var item = props.cardData;
+const { t } = useI18n();
+const item = props.cardData;
 </script>
 
 <template>
@@ -41,7 +43,7 @@ var item = props.cardData;
         />
 
         <div class="mask">
-          <p v-if="item.soldout">Rasprodano</p>
+          <p v-if="item.soldout">{{ t("product.soldOut") }}</p>
           <img v-else src="/assets/img/share.png" class="open-icon" alt="" />
         </div>
       </div>
@@ -55,7 +57,7 @@ var item = props.cardData;
       />
 
       <div class="mask px-lg-5">
-        <p>Uskoro u ponudi</p>
+        <p>{{ t("product.comingSoon") }}</p>
       </div>
     </div>
 
@@ -129,7 +131,7 @@ var item = props.cardData;
 
 .image-div-background {
   position: absolute;
-  background-color: #ede4f2;
+  background-color: var(--color-bg);
   margin-left: auto;
   margin-right: auto;
   left: 0;

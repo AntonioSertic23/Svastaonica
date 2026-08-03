@@ -1,9 +1,11 @@
 <script setup>
-import sourceData from "@/data.json";
+import sourceData from "@/catalog.js";
 import { RouterLink } from "vue-router";
 import VLazyImage from "v-lazy-image";
 import { ref } from "vue";
+import { useI18n } from "@/i18n/useI18n";
 
+const { t } = useI18n();
 var data = ref(sourceData.data.slice(0, 5));
 </script>
 
@@ -100,9 +102,9 @@ var data = ref(sourceData.data.slice(0, 5));
     </div>
 
     <div class="text-center">
-      <RouterLink class="category-link mt-4 mt-lg-5 px-4" to="/gallery"
-        >Pogledaj sve</RouterLink
-      >
+        <RouterLink class="category-link mt-4 mt-lg-5 px-4" to="/gallery"
+          >{{ t("home.viewAll") }}</RouterLink
+        >
     </div>
   </div>
 </template>
@@ -153,15 +155,32 @@ var data = ref(sourceData.data.slice(0, 5));
   height: 263px;
 }
 
-.product-name p {
+.product-name {
   position: absolute;
-  font-size: 20px;
+  left: 0;
+  right: 0;
   bottom: 0;
-  color: white;
-  text-shadow: 3px 3px 3px black;
+  z-index: 2;
+  padding: 2.25rem 0.85rem 0.7rem;
+  background: linear-gradient(
+    to top,
+    rgba(34, 24, 40, 0.72) 0%,
+    rgba(34, 24, 40, 0.35) 55%,
+    transparent 100%
+  );
+  pointer-events: none;
 }
 
-.item-big p {
+.product-name p {
+  position: static;
+  font-size: 20px;
+  margin: 0;
+  color: white;
+  font-weight: 500;
+  text-shadow: none;
+}
+
+.item-big .product-name p {
   font-size: 39.06px;
 }
 
@@ -171,10 +190,10 @@ var data = ref(sourceData.data.slice(0, 5));
 
 .item-big,
 .item-small {
-  border-radius: 15px;
+  border-radius: var(--radius);
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 4px 4px 4px lightgrey;
+  box-shadow: var(--shadow-soft);
 }
 
 .mask {
@@ -206,17 +225,19 @@ var data = ref(sourceData.data.slice(0, 5));
 
 .category-link {
   display: inline-block;
-  color: #222;
+  color: var(--color-text);
   text-decoration: none;
   text-transform: uppercase;
-  background-color: rgb(205, 180, 219);
-  border-radius: 15px;
-  padding: 1rem;
+  background-color: var(--color-lavender);
+  border-radius: var(--radius);
+  padding: 1rem 1.5rem;
   font-weight: 500;
   letter-spacing: 1px;
+  box-shadow: var(--shadow-soft);
+  transition: background-color 0.2s ease;
 }
 .category-link:hover {
-  background-color: #a375bd;
+  background-color: var(--color-lavender-hover);
 }
 
 @media (max-width: 991.98px) {
@@ -234,13 +255,12 @@ var data = ref(sourceData.data.slice(0, 5));
     height: 200px;
   }
 
-  .item-big p {
+  .item-big .product-name p {
     font-size: 31.25px;
   }
 
   .product-name p {
     color: white;
-    text-shadow: 3px 3px 3px black;
   }
 }
 </style>
