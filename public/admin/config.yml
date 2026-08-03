@@ -1,11 +1,12 @@
 # Decap CMS — Svaštaonica product editor
 # Local: npm run cms  (then open http://localhost:5173/admin/)
-# Production: enable Netlify Identity + Git Gateway
+# Production: GitHub OAuth (Netlify Access & security → OAuth → GitHub provider)
 
 local_backend: true
 
 backend:
-  name: git-gateway
+  name: github
+  repo: AntonioSertic23/Svastaonica
   branch: main
 
 logo_url: /svastaonica-logo-1.png

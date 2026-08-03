@@ -20,11 +20,10 @@
 
     <div id="local-auth-note" class="local-auth-note" hidden>
       <strong>Lokalni način:</strong> prijava je namjerno otvorena (bez lozinke)
-      dok radi <code>npm run cms</code>. Na Netlify produkciji ulaze samo
-      pozvani korisnici (Identity → Invite only).
+      dok radi <code>npm run cms</code>. Na produkciji se prijavljuješ GitHub
+      računom (samo collaboratori s write pristupom na repo).
     </div>
 
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
       (function () {
@@ -33,16 +32,6 @@
           location.hostname === "127.0.0.1";
         const note = document.getElementById("local-auth-note");
         if (isLocal && note) note.hidden = false;
-
-        if (window.netlifyIdentity) {
-          window.netlifyIdentity.on("init", (user) => {
-            if (!user) {
-              window.netlifyIdentity.on("login", () => {
-                document.location.href = "/admin/";
-              });
-            }
-          });
-        }
       })();
     </script>
   </body>
