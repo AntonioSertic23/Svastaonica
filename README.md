@@ -14,7 +14,7 @@ The website is responsive and adapted for both desktop and mobile devices.
 
 The appearance resembles a personal web store with a touch of creativity and something new.
 
-The website is hosted on **Netlify** and can be visited [through this link](https://svastaonicazabebe.netlify.app).
+The website is hosted on **Netlify** and can be visited [through this link](https://svastaonica.netlify.app/).
 
 ---
 

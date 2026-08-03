@@ -62,7 +62,7 @@ const share = (e) => {
       .share({
         title: "Product share",
         text: data.value.name,
-        url: "https://svastaonicazabebe.netlify.app" + route.fullPath,
+        url: "https://svastaonica.netlify.app" + route.fullPath,
       })
       .then(() => console.log("thanks for share"))
       .catch((error) =>
