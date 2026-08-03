@@ -1,52 +1,57 @@
 <script setup>
 import { RouterLink } from "vue-router";
 import NavbarMobile from "./NavbarMobile.vue";
-import { ref } from "vue";
-import SearchBar from "../ui/SearchBar.vue";
+import LanguageSwitcher from "../ui/LanguageSwitcher.vue";
+import { ref, onMounted, onUnmounted } from "vue";
+import { useI18n } from "@/i18n/useI18n";
 
-// defining emits so we can call them from this script tags
 const emit = defineEmits(["updateNavbar"]);
+const { t } = useI18n();
 
-var isMobile = ref(false);
+const isMobile = ref(false);
+let mediaQuery;
 
-// we see screen width end set which navbar to use (desktop or mobile)
-if ($(window).width() < 992) {
-  isMobile.value = true;
-} else {
-  isMobile.value = false;
+function syncMobile() {
+  isMobile.value = mediaQuery.matches;
 }
-// when screen is resized we check screen width again to set right navbar
-$(window).on("resize", function () {
-  if ($(window).width() < 992) {
-    isMobile.value = true;
-  } else {
-    isMobile.value = false;
-  }
+
+onMounted(() => {
+  mediaQuery = window.matchMedia("(max-width: 991.98px)");
+  syncMobile();
+  mediaQuery.addEventListener("change", syncMobile);
 });
 
-// if MOBILE navbar button is pressed we emit to update navbar
+onUnmounted(() => {
+  mediaQuery?.removeEventListener("change", syncMobile);
+});
+
 function switchMobileNavbar() {
   emit("updateNavbar");
 }
 
-// if link in MOBILE navbar is pressed this is function that is called after emit
 function closeMobileNavbar() {
   emit("updateNavbar");
-  if ($(".navbar-toggler").is(":visible")) {
-    $(".navbar-collapse").collapse("toggle");
+  const collapse = document.querySelector(".navbar-collapse");
+  const toggler = document.querySelector(".navbar-toggler");
+  if (toggler && window.getComputedStyle(toggler).display !== "none" && collapse) {
+    collapse.classList.remove("show");
   }
 }
 </script>
 
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light py-4 px-3">
-    <div class="container-fluid">
-      <a
-        class="navbar-brand"
-        v-bind:class="isMobile ? 'navbar-brand-mobile' : ''"
-        href="#"
-        >Svaštaonica</a
-      >
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="navbar-inner">
+      <RouterLink class="navbar-brand" to="/" aria-label="Svaštaonica">
+        <img
+          class="brand-logo"
+          src="/svastaonica-logo-1.png"
+          alt="Svaštaonica"
+          width="200"
+          height="133"
+        />
+      </RouterLink>
+
       <button
         class="navbar-toggler"
         type="button"
@@ -59,25 +64,32 @@ function closeMobileNavbar() {
       >
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <NavbarMobile
           v-if="isMobile"
           @close-mobile-navbar="closeMobileNavbar"
         />
 
-        <div v-if="!isMobile" class="navbar-nav mx-auto">
-          <RouterLink class="nav-link" to="/">Početna</RouterLink>
-          <RouterLink class="nav-link" to="/gallery">Galerija</RouterLink>
-          <RouterLink class="nav-link" to="/aboutus">O nama</RouterLink>
-          <RouterLink class="nav-link" to="/contact">Kontakt</RouterLink>
-          <!-- <RouterLink class="nav-link" to="/blog">Blog</RouterLink> -->
-        </div>
-        <div
-          v-if="!isMobile"
-          class="ms-auto navbar-search-div d-flex me-lg-3 pe-4"
-        >
-          <SearchBar :isForNavbar="true" />
-        </div>
+        <template v-else>
+          <div class="navbar-nav navbar-links">
+            <RouterLink class="nav-link site-link" to="/">{{
+              t("nav.home")
+            }}</RouterLink>
+            <RouterLink class="nav-link site-link" to="/gallery">{{
+              t("nav.gallery")
+            }}</RouterLink>
+            <RouterLink class="nav-link site-link" to="/aboutus">{{
+              t("nav.about")
+            }}</RouterLink>
+            <RouterLink class="nav-link site-link" to="/contact">{{
+              t("nav.contact")
+            }}</RouterLink>
+          </div>
+          <div class="navbar-end">
+            <LanguageSwitcher />
+          </div>
+        </template>
       </div>
     </div>
   </nav>
@@ -85,53 +97,124 @@ function closeMobileNavbar() {
 
 <style scoped>
 .navbar {
-  min-height: 62px;
-  position: relative;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  padding: 0.55rem 0.85rem;
+  background-color: rgba(237, 228, 242, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 1px 0 rgba(80, 50, 100, 0.08);
+}
+
+.navbar-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  gap: 0.5rem;
 }
 
 .navbar-brand {
-  font-weight: 600;
-  font-size: 25px;
-  color: #222;
-}
-.navbar-brand-mobile {
-  font-size: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  line-height: 0;
+  flex-shrink: 0;
 }
 
-.navbar-nav {
-  gap: 1rem;
+.brand-logo {
+  display: block;
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(80, 50, 100, 0.12);
+}
+
+.navbar-toggler {
+  border: none;
+  box-shadow: none;
+  padding: 0.35rem 0.45rem;
+  margin-left: auto;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.15rem rgba(205, 180, 219, 0.55);
+}
+
+.navbar-collapse {
+  flex-basis: 100%;
+}
+
+.navbar-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem 1.25rem;
+  flex: 1;
+}
+
+.navbar-end {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .nav-link {
   display: flex !important;
   justify-content: center;
-  margin-top: 3px;
-  margin-bottom: 3px;
-  font-size: 25px !important;
-  color: #444 !important;
+  margin: 0;
+  padding: 0.35rem 0.4rem;
+  font-size: 1.35rem !important;
+  color: var(--color-text-muted) !important;
+  white-space: nowrap;
 }
 
-/* kad je mobile */
-@media (max-width: 992px) {
-  .navbar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1030;
-    background-color: #ede4f2;
-  }
-}
-
-/* podigne lijevu i desnu stranu da bi ovo uzelo u sredini cijelu duzinu i onda postavi u sredinu */
 @media (min-width: 992px) {
-  .navbar-brand,
-  .navbar-search-div {
-    position: absolute;
+  .navbar {
+    padding: 0.65rem 1.25rem;
   }
 
-  .navbar-search-div {
-    right: 0;
+  .navbar-inner {
+    flex-wrap: nowrap;
+    min-height: 64px;
+  }
+
+  .brand-logo {
+    height: 52px;
+    border-radius: 12px;
+  }
+
+  .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .navbar-links {
+    justify-content: center;
+  }
+
+  .nav-link {
+    font-size: 1.45rem !important;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse.show {
+    margin-top: 0.35rem;
   }
 }
 </style>

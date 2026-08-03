@@ -1,167 +1,161 @@
 <script setup>
 import { RouterLink } from "vue-router";
-import SearchBar from "../ui/SearchBar.vue";
+import LanguageSwitcher from "../ui/LanguageSwitcher.vue";
+import { useI18n } from "@/i18n/useI18n";
 
-// defining emits so we can call them from this script tags
 const emit = defineEmits(["closeMobileNavbar"]);
+const { t } = useI18n();
 
-// if link in MOBILE navbar is pressed we emit
 function closeNavbar() {
   emit("closeMobileNavbar");
 }
 </script>
 
 <template>
-  <div class="navbar-nav">
-    <div class="searchbar-mobile-div">
-      <SearchBar @find-data="closeNavbar()" :isForNavbar="true" />
+  <div class="mobile-menu">
+    <div class="mobile-lang">
+      <LanguageSwitcher compact />
     </div>
 
-    <div class="links-div text-center w-100 px-5">
-      <RouterLink class="nav-link" @click="closeNavbar()" to="/"
-        >Početna</RouterLink
+    <nav class="mobile-links" aria-label="Primary">
+      <RouterLink class="nav-link site-link" @click="closeNavbar()" to="/">{{
+        t("nav.home")
+      }}</RouterLink>
+      <RouterLink
+        class="nav-link site-link"
+        @click="closeNavbar()"
+        to="/gallery"
+        >{{ t("nav.gallery") }}</RouterLink
       >
-      <hr />
-      <RouterLink class="nav-link" @click="closeNavbar()" to="/gallery"
-        >Galerija</RouterLink
+      <RouterLink
+        class="nav-link site-link"
+        @click="closeNavbar()"
+        to="/aboutus"
+        >{{ t("nav.about") }}</RouterLink
       >
-      <hr />
-      <RouterLink class="nav-link" @click="closeNavbar()" to="/aboutus"
-        >O nama</RouterLink
+      <RouterLink
+        class="nav-link site-link"
+        @click="closeNavbar()"
+        to="/contact"
+        >{{ t("nav.contact") }}</RouterLink
       >
-      <hr />
-      <RouterLink class="nav-link" @click="closeNavbar()" to="/contact"
-        >Kontakt</RouterLink
-      >
-    </div>
+    </nav>
 
-    <div></div>
-
-    <div class="icons-div">
-      <div class="d-flex flex-row justify-content-center gap-3">
-        <a href="http://m.me/svastaonicazabebe" class="">
-          <img src="/assets/img/sm-facebook-messenger.png" />
+    <div class="mobile-footer">
+      <div class="mobile-social">
+        <a href="http://m.me/svastaonicazabebe" aria-label="Messenger">
+          <img src="/assets/img/sm-facebook-messenger.png" alt="" />
         </a>
-        <a href="https://api.whatsapp.com/send?phone=0919375976" class="">
-          <img src="/assets/img/sm-whatsapp.png" />
+        <a
+          href="https://api.whatsapp.com/send?phone=0919375976"
+          aria-label="WhatsApp"
+        >
+          <img src="/assets/img/sm-whatsapp.png" alt="" />
         </a>
-        <a href="https://www.facebook.com/svastaonicazabebe" class="">
-          <img src="/assets/img/sm-facebook.png" />
+        <a
+          href="https://www.facebook.com/svastaonicaobrtzarukotvorine"
+          aria-label="Facebook"
+        >
+          <img src="/assets/img/sm-facebook.png" alt="" />
         </a>
-        <a href="http://instagram.com/_u/svastaonica_za_bebe/" class="">
-          <img src="/assets/img/sm-instagram.png" />
+        <a
+          href="https://www.instagram.com/svastaonica_rukotvorine/"
+          aria-label="Instagram"
+        >
+          <img src="/assets/img/sm-instagram.png" alt="" />
         </a>
-        <a href="mailto:svastaonicazabebe@gmail.com" class="">
-          <img src="/assets/img/sm-google.png" />
+        <a href="mailto:svastaonicazabebe@gmail.com" aria-label="Email">
+          <img src="/assets/img/sm-google.png" alt="" />
         </a>
-        <!--         <div class="col-3 icon-column">
-          <a href="http://m.me/svastaonicazabebe" class="m-2">
-            <img src="/assets/img/sm-facebook-messenger.png" />
-          </a>
-          <a href="https://api.whatsapp.com/send?phone=0919375976" class="m-2">
-            <img src="/assets/img/sm-whatsapp.png" />
-          </a>
-        </div>
-
-        <div class="col-3 icon-column">
-          <a href="https://www.facebook.com/svastaonicazabebe" class="m-2">
-            <img src="/assets/img/sm-facebook.png" />
-          </a>
-          <a href="http://instagram.com/_u/svastaonica_za_bebe/" class="m-2">
-            <img src="/assets/img/sm-instagram.png" />
-          </a>
-        </div>
-
-        <div class="col-3 icon-column">
-          <a href="#" class="m-2">
-            <img src="/assets/img/sm-viber.png" />
-          </a>
-          <a href="mailto:svastaonicazabebe@gmail.com" class="m-2">
-            <img src="/assets/img/sm-google.png" />
-          </a>
-        </div> -->
       </div>
 
-      <RouterLink class="nav-link mt-3" to="">+385 99 478 85 86</RouterLink>
+      <a class="phone-link" href="tel:+385994788586">+385 99 478 85 86</a>
     </div>
   </div>
 </template>
 
 <style scoped>
-.navbar-nav {
-  height: calc(100vh - 65px);
+.mobile-menu {
   display: flex;
-  justify-content: center;
-  padding-bottom: 100px;
+  flex-direction: column;
   align-items: center;
-  font-family: Poiret_One;
-  position: relative;
+  gap: 1.75rem;
+  min-height: calc(100dvh - 72px);
+  padding: 1rem 1.25rem 1.5rem;
+  font-family: var(--font-display);
 }
 
-.searchbar-mobile-div {
-  position: absolute;
-  top: 30px;
+.mobile-lang {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.mobile-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  width: 100%;
+  max-width: 280px;
+  flex: 1;
+  justify-content: center;
+  animation: fadein 0.7s ease;
 }
 
 .nav-link {
   display: flex !important;
   justify-content: center;
-  margin-top: 3px;
-  margin-bottom: 3px;
-  font-size: 25px !important;
-  color: #222;
-  margin-bottom: 1rem;
+  width: 100%;
+  margin: 0;
+  padding: 0.7rem 0.5rem;
+  font-size: clamp(1.35rem, 5vw, 1.65rem) !important;
+  color: var(--color-text) !important;
 }
 
-.links-div {
-  animation: fadein 1.2s;
+/* Purple active/hover underline only — no grey separators */
+.site-link::after {
+  bottom: 0.25rem;
 }
 
-.icons-div {
-  position: absolute;
-  bottom: 0;
-  animation: fadein 1.2s;
+.site-link.router-link-active::after,
+.site-link.router-link-exact-active::after,
+.site-link:hover::after {
+  width: 42%;
 }
 
-.icons-div img {
-  width: 40px;
-  height: 40px;
-}
-
-.icon-column {
-  align-items: center;
+.mobile-footer {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  width: 100%;
+  flex-shrink: 0;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+  animation: fadein 0.7s ease;
+}
+
+.mobile-social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.mobile-social img {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+.phone-link {
+  font-size: 1.15rem;
+  color: var(--color-text);
+  text-decoration: none;
 }
 
 @keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@-moz-keyframes fadein {
-  /* Firefox */
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes fadein {
-  /* Safari and Chrome */
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@-o-keyframes fadein {
-  /* Opera */
   from {
     opacity: 0;
   }
