@@ -1,158 +1,250 @@
 <script setup>
 import { RouterLink } from "vue-router";
+import { ref } from "vue";
+import { useI18n } from "@/i18n/useI18n";
+
+const { t } = useI18n();
+
+/** false = classic logo.jpg, true = new brand mark */
+const showNewLogo = ref(false);
+const isSpinning = ref(false);
+
+function flipLogo() {
+  if (isSpinning.value) return;
+  isSpinning.value = true;
+
+  // Swap image at mid-spin so the back is never a mirrored copy of the front
+  window.setTimeout(() => {
+    showNewLogo.value = !showNewLogo.value;
+  }, 320);
+
+  window.setTimeout(() => {
+    isSpinning.value = false;
+  }, 650);
+}
 </script>
 
 <template>
-  <div>
-    <div class="container mb-5 mt-0 mt-lg-3 pt-0 pt-lg-3">
-      <div class="row row-cols-1 row-cols-lg-3 px-4 px-lg-0">
-        <div class="order-2 order-lg-1 left-side d-flex">
-          <div class="left-side-div pe-0 pe-lg-5 mt-5 mt-lg-0">
-            <h1>Dobrodošli na</h1>
-            <p class="mt-2 mb-4 my-lg-4">
-              sretno mjesto na internetu gdje se mogu pronaći razni poklončići
-              za bebe!
-            </p>
-
-            <RouterLink class="category-link mt-5 px-4" to="/gallery"
-              >Galerija</RouterLink
-            >
-          </div>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1>{{ t("hero.welcome") }}</h1>
+          <p>{{ t("hero.subtitle") }}</p>
+          <RouterLink class="btn-cta hero-cta" to="/gallery">{{
+            t("hero.cta")
+          }}</RouterLink>
         </div>
 
-        <div
-          class="order-1 order-lg-2 middle-side d-flex justify-content-center"
+        <button
+          type="button"
+          class="hero-logo"
+          :class="{ spinning: isSpinning, 'is-brand': showNewLogo }"
+          :aria-pressed="showNewLogo"
+          :aria-label="t('hero.logoFlipHint')"
+          @click="flipLogo"
         >
-          <div class="middle-side-div">
-            <img class="image2" src="/logo.jpg" alt="" />
-            <!-- <img class="image3" src="/assets/img/bow.png" alt="" /> -->
-          </div>
-        </div>
+          <span class="logo-stage">
+            <img
+              v-show="!showNewLogo"
+              class="logo-img logo-img--classic"
+              src="/logo.jpg"
+              alt="Svaštaonica"
+              width="400"
+              height="364"
+            />
+            <img
+              v-show="showNewLogo"
+              class="logo-img logo-img--brand"
+              src="/svastaonica-logo-1.png"
+              alt="Svaštaonica — obrt za rukotvorine"
+              width="400"
+              height="267"
+            />
+          </span>
+        </button>
 
-        <div class="order-3 order-lg-3 right-side px-2">
-          <div class="right-side-div ps-0 ps-lg-5">
-            <p class="text-center">
-              "Svi smo djeca. Jedina razlika je igračka koju imamo."
-            </p>
-            <p class="text-center fst-italic fw-bold">Pablo Larrain</p>
-          </div>
-        </div>
+        <blockquote class="hero-quote">
+          <p>{{ t("hero.quote") }}</p>
+          <footer>Pablo Larrain</footer>
+        </blockquote>
       </div>
-
-      <img class="gif" src="/assets/img/gif.gif" alt="" />
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped>
-.container {
-  position: relative;
+.hero {
+  margin-bottom: 3rem;
+  padding-top: 0.5rem;
 }
 
-.right-side,
-.left-side {
-  position: relative;
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  align-items: center;
+  padding: 0 1rem;
 }
 
-.left-side-div h1 {
-  font-size: 48.83px;
+.hero-copy {
+  text-align: center;
+  order: 2;
 }
 
-.left-side-div p,
-.right-side-div p {
-  font-size: 25px;
-}
-
-.category-link {
-  display: inline-block;
-  color: #222;
-  text-decoration: none;
-  text-transform: uppercase;
-  background-color: rgb(205, 180, 219);
-  border-radius: 15px;
-  padding: 1rem;
+.hero-copy h1 {
+  font-size: clamp(1.95rem, 4vw, 3.05rem);
   font-weight: 500;
-  letter-spacing: 1px;
-  position: absolute;
-  bottom: 50px;
-  box-shadow: -2px 2px 8px grey;
-  width: fit-content;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-}
-.category-link:hover {
-  background-color: #a375bd;
+  margin: 0 0 0.75rem;
 }
 
-.middle-side-div {
-  position: relative;
-  border-radius: 15px;
-  box-shadow: 0px 5px 18px grey;
+.hero-copy p {
+  font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+  margin: 0 0 1.5rem;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+.hero-cta {
+  margin-top: 0.25rem;
+}
+
+.hero-logo {
+  order: 1;
+  justify-self: center;
+  width: min(100%, 420px);
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.logo-stage {
+  display: grid;
+  place-items: center;
   width: 100%;
+  aspect-ratio: 400 / 364;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  background: #fff;
+  transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
 
-.right-side {
-  display: flex;
-  justify-content: center;
-  align-items: top;
+.hero-logo.spinning .logo-stage {
+  animation: logo-spin 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
 
-.image2 {
+@keyframes logo-spin {
+  0% {
+    transform: rotateY(0deg) scale(1);
+  }
+  45% {
+    transform: rotateY(90deg) scale(0.92);
+  }
+  55% {
+    transform: rotateY(90deg) scale(0.92);
+  }
+  100% {
+    transform: rotateY(0deg) scale(1);
+  }
+}
+
+.logo-img {
+  display: block;
   width: 100%;
-  height: 364px;
+  height: 100%;
+}
+
+.logo-img--classic {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
-.image3 {
-  height: 100px;
-  position: absolute;
-  right: -25px;
-  top: 15px;
+
+.logo-img--brand {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
 }
 
-.image2,
-.image3 {
-  border-radius: 15px;
+.hero-logo:hover .logo-stage {
+  filter: brightness(1.02);
 }
 
-.gif {
-  width: 192px;
-  position: absolute;
-  right: 100px;
-  bottom: 0;
+.hero-logo:focus-visible {
+  outline: 3px solid var(--color-lavender-hover);
+  outline-offset: 4px;
+  border-radius: calc(var(--radius) + 2px);
 }
 
-@media (max-width: 991.98px) {
-  .image3 {
-    height: 75px;
-    right: -25px;
-    top: 10px;
+.hero-quote {
+  display: none;
+  margin: 0;
+  text-align: center;
+}
+
+.hero-quote p {
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  margin: 0 0 0.65rem;
+  line-height: 1.4;
+}
+
+.hero-quote footer {
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+@media (min-width: 992px) {
+  .hero {
+    margin-bottom: 4rem;
+    padding-top: 1rem;
   }
 
-  .left-side-div {
-    text-align: center;
+  .hero-grid {
+    grid-template-columns: 1fr minmax(280px, 380px) 1fr;
+    gap: 1.5rem;
+    padding: 0;
+    align-items: center;
   }
 
-  .left-side-div h1 {
-    font-size: 31.25px;
-  }
-  .left-side-div p,
-  .right-side-div p {
-    font-size: 20px;
+  .hero-copy {
+    order: 1;
+    text-align: left;
+    padding-right: 1.5rem;
   }
 
-  .category-link {
-    position: relative;
+  .hero-logo {
+    order: 2;
   }
 
-  .image2 {
-    height: 210px;
+  .hero-quote {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    order: 3;
+    padding-left: 1rem;
+    padding-right: 0.25rem;
+    align-self: center;
   }
 
-  .gif,
-  .right-side {
-    display: none;
+  .hero-quote p {
+    font-size: clamp(1.55rem, 1.9vw, 1.95rem);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-copy h1 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo.spinning .logo-stage {
+    animation: none;
   }
 }
 </style>
