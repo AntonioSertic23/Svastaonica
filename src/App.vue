@@ -2,61 +2,40 @@
 import Navbar from "./components/layout/Navbar.vue";
 import Footer from "./components/layout/Footer.vue";
 import ScrollToTop from "./components/ui/ScrollToTop.vue";
+import SideDecorations from "./components/layout/SideDecorations.vue";
 import { ref, watch } from "vue";
 import { useRoute } from "vue-router";
 
-var isNavbarOpen = ref(false);
+const isNavbarOpen = ref(false);
+const route = useRoute();
 
 function updateNavbar() {
-  // switch
   isNavbarOpen.value = !isNavbarOpen.value;
+  document.body.classList.toggle("lock-scroll", isNavbarOpen.value);
 
-  // lock/unlock scrolling
-  if (!isNavbarOpen.value) {
-    $("body").removeClass("lock-scroll");
-  } else {
-    $("body").addClass("lock-scroll");
-  }
+  const progress = document.getElementById("progress-wrap");
+  if (!progress) return;
 
-  // show/hide scrolltoTop
-  if (!isNavbarOpen.value && $(window).scrollTop() != 0) {
-    $("#progress-wrap").addClass("active-progress");
+  if (!isNavbarOpen.value && window.scrollY > 0) {
+    progress.classList.add("active-progress");
   } else {
-    $("#progress-wrap").removeClass("active-progress");
+    progress.classList.remove("active-progress");
   }
 }
 
-// postavljanje pozadine u odnosu na stranicu na kojoj se nalazimo
-const route = useRoute();
 watch(
-  () => route.name,
+  () => route.fullPath,
   () => {
-    const appElement = document.getElementById("app");
-    appElement.className = "";
-    if (route.name === "home") {
-      $("#app").addClass("pozadina-pocetna");
-    } else if (route.name === "gallery") {
-      $("#app").addClass("pozadina-galerija");
-    } else if (route.name === "aboutus") {
-      $("#app").addClass("pozadina-onama");
-    } else if (route.name === "contact") {
-      $("#app").addClass("pozadina-kontakt");
-    } else if (route.name === "singleitem") {
-      $("#app").addClass("pozadina-singleitem");
-    } else if (route.name === "pagenotfound") {
-      $("#app").addClass("pozadina-notfound");
-    } else if (route.name === "search") {
-      $("#app").addClass("pozadina-pretraga");
-    } else if (route.name === "blog") {
-      $("#app").addClass("pozadina-pocetna");
-    } else if (route.name === "singleblog") {
-      $("#app").addClass("pozadina-pocetna");
+    if (isNavbarOpen.value) {
+      isNavbarOpen.value = false;
+      document.body.classList.remove("lock-scroll");
     }
   }
 );
 </script>
 
 <template>
+  <SideDecorations />
   <Navbar @update-navbar="updateNavbar" />
 
   <div class="body-div">
@@ -64,14 +43,5 @@ watch(
   </div>
 
   <ScrollToTop />
-
   <Footer />
 </template>
-
-<style scoped>
-@media (max-width: 992px) {
-  .body-div {
-    margin-top: 88px;
-  }
-}
-</style>
