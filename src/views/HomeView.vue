@@ -5,51 +5,41 @@ import TopThreeProducts from "../components/layout/TopThreeProductsSection.vue";
 import PreviewProducts from "../components/layout/PreviewProductsSection.vue";
 import AboutUs from "../components/layout/AboutUsSection.vue";
 import RealNumbers from "../components/layout/RealNumbersSection.vue";
-import NewInStore from "../components/layout/NewInStoreSection.vue";
+import { useI18n } from "@/i18n/useI18n";
+
+const { t } = useI18n();
 </script>
 
 <template>
-  <div class="d-flex flex-column">
-    <p class="main-title text-center mt-4 mb-4 mb-lg-5 px-3">Svaštaonica</p>
+  <div class="home">
+    <h1 class="brand-title">Svaštaonica</h1>
 
     <Hero />
 
-    <div class="container slider py-0 py-lg-5 p-0">
+    <div class="container slider-wrap">
       <Slider />
     </div>
 
-    <!-- <NewInStore /> -->
-
-    <div class="container mb-5 px-4">
-      <h1 class="text-center mt-5" style="font-family: Poiret_One">
-        Ono što dobijemo od djetinjstva nisu igračke, već uspomene. A sretne
-        uspomene bolje su od bilo koje igračke.
-      </h1>
+    <div class="container quote-block">
+      <p class="quote-text">{{ t("home.quote1") }}</p>
     </div>
 
     <TopThreeProducts />
 
-    <div class="container mt-5 mb-5 px-4">
-      <h1 class="text-center" style="font-family: Poiret_One">
-        Darujte djeci igračke koje pokreće njihova mašta, a ne baterije.
-      </h1>
+    <div class="container quote-block">
+      <p class="quote-text">{{ t("home.quote2") }}</p>
     </div>
 
     <PreviewProducts />
 
-    <div class="container pt-5 mt-lg-5 px-4">
-      <h1 class="text-center" style="font-family: Poiret_One">
-        Nitko nikada ne zaboravlja igračku koja ga je u djetinjstvu iznimno
-        veselila.
-      </h1>
+    <div class="container quote-block quote-block--spacious">
+      <p class="quote-text">{{ t("home.quote3") }}</p>
     </div>
 
     <AboutUs />
 
-    <div class="container mt-0 mt-lg-5 px-4">
-      <h1 class="text-center" style="font-family: Poiret_One">
-        Igračke su dječje riječi, a igra njihov jezik.
-      </h1>
+    <div class="container quote-block">
+      <p class="quote-text">{{ t("home.quote4") }}</p>
     </div>
 
     <RealNumbers />
@@ -57,20 +47,49 @@ import NewInStore from "../components/layout/NewInStoreSection.vue";
 </template>
 
 <style scoped>
-.main-title {
-  font-size: 76.28px;
-  font-family: "Montserrat";
-  font-weight: 300;
+.home {
+  display: flex;
+  flex-direction: column;
 }
 
-.slider {
+.brand-title {
+  text-align: center;
+  margin: 1.5rem 0 1.25rem;
+  padding: 0 1rem;
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  font-family: var(--font-body);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+.slider-wrap {
   display: flex;
   justify-content: center;
+  padding: 0;
 }
 
-@media (max-width: 991.98px) {
-  .main-title {
-    font-size: 48.83px;
+.quote-block {
+  margin: 2rem auto;
+  padding: 0 1.25rem;
+  max-width: 900px;
+}
+
+.quote-block--spacious {
+  margin-top: 3rem;
+}
+
+@media (min-width: 992px) {
+  .brand-title {
+    margin: 1.75rem 0 2rem;
+  }
+
+  .slider-wrap {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .quote-block {
+    margin: 2.5rem auto;
   }
 }
 </style>

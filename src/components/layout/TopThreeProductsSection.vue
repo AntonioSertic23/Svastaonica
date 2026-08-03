@@ -1,258 +1,307 @@
 <script setup>
 import { RouterLink } from "vue-router";
+import { onMounted, onUnmounted, ref } from "vue";
 
-if (window.innerWidth < 992) {
-  $(window).on("scroll", function () {
-    if (window.innerHeight <= 740) {
-      // item1
-      if (window.pageYOffset < 1050) {
-        document.getElementById("item1").style = "transform: translateX(-120%)";
-      }
-      if (window.pageYOffset > 1050) {
-        document.getElementById("item1").style = "transform: translateX(0%)";
-      }
+const visible = ref({ item1: false, item2: false, item3: false });
+let observer;
 
-      // item2
-      if (window.pageYOffset < 1350) {
-        document.getElementById("item2").style = "transform: translateX(120%)";
-      }
-      if (window.pageYOffset > 1350) {
-        document.getElementById("item2").style = "transform: translateX(0%)";
-      }
+onMounted(() => {
+  if (window.innerWidth >= 992) {
+    visible.value = { item1: true, item2: true, item3: true };
+    return;
+  }
 
-      // item3
-      if (window.pageYOffset < 1650) {
-        document.getElementById("item3").style = "transform: translateX(-120%)";
-      }
-      if (window.pageYOffset > 1650) {
-        document.getElementById("item3").style = "transform: translateX(0%)";
-      }
-    } else if (window.innerHeight > 740 && window.innerHeight <= 840) {
-      if (window.pageYOffset < 950) {
-        document.getElementById("item1").style = "transform: translateX(-120%)";
-      }
-      if (window.pageYOffset > 950) {
-        document.getElementById("item1").style = "transform: translateX(0%)";
-      }
+  observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.dataset.item;
+          if (id) visible.value[id] = true;
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.25, rootMargin: "0px 0px -40px 0px" }
+  );
 
-      // item2
-      if (window.pageYOffset < 1250) {
-        document.getElementById("item2").style = "transform: translateX(120%)";
-      }
-      if (window.pageYOffset > 1250) {
-        document.getElementById("item2").style = "transform: translateX(0%)";
-      }
+  document.querySelectorAll("[data-item]").forEach((el) => observer.observe(el));
+});
 
-      // item3
-      if (window.pageYOffset < 1550) {
-        document.getElementById("item3").style = "transform: translateX(-120%)";
-      }
-      if (window.pageYOffset > 1550) {
-        document.getElementById("item3").style = "transform: translateX(0%)";
-      }
-    } else if (window.innerHeight > 840) {
-      if (window.pageYOffset < 850) {
-        document.getElementById("item1").style = "transform: translateX(-120%)";
-      }
-      if (window.pageYOffset > 850) {
-        document.getElementById("item1").style = "transform: translateX(0%)";
-      }
-
-      // item2
-      if (window.pageYOffset < 1150) {
-        document.getElementById("item2").style = "transform: translateX(120%)";
-      }
-      if (window.pageYOffset > 1150) {
-        document.getElementById("item2").style = "transform: translateX(0%)";
-      }
-
-      // item3
-      if (window.pageYOffset < 1450) {
-        document.getElementById("item3").style = "transform: translateX(-120%)";
-      }
-      if (window.pageYOffset > 1450) {
-        document.getElementById("item3").style = "transform: translateX(0%)";
-      }
-    }
-  });
-}
+onUnmounted(() => {
+  observer?.disconnect();
+});
 </script>
 
 <template>
-  <div class="container my-0 my-lg-5">
-    <div class="row row-cols-1 row-cols-lg-3 mx-lg-5 px-5">
-      <div id="item2" class="item mt-0 mt-lg-5 order-2 order-lg-1">
-        <RouterLink to="/singleitem/8">
+  <div class="container top-three">
+    <div class="products-row">
+      <div
+        data-item="item2"
+        class="item item--side"
+        :class="{ 'is-visible': visible.item2, 'from-right': true }"
+      >
+        <RouterLink to="/singleitem/8" class="top-card-link">
           <div class="top-card">
-            <div class="image-div p-4 pb-0">
-              <img class="image" src="/assets/img/slinceki/12.jpg" alt="" />
+            <div class="image-div">
+              <img
+                class="image"
+                src="/assets/img/slinceki/12.jpg"
+                alt="Slinček"
+                loading="lazy"
+                decoding="async"
+              />
               <div class="medal-div">
                 <img class="medal" src="/assets/img/medal2.png" alt="" />
               </div>
             </div>
-            <div id="parallelogram" class="shape1"></div>
+            <div class="shape shape1">
+              <h3>Slinček</h3>
+            </div>
           </div>
         </RouterLink>
-        <h3 class="text-center mt-3">Slinček</h3>
       </div>
 
-      <div id="item3" class="item order-3 order-lg-2">
-        <RouterLink to="/singleitem/9">
+      <div
+        data-item="item3"
+        class="item item--middle"
+        :class="{ 'is-visible': visible.item3 }"
+      >
+        <RouterLink to="/singleitem/9" class="top-card-link">
           <div class="top-card">
-            <div class="image-div p-4 pb-0">
-              <img class="image" src="/assets/img/kocke/23.jpg" alt="" />
+            <div class="image-div">
+              <img
+                class="image"
+                src="/assets/img/kocke/23.jpg"
+                alt="Didaktička Kocka"
+                loading="lazy"
+                decoding="async"
+              />
               <div class="medal-div">
                 <img class="medal" src="/assets/img/medal1.png" alt="" />
               </div>
             </div>
-            <div id="parallelogram" class="shape2"></div>
+            <div class="shape shape2">
+              <h3>Didaktička Kocka</h3>
+            </div>
           </div>
         </RouterLink>
-        <h3 class="text-center mt-3 middle-text">Didaktička Kocka</h3>
       </div>
 
-      <div id="item1" class="item mt-0 mt-lg-5 order-1 order-lg-3">
-        <RouterLink to="/singleitem/7">
+      <div
+        data-item="item1"
+        class="item item--side"
+        :class="{ 'is-visible': visible.item1, 'from-left': true }"
+      >
+        <RouterLink to="/singleitem/7" class="top-card-link">
           <div class="top-card">
-            <div class="image-div p-4 pb-0">
-              <img class="image" src="/assets/img/vezice/10.jpg" alt="" />
+            <div class="image-div">
+              <img
+                class="image"
+                src="/assets/img/vezice/10.jpg"
+                alt="Silikonska vezica"
+                loading="lazy"
+                decoding="async"
+              />
               <div class="medal-div">
                 <img class="medal" src="/assets/img/medal3.png" alt="" />
               </div>
             </div>
-            <div id="parallelogram" class="shape3"></div>
+            <div class="shape shape3">
+              <h3>Silikonska vezica</h3>
+            </div>
           </div>
         </RouterLink>
-        <h3 class="text-center mt-3">Silikonska vezica</h3>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.row {
-  height: 420px;
+.top-three {
+  margin: 2rem auto;
+}
+
+.products-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  padding: 0 2rem;
+  overflow-x: hidden;
 }
 
 .item {
+  position: relative;
+  transition: transform 0.9s ease, opacity 0.9s ease;
+}
+
+.top-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.top-card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: end;
-  position: relative;
+  align-items: center;
 }
 
 .image-div {
-  height: 280px;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 0.5rem 1rem 0;
 }
 
 .image {
   width: 100%;
-  z-index: 1;
-  box-shadow: 3px 3px 5px grey;
-  border-radius: 15px;
-  height: 270px;
+  height: 230px;
   object-fit: cover;
-  position: absolute;
-  width: 260px;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  top: 20px;
-  transition: top ease 0.5s;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.45s ease;
+  display: block;
 }
+
 .image:hover {
-  cursor: pointer;
-  top: 0;
+  transform: translateY(-8px);
 }
 
 .medal-div {
   position: absolute;
-  z-index: 1;
-  top: -5px;
-  right: 20px;
+  z-index: 3;
+  top: 0;
+  right: 0.5rem;
 }
+
 .medal {
   width: 80px;
   height: 80px;
-  transition: transform 0.5s;
+  transition: transform 0.45s ease;
 }
+
 .medal:hover {
-  transform: scale(1.2);
+  transform: scale(1.15);
 }
 
-#parallelogram {
-  width: 100%;
-  height: 50px;
-  background-color: #cdb4db;
-  border-radius: 15px;
-  margin-top: -20px;
-  box-shadow: 3px 3px 5px grey;
+/* Purple bar = title plate under the photo */
+.shape {
   position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 52px;
+  margin-top: -22px;
+  padding: 1.6rem 0.75rem 0.65rem;
+  background-color: var(--color-lavender);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
-.shape1 {
-  transform: skew(-20deg);
-}
-.shape2 {
-  transform: skew(0deg);
-}
-.shape3 {
-  transform: skew(20deg);
-}
-
-.middle-text {
-  margin-bottom: 56px;
+.shape h3 {
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-text);
+  line-height: 1.3;
 }
 
 @media (max-width: 991.98px) {
-  .row {
-    height: auto;
-    overflow-x: hidden;
+  .item:not(.is-visible) {
+    opacity: 0;
   }
 
-  .image-div {
-    height: auto;
+  .item.from-left:not(.is-visible) {
+    transform: translateX(-40%);
   }
 
-  .image {
-    position: relative;
-    width: 100%;
-    height: 230px;
-    top: 5px;
+  .item.from-right:not(.is-visible),
+  .item--middle:not(.is-visible) {
+    transform: translateX(40%);
   }
 
-  .medal-div {
-    top: 5px;
-    right: 0;
-  }
-
-  .shape1 {
-    transform: skew(0deg);
-  }
-  .shape3 {
-    transform: skew(0deg);
-  }
-
-  .middle-text {
-    margin-bottom: 0.5rem;
-  }
-
-  #item1,
-  #item3 {
-    transform: translateX(-120%);
-    transition: transform 1s;
-  }
-  #item2 {
-    transform: translateX(120%);
-    transition: transform 1s;
+  .item.is-visible {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
 @media (min-width: 992px) {
+  .top-three {
+    margin: 3rem auto;
+  }
+
+  .products-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 0 3rem;
+    min-height: 420px;
+    align-items: end;
+  }
+
+  .item--side {
+    margin-top: 3rem;
+  }
+
   .item {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding: 0 1.25rem;
+  }
+
+  .image-div {
+    height: 280px;
+  }
+
+  .image {
+    position: absolute;
+    width: 260px;
+    height: 270px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 10px;
+    transition: top 0.45s ease;
+  }
+
+  .image:hover {
+    top: -8px;
+    transform: none;
+  }
+
+  .medal-div {
+    top: -5px;
+    right: 18px;
+  }
+
+  .shape {
+    min-height: 58px;
+    padding: 1.75rem 0.5rem 0.7rem;
+  }
+
+  .shape1 {
+    transform: skew(-18deg);
+  }
+
+  .shape1 h3 {
+    transform: skew(18deg);
+  }
+
+  .shape3 {
+    transform: skew(18deg);
+  }
+
+  .shape3 h3 {
+    transform: skew(-18deg);
+  }
+
+  .shape h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
   }
 }
 </style>
