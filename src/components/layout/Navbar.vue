@@ -45,7 +45,7 @@ function closeMobileNavbar() {
       <RouterLink class="navbar-brand" to="/" aria-label="Svaštaonica">
         <img
           class="brand-logo"
-          src="/svastaonica-logo-1.png"
+          src="/assets/img/brand/svastaonica-logo-1.png"
           alt="Svaštaonica"
           width="200"
           height="133"

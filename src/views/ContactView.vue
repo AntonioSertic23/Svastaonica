@@ -19,23 +19,23 @@ const { t } = useI18n();
 
           <div class="social-media mb-5 row g-3 justify-content-center">
             <a href="http://m.me/svastaonicazabebe" class="">
-              <img src="/assets/img/sm-facebook-messenger.png" />
+              <img src="/assets/img/ui/sm-facebook-messenger.png" />
             </a>
 
             <a href="https://api.whatsapp.com/send?phone=0919375976" class="">
-              <img src="/assets/img/sm-whatsapp.png" />
+              <img src="/assets/img/ui/sm-whatsapp.png" />
             </a>
 
             <a href="https://www.facebook.com/svastaonicaobrtzarukotvorine" class="">
-              <img src="/assets/img/sm-facebook.png" />
+              <img src="/assets/img/ui/sm-facebook.png" />
             </a>
 
             <a href="https://www.instagram.com/svastaonica_rukotvorine/" class="">
-              <img src="/assets/img/sm-instagram.png" />
+              <img src="/assets/img/ui/sm-instagram.png" />
             </a>
 
             <a href="mailto:svastaonicazabebe@gmail.com" class="">
-              <img src="/assets/img/sm-google.png" />
+              <img src="/assets/img/ui/sm-google.png" />
             </a>
           </div>
 
@@ -52,19 +52,19 @@ const { t } = useI18n();
 
           <div class="aboutus-cards-div row row-cols-1 row-cols-lg-3 mt-5">
             <div class="text-center">
-              <img src="/assets/img/house.png" alt="" />
+              <img src="/assets/img/ui/house.png" alt="" />
               <h6 class="card-label">{{ t("contact.place") }}</h6>
               <p class="info">{{ t("contact.placeValue") }}</p>
             </div>
 
             <div class="text-center">
-              <img src="/assets/img/call.png" alt="" />
+              <img src="/assets/img/ui/call.png" alt="" />
               <h6 class="card-label">{{ t("contact.phone") }}</h6>
               <p class="info">091 937 59 76</p>
             </div>
 
             <div class="text-center">
-              <img src="/assets/img/email.png" alt="" />
+              <img src="/assets/img/ui/email.png" alt="" />
               <h6 class="card-label">{{ t("contact.email") }}</h6>
               <p class="info">svastaonicazabebe@gmail.com</p>
             </div>

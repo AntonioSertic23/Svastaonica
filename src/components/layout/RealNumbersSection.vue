@@ -10,7 +10,7 @@ const stats = [
     target: 5200,
     suffix: "+",
     labelKey: "stats.hours",
-    icons: [{ src: "/assets/img/clock.png", rotate: 0 }],
+    icons: [{ src: "/assets/img/ui/clock.png", rotate: 0 }],
   },
   {
     id: "children",
@@ -18,8 +18,8 @@ const stats = [
     suffix: "+",
     labelKey: "stats.children",
     icons: [
-      { src: "/assets/img/baby.png", rotate: -15 },
-      { src: "/assets/img/baby-girl.png", rotate: 15 },
+      { src: "/assets/img/ui/baby.png", rotate: -15 },
+      { src: "/assets/img/ui/baby-girl.png", rotate: 15 },
     ],
   },
   {
@@ -27,14 +27,14 @@ const stats = [
     target: 2600,
     suffix: "+",
     labelKey: "stats.moms",
-    icons: [{ src: "/assets/img/mother.png", rotate: 0 }],
+    icons: [{ src: "/assets/img/ui/mother.png", rotate: 0 }],
   },
   {
     id: "products",
     target: 180,
     suffix: "+",
     labelKey: "stats.products",
-    icons: [{ src: "/assets/img/gift.png", rotate: 0 }],
+    icons: [{ src: "/assets/img/ui/gift.png", rotate: 0 }],
   },
 ];
 

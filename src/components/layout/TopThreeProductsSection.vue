@@ -45,13 +45,13 @@ onUnmounted(() => {
             <div class="image-div">
               <img
                 class="image"
-                src="/assets/img/slinceki/12.jpg"
+                src="/assets/img/products/slinceki/12.jpg"
                 alt="Slinček"
                 loading="lazy"
                 decoding="async"
               />
               <div class="medal-div">
-                <img class="medal" src="/assets/img/medal2.png" alt="" />
+                <img class="medal" src="/assets/img/ui/medal2.png" alt="" />
               </div>
             </div>
             <div class="shape shape1">
@@ -71,13 +71,13 @@ onUnmounted(() => {
             <div class="image-div">
               <img
                 class="image"
-                src="/assets/img/kocke/23.jpg"
+                src="/assets/img/products/kocke/23.jpg"
                 alt="Didaktička Kocka"
                 loading="lazy"
                 decoding="async"
               />
               <div class="medal-div">
-                <img class="medal" src="/assets/img/medal1.png" alt="" />
+                <img class="medal" src="/assets/img/ui/medal1.png" alt="" />
               </div>
             </div>
             <div class="shape shape2">
@@ -97,13 +97,13 @@ onUnmounted(() => {
             <div class="image-div">
               <img
                 class="image"
-                src="/assets/img/vezice/10.jpg"
+                src="/assets/img/products/vezice/10.jpg"
                 alt="Silikonska vezica"
                 loading="lazy"
                 decoding="async"
               />
               <div class="medal-div">
-                <img class="medal" src="/assets/img/medal3.png" alt="" />
+                <img class="medal" src="/assets/img/ui/medal3.png" alt="" />
               </div>
             </div>
             <div class="shape shape3">

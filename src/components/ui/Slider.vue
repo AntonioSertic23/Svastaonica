@@ -1,17 +1,17 @@
 <script setup>
 const images = [
-  "/assets/img/cizme/1.jpg",
-  "/assets/img/gricke/1.jpg",
-  "/assets/img/kocke/1.jpg",
-  "/assets/img/krun/1.jpg",
-  "/assets/img/kugle/1.jpg",
-  "/assets/img/okviri/10.jpg",
-  "/assets/img/privj/1.jpg",
-  "/assets/img/set/6.jpg",
-  "/assets/img/shuze/1.jpg",
-  "/assets/img/slinceki/12.jpg",
-  "/assets/img/trake/1.jpg",
-  "/assets/img/vezice/12.jpg",
+  "/assets/img/products/cizme/1.jpg",
+  "/assets/img/products/gricke/1.jpg",
+  "/assets/img/products/kocke/1.jpg",
+  "/assets/img/products/krun/1.jpg",
+  "/assets/img/products/kugle/1.jpg",
+  "/assets/img/products/okviri/10.jpg",
+  "/assets/img/products/privj/1.jpg",
+  "/assets/img/products/set/6.jpg",
+  "/assets/img/products/shuze/1.jpg",
+  "/assets/img/products/slinceki/12.jpg",
+  "/assets/img/products/trake/1.jpg",
+  "/assets/img/products/vezice/12.jpg",
 ];
 </script>
 

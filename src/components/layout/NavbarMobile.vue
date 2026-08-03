@@ -44,28 +44,28 @@ function closeNavbar() {
     <div class="mobile-footer">
       <div class="mobile-social">
         <a href="http://m.me/svastaonicazabebe" aria-label="Messenger">
-          <img src="/assets/img/sm-facebook-messenger.png" alt="" />
+          <img src="/assets/img/ui/sm-facebook-messenger.png" alt="" />
         </a>
         <a
           href="https://api.whatsapp.com/send?phone=0919375976"
           aria-label="WhatsApp"
         >
-          <img src="/assets/img/sm-whatsapp.png" alt="" />
+          <img src="/assets/img/ui/sm-whatsapp.png" alt="" />
         </a>
         <a
           href="https://www.facebook.com/svastaonicaobrtzarukotvorine"
           aria-label="Facebook"
         >
-          <img src="/assets/img/sm-facebook.png" alt="" />
+          <img src="/assets/img/ui/sm-facebook.png" alt="" />
         </a>
         <a
           href="https://www.instagram.com/svastaonica_rukotvorine/"
           aria-label="Instagram"
         >
-          <img src="/assets/img/sm-instagram.png" alt="" />
+          <img src="/assets/img/ui/sm-instagram.png" alt="" />
         </a>
         <a href="mailto:svastaonicazabebe@gmail.com" aria-label="Email">
-          <img src="/assets/img/sm-google.png" alt="" />
+          <img src="/assets/img/ui/sm-google.png" alt="" />
         </a>
       </div>
 

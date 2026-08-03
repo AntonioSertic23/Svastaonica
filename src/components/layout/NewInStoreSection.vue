@@ -18,7 +18,7 @@ const { t } = useI18n();
       <div class="row">
         <div class="col col-lg-6 image-column px-5 px-lg-2">
           <div class="image-div">
-            <img class="main-image" src="/assets/img/zahvalnice/1.jpg" alt="" />
+            <img class="main-image" src="/assets/img/products/zahvalnice/1.jpg" alt="" />
           </div>
         </div>
 

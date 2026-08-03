@@ -56,7 +56,7 @@ onUnmounted(() => {
         }"
       />
     </svg>
-    <img class="icon" src="/assets/img/up-arrow.png" alt="Na vrh" />
+    <img class="icon" src="/assets/img/ui/up-arrow.png" alt="Na vrh" />
   </div>
 </template>
 

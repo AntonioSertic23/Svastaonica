@@ -13,7 +13,7 @@ const { t } = useI18n();
 
     <div class="row process gy-5 mx-lg-5 mt-lg-0">
       <div class="item col-lg-4">
-        <img src="/assets/img/message.png" alt="" />
+        <img src="/assets/img/ui/message.png" alt="" />
         <p class="mt-4 heading">{{ t("order.contact") }}</p>
         <p class="mt-3 text-center px-3">
           {{ t("order.contactText") }}
@@ -25,21 +25,21 @@ const { t } = useI18n();
       </div>
 
       <div class="arrow-section1">
-        <img src="/assets/img/arrow.png" alt="" />
+        <img src="/assets/img/ui/arrow.png" alt="" />
       </div>
 
       <div class="item col-lg-4">
-        <img src="/assets/img/handcraft.png" alt="" />
+        <img src="/assets/img/ui/handcraft.png" alt="" />
         <p class="mt-4 heading">{{ t("order.crafting") }}</p>
         <p class="mt-3 text-center px-3">{{ t("order.craftingText") }}</p>
       </div>
 
       <div class="arrow-section2">
-        <img src="/assets/img/arrow.png" alt="" />
+        <img src="/assets/img/ui/arrow.png" alt="" />
       </div>
 
       <div class="item col-lg-4">
-        <img src="/assets/img/delivery.png" alt="" />
+        <img src="/assets/img/ui/delivery.png" alt="" />
         <p class="mt-4 heading">{{ t("order.delivery") }}</p>
         <p class="mt-3 text-center px-3">
           {{ t("order.deliveryTextBefore") }}

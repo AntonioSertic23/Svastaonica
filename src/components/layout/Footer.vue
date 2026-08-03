@@ -59,23 +59,23 @@ const { t } = useI18n();
 
         <section class="my-0 social-media px-3 row g-3 justify-content-center">
           <a href="http://m.me/svastaonicazabebe">
-            <img src="/assets/img/sm-facebook-messenger.png" alt="Messenger" />
+            <img src="/assets/img/ui/sm-facebook-messenger.png" alt="Messenger" />
           </a>
 
           <a href="https://api.whatsapp.com/send?phone=0919375976">
-            <img src="/assets/img/sm-whatsapp.png" alt="WhatsApp" />
+            <img src="/assets/img/ui/sm-whatsapp.png" alt="WhatsApp" />
           </a>
 
           <a href="https://www.facebook.com/svastaonicaobrtzarukotvorine">
-            <img src="/assets/img/sm-facebook.png" alt="Facebook" />
+            <img src="/assets/img/ui/sm-facebook.png" alt="Facebook" />
           </a>
 
           <a href="https://www.instagram.com/svastaonica_rukotvorine/">
-            <img src="/assets/img/sm-instagram.png" alt="Instagram" />
+            <img src="/assets/img/ui/sm-instagram.png" alt="Instagram" />
           </a>
 
           <a href="mailto:svastaonicazabebe@gmail.com">
-            <img src="/assets/img/sm-google.png" alt="Email" />
+            <img src="/assets/img/ui/sm-google.png" alt="Email" />
           </a>
         </section>
 

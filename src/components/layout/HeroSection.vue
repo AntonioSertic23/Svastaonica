@@ -48,7 +48,7 @@ function flipLogo() {
             <img
               v-show="!showNewLogo"
               class="logo-img logo-img--classic"
-              src="/logo.jpg"
+              src="/assets/img/brand/logo.jpg"
               alt="Svaštaonica"
               width="400"
               height="364"
@@ -56,7 +56,7 @@ function flipLogo() {
             <img
               v-show="showNewLogo"
               class="logo-img logo-img--brand"
-              src="/svastaonica-logo-1.png"
+              src="/assets/img/brand/svastaonica-logo-1.png"
               alt="Svaštaonica — obrt za rukotvorine"
               width="400"
               height="267"

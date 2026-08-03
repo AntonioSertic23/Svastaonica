@@ -14,20 +14,20 @@ const { t } = useI18n();
         <p class="mb-0 mb-lg-4 subheading">
           <img
             class="start-icon me-3"
-            src="/assets/img/floral-design.png"
+            src="/assets/img/ui/floral-design.png"
             alt=""
           />
           {{ t("about.subheading") }}
           <img
             class="end-icon ms-3"
-            src="/assets/img/floral-design.png"
+            src="/assets/img/ui/floral-design.png"
             alt=""
           />
         </p>
 
         <div class="heading-decoration">
-          <img class="start-icon" src="/assets/img/floral-design.png" alt="" />
-          <img class="end-icon" src="/assets/img/floral-design.png" alt="" />
+          <img class="start-icon" src="/assets/img/ui/floral-design.png" alt="" />
+          <img class="end-icon" src="/assets/img/ui/floral-design.png" alt="" />
         </div>
 
         <div class="mt-4 mt-lg-0 col col-lg-8 px-4">
@@ -42,7 +42,7 @@ const { t } = useI18n();
         <div class="background-connector"></div>
 
         <div class="col col-lg-4 section2-left order-2 order-lg-1">
-          <VLazyImage v-bind:src="'/assets/img/aboutus/4.jpg'" class="image1" />
+          <VLazyImage v-bind:src="'/assets/img/site/aboutus/4.jpg'" class="image1" />
 
           <p class="mt-4">
             „Mašta je važija od znanja. Znanje je ograničeno. Mašta okružuje
@@ -56,33 +56,33 @@ const { t } = useI18n();
         >
           <div class="social-media mb-4 d-flex gap-lg-3">
             <a href="http://m.me/svastaonicazabebe" class="">
-              <img src="/assets/img/sm-facebook-messenger.png" />
+              <img src="/assets/img/ui/sm-facebook-messenger.png" />
             </a>
 
             <a href="https://api.whatsapp.com/send?phone=0919375976" class="">
-              <img src="/assets/img/sm-whatsapp.png" />
+              <img src="/assets/img/ui/sm-whatsapp.png" />
             </a>
 
             <a href="https://www.facebook.com/svastaonicaobrtzarukotvorine" class="">
-              <img src="/assets/img/sm-facebook.png" />
+              <img src="/assets/img/ui/sm-facebook.png" />
             </a>
 
             <a href="https://www.instagram.com/svastaonica_rukotvorine/" class="">
-              <img src="/assets/img/sm-instagram.png" />
+              <img src="/assets/img/ui/sm-instagram.png" />
             </a>
 
             <!--             <a
               href="viber://pa?chatURI=<URI> viber://chat?number=0919375976"
               class=""
             >
-              <img src="/assets/img/sm-viber.png" />
+              <img src="/assets/img/ui/sm-viber.png" />
             </a> -->
 
             <a href="mailto:svastaonicazabebe@gmail.com" class="">
-              <img src="/assets/img/sm-google.png" />
+              <img src="/assets/img/ui/sm-google.png" />
             </a>
           </div>
-          <VLazyImage v-bind:src="'/assets/img/aboutus/2.jpg'" class="image2" />
+          <VLazyImage v-bind:src="'/assets/img/site/aboutus/2.jpg'" class="image2" />
         </div>
       </div>
 
@@ -101,24 +101,24 @@ const { t } = useI18n();
         <div class="background-image"></div>
         <div class="section3-1 px-3 col col-lg-5">
           <div class="item">
-            <img src="/assets/img/bp1.png" alt="" />
+            <img src="/assets/img/ui/bp1.png" alt="" />
             <p>Igračke kao umjetnost</p>
           </div>
 
           <div class="item">
-            <img src="/assets/img/bp1.png" alt="" />
+            <img src="/assets/img/ui/bp1.png" alt="" />
             <p>Igračke za moderne obitelji</p>
           </div>
 
           <!--           <div class="item">
-            <img src="/assets/img/bp1.png" alt="" />
+            <img src="/assets/img/ui/bp1.png" alt="" />
             <p>Igračke za zajedničko provođenje vremena</p>
           </div> -->
         </div>
 
         <div class="section3-2 mt-5 mt-lg-0 col col-lg-3">
           <VLazyImage
-            v-bind:src="'/assets/img/aboutus/5.jpg'"
+            v-bind:src="'/assets/img/site/aboutus/5.jpg'"
             class="section3-image1"
           />
           <div class="circle1"></div>
@@ -157,7 +157,7 @@ const { t } = useI18n();
             <div class="photo-div p-4">
               <div class="mark"></div>
               <VLazyImage
-                v-bind:src="'/assets/img/aboutus3.jpg'"
+                v-bind:src="'/assets/img/site/aboutus3.jpg'"
                 class="photo-photo"
               />
               <h1 class="text-center mt-4">Naslov</h1>
@@ -170,7 +170,7 @@ const { t } = useI18n();
             <div class="photo2-div p-4">
               <div class="mark"></div>
               <VLazyImage
-                v-bind:src="'/assets/img/aboutus4.jpg'"
+                v-bind:src="'/assets/img/site/aboutus4.jpg'"
                 class="photo-photo"
               />
               <h1 class="text-center mt-4">Naslov</h1>
@@ -196,7 +196,7 @@ const { t } = useI18n();
             <div class="photo-div p-4">
               <div class="mark"></div>
               <VLazyImage
-                v-bind:src="'/assets/img/aboutus3.jpg'"
+                v-bind:src="'/assets/img/site/aboutus3.jpg'"
                 class="photo-photo"
               />
               <h1 class="text-center mt-4">Naslov</h1>
@@ -217,9 +217,9 @@ const { t } = useI18n();
                 intenziteta crvene do izrazito tamnih i crnih tkanina.
               </p>
               <div class="icons mt-4 mt-lg-5">
-                <img src="/assets/img/aboutus/palette1.png" alt="" />
-                <img src="/assets/img/aboutus/palette2.png" alt="" />
-                <img src="/assets/img/aboutus/palette3.png" alt="" />
+                <img src="/assets/img/site/aboutus/palette1.png" alt="" />
+                <img src="/assets/img/site/aboutus/palette2.png" alt="" />
+                <img src="/assets/img/site/aboutus/palette3.png" alt="" />
               </div>
             </div>
           </div>
@@ -233,9 +233,9 @@ const { t } = useI18n();
                 motiva.
               </p>
               <div class="icons mt-4 mt-lg-5">
-                <img src="/assets/img/aboutus/shapes1.png" alt="" />
-                <img src="/assets/img/aboutus/shapes5.png" alt="" />
-                <img src="/assets/img/aboutus/flowers3.png" alt="" />
+                <img src="/assets/img/site/aboutus/shapes1.png" alt="" />
+                <img src="/assets/img/site/aboutus/shapes5.png" alt="" />
+                <img src="/assets/img/site/aboutus/flowers3.png" alt="" />
               </div>
             </div>
           </div>
@@ -248,9 +248,9 @@ const { t } = useI18n();
                 vizuali u skladu sa sezonskim trendovima i prigodama.
               </p>
               <div class="icons mt-4 mt-lg-5">
-                <img src="/assets/img/aboutus/creativity1.png" alt="" />
-                <img src="/assets/img/aboutus/creativity2.png" alt="" />
-                <img src="/assets/img/aboutus/creativity3.png" alt="" />
+                <img src="/assets/img/site/aboutus/creativity1.png" alt="" />
+                <img src="/assets/img/site/aboutus/creativity2.png" alt="" />
+                <img src="/assets/img/site/aboutus/creativity3.png" alt="" />
               </div>
             </div>
           </div>
