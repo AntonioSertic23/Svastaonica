@@ -1,5 +1,8 @@
 <script setup>
 import VLazyImage from "v-lazy-image";
+import { useI18n } from "@/i18n/useI18n";
+
+const { t } = useI18n();
 </script>
 
 <template>
@@ -7,14 +10,14 @@ import VLazyImage from "v-lazy-image";
     <div class="container d-flex flex-column">
       <!-- SECTION 1 -->
       <div class="row justify-content-center text-center">
-        <p class="mb-4 mb-lg-2 menu-title">Ukratko o nama</p>
+        <p class="mb-4 mb-lg-2 menu-title">{{ t("about.title") }}</p>
         <p class="mb-0 mb-lg-4 subheading">
           <img
             class="start-icon me-3"
             src="/assets/img/floral-design.png"
             alt=""
           />
-          mjesto gdje se susreću mašta,kreativa i pozitiva
+          {{ t("about.subheading") }}
           <img
             class="end-icon ms-3"
             src="/assets/img/floral-design.png"
@@ -29,11 +32,7 @@ import VLazyImage from "v-lazy-image";
 
         <div class="mt-4 mt-lg-0 col col-lg-8 px-4">
           <p class="aboutus-description">
-            Svaštaonica je nastala kao nastavak dugogodišnjeg hobija, a zatim
-            smo rasli i sazrijevali u svojoj kreativi zahvaljujući ponajprije
-            svima vama, divnim i vjernim kupcima, koji ste nas inspirirali,
-            nadahnjivali i davali vjetar u leđa svakom svojom idejom i
-            narudžbom!
+            {{ t("about.intro") }}
           </p>
         </div>
       </div>
@@ -64,11 +63,11 @@ import VLazyImage from "v-lazy-image";
               <img src="/assets/img/sm-whatsapp.png" />
             </a>
 
-            <a href="https://www.facebook.com/svastaonicazabebe" class="">
+            <a href="https://www.facebook.com/svastaonicaobrtzarukotvorine" class="">
               <img src="/assets/img/sm-facebook.png" />
             </a>
 
-            <a href="http://instagram.com/_u/svastaonica_za_bebe/" class="">
+            <a href="https://www.instagram.com/svastaonica_rukotvorine/" class="">
               <img src="/assets/img/sm-instagram.png" />
             </a>
 
@@ -90,10 +89,9 @@ import VLazyImage from "v-lazy-image";
       <div class="row justify-content-center text-center mt-3 mt-lg-0 mb-5">
         <div class="col col-lg-8 px-4">
           <p class="aboutus-description">
-            Svaki proizvod je <span class="important">ručni rad</span>,
-            proizašao iz malene radionice, napravljen s mnoštvom ljubavi i
-            pažnje, te provjeren, poslikan i pojašnjen kupcu prije slanja, kako
-            bi do Vas stigao točno onakav kakvog ste ga i zamislili.
+            {{ t("about.handmadePrefix")
+            }}<span class="important">{{ t("about.handmade") }}</span
+            >{{ t("about.handmadeSuffix") }}
           </p>
         </div>
       </div>
@@ -442,7 +440,7 @@ import VLazyImage from "v-lazy-image";
 }
 
 .section3-2 {
-  background-color: #ede4f2;
+  background-color: var(--color-bg);
   display: flex;
   align-items: center;
   z-index: 1;

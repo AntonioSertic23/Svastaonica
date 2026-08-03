@@ -1,22 +1,27 @@
 <script setup>
 import { RouterLink } from "vue-router";
+import { useI18n } from "@/i18n/useI18n";
+
+const { t } = useI18n();
 </script>
 
 <template>
   <section>
     <div class="container">
       <div class="box">
-        <h1 class="mb-3 mb-lg-5">Oops!</h1>
-        <p class="my-5">404 - Ova stranica nije pronađena</p>
+        <h1 class="mb-3 mb-lg-5">{{ t("notFound.title") }}</h1>
+        <p class="my-5">{{ t("notFound.message") }}</p>
 
         <div class="">
           <a
             class="home-link first me-3"
             href="javascript:;"
             onclick="history.back()"
-            >Povratak</a
+            >{{ t("notFound.back") }}</a
           >
-          <RouterLink class="home-link ms-3" to="/">Početna</RouterLink>
+          <RouterLink class="home-link ms-3" to="/">{{
+            t("notFound.home")
+          }}</RouterLink>
         </div>
       </div>
     </div>
@@ -53,7 +58,7 @@ p {
   color: #222;
   text-decoration: none;
   text-transform: uppercase;
-  background-color: rgb(205, 180, 219);
+  background-color: var(--color-lavender);
   border-radius: 15px;
   padding: 1rem;
   font-weight: 500;
@@ -61,7 +66,7 @@ p {
   border: none;
 }
 .home-link:hover {
-  background-color: #a375bd;
+  background-color: var(--color-lavender-hover);
 }
 
 .first {

@@ -1,16 +1,20 @@
-<script setup></script>
+<script setup>
+import { useI18n } from "@/i18n/useI18n";
+
+const { t } = useI18n();
+</script>
 
 <template>
   <section class="contact-section py-4">
     <div class="container d-flex flex-column">
       <div class="row text-center">
-        <p class="mb-5 menu-title">Kontakt</p>
+        <p class="mb-5 menu-title">{{ t("contact.title") }}</p>
       </div>
 
       <div class="col col-lg-8 pb-4 py-0 mx-auto">
         <div class="contact-information px-md-4 mb-4">
           <div class="mb-3 text-center">
-            <p class="contact-description">Obratite nam se putem:</p>
+            <p class="contact-description">{{ t("contact.reachUs") }}</p>
           </div>
 
           <div class="social-media mb-5 row g-3 justify-content-center">
@@ -22,20 +26,13 @@
               <img src="/assets/img/sm-whatsapp.png" />
             </a>
 
-            <a href="https://www.facebook.com/svastaonicazabebe" class="">
+            <a href="https://www.facebook.com/svastaonicaobrtzarukotvorine" class="">
               <img src="/assets/img/sm-facebook.png" />
             </a>
 
-            <a href="http://instagram.com/_u/svastaonica_za_bebe/" class="">
+            <a href="https://www.instagram.com/svastaonica_rukotvorine/" class="">
               <img src="/assets/img/sm-instagram.png" />
             </a>
-
-            <!--             <a
-              href="viber://pa?chatURI=<URI> viber://chat?number=0919375976"
-              class=""
-            >
-              <img src="/assets/img/sm-viber.png" />
-            </a> -->
 
             <a href="mailto:svastaonicazabebe@gmail.com" class="">
               <img src="/assets/img/sm-google.png" />
@@ -50,25 +47,25 @@
           </a>
 
           <div class="text-center short-message">
-            <p>Radujemo se svakom vašem upitu i narudžbi!</p>
+            <p>{{ t("contact.glad") }}</p>
           </div>
 
           <div class="aboutus-cards-div row row-cols-1 row-cols-lg-3 mt-5">
             <div class="text-center">
               <img src="/assets/img/house.png" alt="" />
-              <h6 class="naslov">Mjesto</h6>
-              <p class="info">Našice, Hrvatska</p>
+              <h6 class="card-label">{{ t("contact.place") }}</h6>
+              <p class="info">{{ t("contact.placeValue") }}</p>
             </div>
 
             <div class="text-center">
               <img src="/assets/img/call.png" alt="" />
-              <h6 class="naslov">Telefon</h6>
+              <h6 class="card-label">{{ t("contact.phone") }}</h6>
               <p class="info">091 937 59 76</p>
             </div>
 
             <div class="text-center">
               <img src="/assets/img/email.png" alt="" />
-              <h6 class="naslov">Email</h6>
+              <h6 class="card-label">{{ t("contact.email") }}</h6>
               <p class="info">svastaonicazabebe@gmail.com</p>
             </div>
           </div>
@@ -106,7 +103,7 @@
   color: #222;
   text-decoration: none;
   text-transform: uppercase;
-  background-color: rgb(205, 180, 219);
+  background-color: var(--color-lavender);
   border-radius: 15px;
   font-weight: 500;
   letter-spacing: 2px;
@@ -114,7 +111,7 @@
   box-shadow: -2px 2px 8px grey;
 }
 .call-btn:hover {
-  background-color: #a375bd;
+  background-color: var(--color-lavender-hover);
 }
 
 .aboutus-cards-div .col-4 {
@@ -127,7 +124,7 @@
   width: 128px;
 }
 
-.aboutus-cards-div .naslov {
+.aboutus-cards-div .card-label {
   margin-bottom: 0.5rem !important;
   margin-top: 2rem !important;
   font-size: 31.25px;
