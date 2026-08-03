@@ -30,16 +30,6 @@ const router = createRouter({
       component: () => import("../views/SingleItemView.vue"),
     },
     {
-      path: "/blog",
-      name: "blog",
-      component: () => import("../views/BlogView.vue"),
-    },
-    {
-      path: "/singleblog/:id",
-      name: "singleblog",
-      component: () => import("../views/SingleBlogView.vue"),
-    },
-    {
       path: "/search/:search",
       name: "search",
       component: () => import("../views/SearchView.vue"),
