@@ -1,0 +1,298 @@
+{
+  "id": 3,
+  "name": "Okvir",
+  "subheading": "... savršeni način za sačuvati uspomenu na Vama važan događaj ...",
+  "description": "Trebate li poklon za uspomenu na rođenje, mjesto za čuvanje narukvica iz rodilišta, uspomenu na svete sakramente ili razne prigode<br><span class='important'> – Okvir je pravi izbor za Vas!</span><br><br> Okvir je bijele boje, može stajati samostalno ili na zidu, a <span class='important'>izrada je po primjerku ili u potpunosti po Vašoj želji.</span>",
+  "thumbnail": "/assets/img/okviri/10.jpg",
+  "images": [
+    {
+      "path": "/assets/img/okviri/10.jpg",
+      "isActive": true
+    },
+    {
+      "path": "/assets/img/okviri/2.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/3.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/4.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/5.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/6.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/7.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/8.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/9.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/1.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/11.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/12.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/13.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/14.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/15.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/16.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/17.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/18.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/19.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/20.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/21.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/22.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/23.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/24.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/25.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/26.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/27.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/28.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/29.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/30.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/31.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/32.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/33.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/34.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/35.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/36.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/37.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/38.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/39.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/40.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/41.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/42.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/43.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/44.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/45.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/46.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/47.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/48.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/49.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/50.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/51.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/52.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/53.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/54.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/55.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/56.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/57.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/58.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/59.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/60.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/61.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/62.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/63.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/64.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/65.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/66.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/67.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/68.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/69.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/70.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/71.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/72.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/73.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/74.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/75.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/76.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/77.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/78.jpg"
+    },
+    {
+      "path": "/assets/img/okviri/79.jpg"
+    }
+  ],
+  "sizes": [
+    "L"
+  ],
+  "declaration": {
+    "materials": [
+      "90% drvo",
+      "10% staklo",
+      "26x26x4cm"
+    ]
+  },
+  "reviews": [
+    {
+      "image": "/assets/img/profile_picture.jpg",
+      "name": "Netko",
+      "comment": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur."
+    },
+    {
+      "image": "/assets/img/profile_picture.jpg",
+      "name": "Netko Nekić",
+      "comment": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore amet dicta harum!"
+    }
+  ],
+  "similarItems": [
+    9,
+    8,
+    6,
+    5
+  ],
+  "badges": [
+    "badge3"
+  ],
+  "soldout": false,
+  "categories": [],
+  "keywords": [
+    {
+      "text": "Preporuka kupaca",
+      "icon": "/assets/img/badge3.png"
+    },
+    {
+      "text": "Ručna izrada",
+      "icon": "/assets/img/sewing.png"
+    },
+    {
+      "text": "Izvrsno kao poklon",
+      "icon": "/assets/img/gift.png"
+    }
+  ],
+  "isBundle": false,
+  "bundleItems": [],
+  "isPartOfBundle": false,
+  "bundle": []
+}

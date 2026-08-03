@@ -1,0 +1,122 @@
+{
+  "id": 11,
+  "name": "Blagdanske čizme",
+  "description": "Personalizirane blagdanske čizmice, u potpunosti ručni rad, sa strojno uvezenim imenom, služe kao dekoracija ili za punjenje poklonima za Sv.Nikolu ili Božić.<br><br> Savršen su dodatak božićnim dekoracijama u svakom domu!",
+  "thumbnail": "/assets/img/cizme/1.jpg",
+  "images": [
+    {
+      "path": "/assets/img/cizme/1.jpg",
+      "isActive": true
+    },
+    {
+      "path": "/assets/img/cizme/2.jpg"
+    },
+    {
+      "path": "/assets/img/cizme/3.jpg"
+    },
+    {
+      "path": "/assets/img/cizme/4.jpg"
+    },
+    {
+      "path": "/assets/img/cizme/5.jpg"
+    },
+    {
+      "path": "/assets/img/cizme/6.jpg"
+    },
+    {
+      "path": "/assets/img/cizme/7.jpg"
+    },
+    {
+      "path": "/assets/img/cizme/8.jpg"
+    },
+    {
+      "path": "/assets/img/cizme/9.jpg"
+    },
+    {
+      "path": "/assets/img/cizme/10.jpg"
+    },
+    {
+      "path": "/assets/img/cizme/11.jpg"
+    },
+    {
+      "path": "/assets/img/cizme/12.jpg"
+    },
+    {
+      "path": "/assets/img/cizme/13.jpg"
+    },
+    {
+      "path": "/assets/img/cizme/14.jpg"
+    },
+    {
+      "path": "/assets/img/cizme/15.jpg"
+    },
+    {
+      "path": "/assets/img/cizme/16.jpg"
+    },
+    {
+      "path": "/assets/img/cizme/17.jpg"
+    },
+    {
+      "path": "/assets/img/cizme/18.jpg"
+    },
+    {
+      "path": "/assets/img/cizme/19.jpg"
+    },
+    {
+      "path": "/assets/img/cizme/20.jpg"
+    },
+    {
+      "path": "/assets/img/cizme/21.jpg"
+    },
+    {
+      "path": "/assets/img/cizme/22.jpg"
+    },
+    {
+      "path": "/assets/img/cizme/23.jpg"
+    },
+    {
+      "path": "/assets/img/cizme/24.jpg"
+    },
+    {
+      "path": "/assets/img/cizme/25.jpg"
+    },
+    {
+      "path": "/assets/img/cizme/26.jpg"
+    },
+    {
+      "path": "/assets/img/cizme/27.jpg"
+    }
+  ],
+  "sizes": [
+    "L",
+    "XL"
+  ],
+  "declaration": {
+    "materials": [
+      "Dužine cca 40 cm",
+      "Širine cca 15 cm",
+      "100% flis"
+    ]
+  },
+  "reviews": [
+    {
+      "image": "/assets/img/profile_picture.jpg",
+      "name": "Netko",
+      "comment": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur."
+    },
+    {
+      "image": "/assets/img/profile_picture.jpg",
+      "name": "Netko Nekić",
+      "comment": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore amet dicta harum!"
+    }
+  ],
+  "similarItems": [],
+  "badges": [],
+  "soldout": false,
+  "categories": [],
+  "keywords": [],
+  "isBundle": false,
+  "bundleItems": [],
+  "isPartOfBundle": false,
+  "bundle": []
+}

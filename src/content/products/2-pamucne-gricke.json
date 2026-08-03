@@ -1,0 +1,103 @@
+{
+  "id": 2,
+  "name": "Pamučne gricke",
+  "subheading": "... nijedna slina neće proći ...",
+  "description": "Pamučne gricke neizostavna su oprema za sve male grickače!<br><br> Izrađene po mjeri, od pamuka i frotira s kočanjem na drukere, osigurati će svaki pojas u nosiljci, jajetu, hranilici, kolicima ili automobilu od sline i grickanja, te zaštititi vratić od iritacije pojasom.<br><br> <span class='important'>Dezene, boje i uzorke možete i sami odabrati.</span>",
+  "thumbnail": "/assets/img/gricke/1.jpg",
+  "images": [
+    {
+      "path": "/assets/img/gricke/1.jpg",
+      "isActive": true
+    },
+    {
+      "path": "/assets/img/gricke/2.jpg"
+    },
+    {
+      "path": "/assets/img/gricke/3.jpg"
+    },
+    {
+      "path": "/assets/img/gricke/4.jpg"
+    }
+  ],
+  "sizes": [
+    "S",
+    "L",
+    "XL"
+  ],
+  "declaration": {
+    "materials": [
+      "90% pamuk",
+      "10% poliester",
+      "Cca 15 cm visine",
+      "Znakići za tkanine"
+    ],
+    "standards": [
+      {
+        "name": "OEKO-TEX 100- standard",
+        "image": "/assets/img/OekoTexStandard100.png"
+      }
+    ],
+    "icons": [
+      {
+        "icon": "/assets/img/tc-wash-two.png"
+      },
+      {
+        "icon": "/assets/img/tc-ironing-two.png"
+      },
+      {
+        "icon": "/assets/img/tc-tumble-dry.png"
+      },
+      {
+        "icon": "/assets/img/tc-dry-clean.png"
+      },
+      {
+        "icon": "/assets/img/tc-bleach.png"
+      }
+    ]
+  },
+  "reviews": [
+    {
+      "image": "/assets/img/profile_picture.jpg",
+      "name": "Netko",
+      "comment": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur."
+    },
+    {
+      "image": "/assets/img/profile_picture.jpg",
+      "name": "Netko Nekić",
+      "comment": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore amet dicta harum!"
+    }
+  ],
+  "similarItems": [
+    8,
+    7,
+    5,
+    4
+  ],
+  "badges": [
+    "badge3"
+  ],
+  "soldout": false,
+  "categories": [],
+  "keywords": [
+    {
+      "text": "Preporuka kupaca",
+      "icon": "/assets/img/badge3.png"
+    },
+    {
+      "text": "Ručna izrada",
+      "icon": "/assets/img/sewing.png"
+    },
+    {
+      "text": "Očuvanje planete",
+      "icon": "/assets/img/planet-earth.png"
+    },
+    {
+      "text": "Siguran za vaše dijete",
+      "icon": "/assets/img/badge6.png"
+    }
+  ],
+  "isBundle": false,
+  "bundleItems": [],
+  "isPartOfBundle": false,
+  "bundle": []
+}

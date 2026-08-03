@@ -1,0 +1,90 @@
+{
+  "bundle": [],
+  "subheading": "... koliko trakica je dovoljno trakica!? ...",
+  "keywords": [
+    {
+      "text": "Na akciji",
+      "icon": "/assets/img/badge4.png"
+    },
+    {
+      "text": "Ručna izrada",
+      "icon": "/assets/img/sewing.png"
+    },
+    {
+      "text": "Očuvanje planete",
+      "icon": "/assets/img/planet-earth.png"
+    },
+    {
+      "text": "Rađeno s ljubavlju",
+      "icon": "/assets/img/give-love.png"
+    }
+  ],
+  "name": "Trakice",
+  "thumbnail": "/assets/img/trake/1.jpg",
+  "isBundle": false,
+  "badges": [
+    "badge4"
+  ],
+  "sizes": [
+    "L",
+    "XL"
+  ],
+  "similarItems": [
+    7,
+    9,
+    4,
+    6
+  ],
+  "isPartOfBundle": false,
+  "images": [
+    {
+      "path": "/assets/img/trake/1.jpg",
+      "isActive": false
+    },
+    {
+      "path": "/assets/img/trake/2.jpg",
+      "isActive": true
+    },
+    {
+      "path": "/assets/img/trake/3.jpg"
+    },
+    {
+      "path": "/assets/img/trake/4.jpg"
+    },
+    {
+      "path": "/assets/img/trake/5.jpg"
+    },
+    {
+      "path": "/assets/img/trake/6.jpg"
+    },
+    {
+      "path": "/assets/img/trake/7.jpg"
+    }
+  ],
+  "declaration": {
+    "materials": [
+      "100%poliester",
+      "Uni size do 2g",
+      "Izrada i po mjeri OG"
+    ]
+  },
+  "soldout": false,
+  "reviews": [
+    {
+      "image": "/assets/img/profile_picture.jpg",
+      "name": "Netko",
+      "comment": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur."
+    },
+    {
+      "image": "/assets/img/profile_picture.jpg",
+      "name": "Netko Nekić",
+      "comment": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore amet dicta harum!"
+    }
+  ],
+  "id": 1,
+  "categories": [
+    3
+  ],
+  "description": "Raznobojne trake za glavu, pogodne za svaki outfit, koje karakterizira velika trendy mašna.<br><br> Izrađene su od extra rastezljivog materijala, što omogućuje dugotrajno korištenje.<br><br> Široke su i korisne u pokrivanju ušeka u vjetrovitim danima, dok su istovremeno uočljiv modni dodatak.",
+  "bundleItems": []
+}

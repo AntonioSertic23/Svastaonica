@@ -1,0 +1,12 @@
+{
+  "id": 12,
+  "name": "Uskoro u ponudi",
+  "thumbnail": "/assets/img/set/1.jpg",
+  "badges": [],
+  "keywords": [],
+  "categories": [
+    2,
+    4
+  ],
+  "comingSoon": true
+}

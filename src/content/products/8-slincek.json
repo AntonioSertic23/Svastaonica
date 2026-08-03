@@ -1,0 +1,309 @@
+{
+  "id": 8,
+  "name": "Slinček",
+  "subheading": "... jer slinčeka nikad nema dovoljno ...",
+  "description": "<i>Slinček, partikla, bavarin, balavac, podbradnjak, barbajol </i>- mnoštvo imena za jedan nezamjenjiv proizvod! <br><br> Spoj kvalitetnog pamuka u raznim dezenima i pamučnog frotira, nosiv s obje strane (lica) a u potpunosti nepromočiv, neizostavan je dodatak pri svakom hranjenju, a posebice pri pojačanom slinjenju uzrokovanog rastom zubića. <br><br> Kopčanje je na drukere, na dva nivoa, što omogućuje lakšu prilagodbu svakom vratiću.",
+  "thumbnail": "/assets/img/slinceki/12.jpg",
+  "images": [
+    {
+      "path": "/assets/img/slinceki/1.jpg",
+      "isActive": true
+    },
+    {
+      "path": "/assets/img/slinceki/2.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/3.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/4.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/5.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/6.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/7.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/8.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/9.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/10.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/11.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/12.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/13.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/14.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/15.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/16.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/17.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/18.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/19.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/20.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/21.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/22.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/23.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/24.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/25.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/26.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/27.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/28.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/29.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/30.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/31.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/32.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/33.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/34.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/35.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/36.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/37.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/38.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/39.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/40.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/41.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/42.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/43.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/44.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/45.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/46.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/47.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/48.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/49.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/50.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/51.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/52.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/53.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/54.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/55.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/56.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/57.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/58.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/59.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/60.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/61.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/62.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/63.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/64.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/65.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/66.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/67.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/68.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/69.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/70.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/71.jpg"
+    },
+    {
+      "path": "/assets/img/slinceki/72.jpg"
+    }
+  ],
+  "sizes": [
+    "L",
+    "XL"
+  ],
+  "declaration": {
+    "materials": [
+      "97% pamuk",
+      "2% poliester",
+      "Znakići za tkanine"
+    ],
+    "standards": [
+      {
+        "name": "OEKO-TEX 100- standard",
+        "image": "/assets/img/OekoTexStandard100.png"
+      }
+    ],
+    "icons": [
+      {
+        "icon": "/assets/img/tc-wash-two.png"
+      },
+      {
+        "icon": "/assets/img/tc-ironing-two.png"
+      },
+      {
+        "icon": "/assets/img/tc-tumble-dry.png"
+      },
+      {
+        "icon": "/assets/img/tc-dry-clean.png"
+      },
+      {
+        "icon": "/assets/img/tc-bleach.png"
+      }
+    ]
+  },
+  "reviews": [
+    {
+      "image": "/assets/img/profile_picture.jpg",
+      "name": "Netko",
+      "comment": "Lorem ipsum dolor."
+    },
+    {
+      "image": "/assets/img/profile_picture.jpg",
+      "name": "Netko Nekić",
+      "comment": "Lorem ipsum dolor!"
+    }
+  ],
+  "similarItems": [
+    5,
+    4,
+    2,
+    1
+  ],
+  "badges": [
+    "badge2",
+    "badge4"
+  ],
+  "soldout": false,
+  "categories": [
+    1,
+    3
+  ],
+  "keywords": [
+    {
+      "text": "Drugi najprodavaniji proizvod",
+      "icon": "/assets/img/medal2.png"
+    },
+    {
+      "text": "U trendu",
+      "icon": "/assets/img/badge2.png"
+    },
+    {
+      "text": "Na akciji",
+      "icon": "/assets/img/badge4.png"
+    },
+    {
+      "text": "Ručna izrada",
+      "icon": "/assets/img/sewing.png"
+    }
+  ],
+  "isBundle": false,
+  "bundleItems": [],
+  "isPartOfBundle": false,
+  "bundle": []
+}

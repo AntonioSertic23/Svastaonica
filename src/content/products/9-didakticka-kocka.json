@@ -1,0 +1,202 @@
+{
+  "id": 9,
+  "name": "Didaktička Kocka",
+  "subheading": "... dizajnirano kao poklon, stvoreno kao uspomena ...",
+  "description": "Personalizirane zveckave kocke, posebno su dizajnirane u veselim bojama i šarenim uzorcima kako bi odmah privukle pozornost bebinih okica! <br><br> Ispunjene su mekim punjenjem, zveckavcem u sredini, šuškavom stranicom i mnoštvom etiketa i trakica koje pospješuju razvoj fine motorike, ponajprije hvatanja, prepoznavanja boja, vježbe sluha kroz igru, ravnoteže te pokretanje cijelog lokomotornog sustava.<br><br> Kvaliteta tkanina i izrada preduvjet su ovako kvalitetnog i dugotrajnog proizvoda. <br><br> <span class='important'>Svaku kocku možete sami dizajnirati, samostalnim odabirom tkanina iz ponude, boja, dezena, imena.</span>",
+  "thumbnail": "/assets/img/kocke/1.jpg",
+  "images": [
+    {
+      "path": "/assets/img/kocke/1.jpg",
+      "isActive": true
+    },
+    {
+      "path": "/assets/img/kocke/2.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/3.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/4.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/5.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/6.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/7.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/8.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/9.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/10.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/11.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/12.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/13.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/14.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/15.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/16.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/17.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/18.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/19.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/20.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/21.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/22.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/23.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/24.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/25.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/26.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/27.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/28.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/29.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/30.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/31.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/32.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/33.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/34.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/35.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/36.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/37.jpg"
+    },
+    {
+      "path": "/assets/img/kocke/38.jpg"
+    }
+  ],
+  "sizes": [
+    "S",
+    "L",
+    "XL"
+  ],
+  "declaration": {
+    "materials": [
+      "90% Pamuk",
+      "10% Poliester",
+      "10x10x10 cm"
+    ],
+    "standards": [
+      {
+        "name": "OEKO-TEX 100- standard",
+        "image": "/assets/img/OekoTexStandard100.png"
+      }
+    ],
+    "icons": [
+      {
+        "icon": "/assets/img/tc-wash-one.png"
+      },
+      {
+        "icon": "/assets/img/tc-no-ironing.png"
+      },
+      {
+        "icon": "/assets/img/tc-tumble-dry.png"
+      },
+      {
+        "icon": "/assets/img/tc-dry-clean.png"
+      },
+      {
+        "icon": "/assets/img/tc-bleach.png"
+      }
+    ]
+  },
+  "reviews": [
+    {
+      "image": "/assets/img/profile_picture.jpg",
+      "name": "Netko",
+      "comment": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur."
+    },
+    {
+      "image": "/assets/img/profile_picture.jpg",
+      "name": "Netko Nekić",
+      "comment": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore amet dicta harum!"
+    }
+  ],
+  "similarItems": [
+    6,
+    5,
+    3,
+    2
+  ],
+  "badges": [
+    "bow"
+  ],
+  "soldout": false,
+  "categories": [
+    1
+  ],
+  "keywords": [
+    {
+      "text": "Najprodavaniji proizvod",
+      "icon": "/assets/img/medal1.png"
+    },
+    {
+      "text": "Ručna izrada",
+      "icon": "/assets/img/sewing.png"
+    },
+    {
+      "text": "100% zabavno",
+      "icon": "/assets/img/playtime.png"
+    }
+  ],
+  "isBundle": false,
+  "bundleItems": [],
+  "isPartOfBundle": false,
+  "bundle": []
+}

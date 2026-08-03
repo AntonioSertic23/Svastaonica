@@ -1,0 +1,201 @@
+{
+  "id": 7,
+  "name": "Silikonska vezica",
+  "subheading": "... jer cucla bez vezice dobije krila ...",
+  "description": "Silikonska vezica neizostavan je modni dodatak, a svrsihodan u sprječavanju padanja na pod i gubitka dude.<br><br> Izrađena je od akril kopče i imena po Vašoj želji, te silikonskih perli i oblika bez štetnih tvari, koji su otporni na sva grickanja, slinu i zubiće.<br><br> Izrada u preporučenim dužinama po EU standardima 22-25cm (bez kopče), ali <span class='important'>dužine mogu biti prilagođene željama i potrebama kupca.</span>",
+  "thumbnail": "/assets/img/vezice/12.jpg",
+  "images": [
+    {
+      "path": "/assets/img/vezice/1.jpg",
+      "isActive": true
+    },
+    {
+      "path": "/assets/img/vezice/2.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/3.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/4.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/5.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/6.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/7.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/8.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/9.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/10.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/11.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/12.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/13.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/14.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/15.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/16.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/17.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/18.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/19.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/20.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/21.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/22.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/23.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/24.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/25.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/26.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/27.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/28.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/29.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/30.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/31.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/32.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/33.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/34.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/35.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/36.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/37.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/38.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/39.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/40.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/41.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/42.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/43.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/44.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/45.jpg"
+    },
+    {
+      "path": "/assets/img/vezice/46.jpg"
+    }
+  ],
+  "sizes": [
+    "L"
+  ],
+  "declaration": {
+    "materials": [
+      "90% silikon",
+      "10% akril",
+      "BPA free"
+    ]
+  },
+  "reviews": [
+    {
+      "image": "/assets/img/profile_picture.jpg",
+      "name": "Netko",
+      "comment": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur."
+    },
+    {
+      "image": "/assets/img/profile_picture.jpg",
+      "name": "Netko Nekić",
+      "comment": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore amet dicta harum!"
+    }
+  ],
+  "similarItems": [
+    4,
+    6,
+    1,
+    3
+  ],
+  "badges": [
+    "badge6"
+  ],
+  "soldout": false,
+  "categories": [
+    1
+  ],
+  "keywords": [
+    {
+      "text": "Treći najprodavaniji proizvod",
+      "icon": "/assets/img/medal3.png"
+    },
+    {
+      "text": "Siguran za vaše dijete",
+      "icon": "/assets/img/badge6.png"
+    },
+    {
+      "text": "Ručna izrada",
+      "icon": "/assets/img/sewing.png"
+    }
+  ],
+  "isBundle": false,
+  "bundleItems": [],
+  "isPartOfBundle": false,
+  "bundle": []
+}
