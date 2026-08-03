@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Svaštaonica — Admin</title>
+    <link rel="icon" href="/svastaonica-logo-2.jpg" />
+    <link rel="stylesheet" href="./admin.css" />
+  </head>
+  <body>
+    <div class="admin-splash">
+      <img
+        src="/svastaonica-logo-1.png"
+        alt="Svaštaonica"
+        class="admin-splash-logo"
+      />
+      <p>Učitavanje uređivača proizvoda…</p>
+    </div>
+
+    <div id="local-auth-note" class="local-auth-note" hidden>
+      <strong>Lokalni način:</strong> prijava je namjerno otvorena (bez lozinke)
+      dok radi <code>npm run cms</code>. Na Netlify produkciji ulaze samo
+      pozvani korisnici (Identity → Invite only).
+    </div>
+
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      (function () {
+        const isLocal =
+          location.hostname === "localhost" ||
+          location.hostname === "127.0.0.1";
+        const note = document.getElementById("local-auth-note");
+        if (isLocal && note) note.hidden = false;
+
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", (user) => {
+            if (!user) {
+              window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+              });
+            }
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

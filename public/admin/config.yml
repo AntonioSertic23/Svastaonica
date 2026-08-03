@@ -1,0 +1,213 @@
+# Decap CMS — Svaštaonica product editor
+# Local: npm run cms  (then open http://localhost:5173/admin/)
+# Production: enable Netlify Identity + Git Gateway
+
+local_backend: true
+
+backend:
+  name: git-gateway
+  branch: main
+
+logo_url: /svastaonica-logo-1.png
+
+media_folder: public/assets/img/uploads
+public_folder: /assets/img/uploads
+
+locale: hr
+
+collections:
+  - name: products
+    label: Proizvodi
+    label_singular: Proizvod
+    description: Svaki proizvod je zasebna datoteka — ovdje vidiš cijeli katalog.
+    folder: src/content/products
+    create: true
+    delete: true
+    extension: json
+    format: json
+    slug: "{{id}}-{{slug}}"
+    identifier_field: name
+    summary: "{{name}} (ID {{id}})"
+    editor:
+      preview: false
+    fields:
+      - label: ID
+        name: id
+        widget: number
+        value_type: int
+        min: 1
+        hint: Jedinstveni broj. Novi proizvod = id veći od postojećih.
+
+      - label: Naziv
+        name: name
+        widget: string
+
+      - label: Podnaslov
+        name: subheading
+        widget: string
+        required: false
+
+      - label: Opis
+        name: description
+        widget: text
+        required: false
+        hint: Možeš koristiti HTML (npr. <br>, <span class='important'>…).
+
+      - label: Thumbnail
+        name: thumbnail
+        widget: image
+        choose_url: true
+        required: false
+
+      - label: Galerija slika
+        name: images
+        widget: list
+        required: false
+        label_singular: slika
+        summary: "{{fields.path}}"
+        allow_add: true
+        allow_delete: true
+        allow_reorder: true
+        fields:
+          - label: Slika
+            name: path
+            widget: image
+            choose_url: true
+          - label: Početna (aktivna) slika
+            name: isActive
+            widget: boolean
+            default: false
+            required: false
+            hint: Samo jedna slika bi trebala biti aktivna.
+
+      - label: Veličine
+        name: sizes
+        widget: list
+        required: false
+        hint: Unesi veličine odvojene zarezom (npr. S, L, XL).
+
+      - label: Deklaracija
+        name: declaration
+        widget: object
+        required: false
+        collapsed: true
+        fields:
+          - label: Materijali / napomene
+            name: materials
+            widget: list
+            required: false
+            hint: Stavke odvojene zarezom.
+          - label: Standardi
+            name: standards
+            widget: list
+            required: false
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Naziv, name: name, widget: string }
+              - { label: Slika, name: image, widget: image, choose_url: true, required: false }
+          - label: Ikone njege
+            name: icons
+            widget: list
+            required: false
+            fields:
+              - { label: Ikona, name: icon, widget: image, choose_url: true }
+              - { label: Opis, name: text, widget: string, required: false }
+
+      - label: Slični proizvodi (ID-evi)
+        name: similarItems
+        widget: list
+        required: false
+        hint: ID brojevi odvojeni zarezom (npr. 7, 9, 4).
+
+      - label: Bedževi
+        name: badges
+        widget: list
+        required: false
+        hint: Nazivi bedževa odvojeni zarezom (npr. badge1, badge4).
+
+      - label: Rasprodano
+        name: soldout
+        widget: boolean
+        default: false
+        required: false
+
+      - label: Uskoro
+        name: comingSoon
+        widget: boolean
+        default: false
+        required: false
+
+      - label: Kategorije
+        name: categories
+        widget: select
+        multiple: true
+        required: false
+        options:
+          - { label: "U trendu", value: 1 }
+          - { label: "Novo u ponudi", value: 2 }
+          - { label: "Akcija", value: 3 }
+          - { label: "Paketi", value: 4 }
+
+      - label: Ključne riječi / ikone
+        name: keywords
+        widget: list
+        required: false
+        summary: "{{fields.text}}"
+        fields:
+          - { label: Tekst, name: text, widget: string }
+          - { label: Ikona, name: icon, widget: image, choose_url: true }
+
+      - label: Je paket (bundle)
+        name: isBundle
+        widget: boolean
+        default: false
+        required: false
+
+      - label: Stavke u paketu (ID-evi)
+        name: bundleItems
+        widget: list
+        required: false
+        hint: ID brojevi odvojeni zarezom.
+
+      - label: Dio je paketa
+        name: isPartOfBundle
+        widget: boolean
+        default: false
+        required: false
+
+      - label: Pripada paketima (ID-evi)
+        name: bundle
+        widget: list
+        required: false
+        hint: ID brojevi odvojeni zarezom.
+
+      - label: Recenzije
+        name: reviews
+        widget: list
+        required: false
+        collapsed: true
+        summary: "{{fields.name}}"
+        fields:
+          - { label: Ime, name: name, widget: string }
+          - { label: Komentar, name: comment, widget: text }
+          - { label: Foto, name: image, widget: image, choose_url: true, required: false }
+
+  - name: blogs
+    label: Blogovi
+    label_singular: Blog
+    folder: src/content/blogs
+    create: true
+    delete: true
+    extension: json
+    format: json
+    slug: "{{id}}-{{slug}}"
+    identifier_field: title
+    summary: "{{title}} (ID {{id}})"
+    editor:
+      preview: false
+    fields:
+      - { label: ID, name: id, widget: number, value_type: int }
+      - { label: Naslov, name: title, widget: string }
+      - { label: Opis, name: description, widget: text }
+      - { label: Datum, name: date, widget: string }
+      - { label: Thumbnail, name: thumbnail, widget: image, choose_url: true, required: false }

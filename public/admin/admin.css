@@ -1,0 +1,74 @@
+/* Brand polish for Decap CMS shell */
+:root {
+  --sv-lavender: #cdb4db;
+  --sv-lavender-deep: #a375bd;
+  --sv-bg: #ede4f2;
+  --sv-text: #222;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--sv-bg);
+  font-family: "Montserrat", system-ui, sans-serif;
+}
+
+.admin-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(255, 200, 221, 0.35), transparent 60%),
+    var(--sv-bg);
+  color: var(--sv-text);
+  pointer-events: none;
+}
+
+.admin-splash-logo {
+  width: min(360px, 70vw);
+  height: auto;
+}
+
+.admin-splash p {
+  margin: 0;
+  opacity: 0.7;
+  font-size: 1rem;
+}
+
+.local-auth-note {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  padding: 0.75rem 1rem;
+  background: #3d2a4a;
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.local-auth-note code {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
+/* When CMS mounts, hide splash (CMS root is usually #nc-root) */
+body:has(#nc-root) .admin-splash,
+body:has([data-slate-editor]) .admin-splash {
+  display: none;
+}
+
+/* Soften Decap chrome toward brand colors when available */
+.css-1gj57a3-AppHeaderContent,
+[class*="AppHeader"] {
+  background: rgba(237, 228, 242, 0.95) !important;
+}
