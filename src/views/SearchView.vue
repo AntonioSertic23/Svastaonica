@@ -5,22 +5,19 @@ import sourceData from "@/catalog.js";
 import ProductCard from "../components/ui/ProductCard.vue";
 import SearchBar from "../components/ui/SearchBar.vue";
 import { useI18n } from "@/i18n/useI18n";
+import { productMatchesQuery } from "@/i18n/productLocale";
 
 const { t } = useI18n();
 const data = ref(sourceData.data);
 const route = useRoute();
-data.value = sourceData.data.filter(function (el) {
-  if (el.name.toLowerCase().includes(route.params.search.toLowerCase())) {
-    return el;
-  }
-});
+data.value = sourceData.data.filter((el) =>
+  productMatchesQuery(el, route.params.search)
+);
 
 function FindData(text) {
-  data.value = sourceData.data.filter(function (el) {
-    if (el.name.toLowerCase().includes(text.value.toLowerCase())) {
-      return el;
-    }
-  });
+  data.value = sourceData.data.filter((el) =>
+    productMatchesQuery(el, text.value)
+  );
 }
 
 const isEmpty = computed(() => data.value.length === 0);

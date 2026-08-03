@@ -1,5 +1,6 @@
 import { ref } from "vue";
 import { messages } from "./messages";
+import { productText } from "./productLocale";
 
 const STORAGE_KEY = "svastaonica-locale";
 const saved = typeof localStorage !== "undefined" ? localStorage.getItem(STORAGE_KEY) : null;
@@ -20,6 +21,11 @@ export function useI18n() {
     return value ?? key;
   }
 
+  /** Localized product field (name / subheading / description) with HR fallback. */
+  function pt(product, field) {
+    return productText(product, field, locale.value);
+  }
+
   function setLocale(lang) {
     if (lang !== "hr" && lang !== "en") return;
     locale.value = lang;
@@ -27,5 +33,5 @@ export function useI18n() {
     applyDocumentLang(lang);
   }
 
-  return { locale, t, setLocale };
+  return { locale, t, pt, setLocale };
 }

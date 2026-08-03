@@ -5,6 +5,7 @@ import ProductCard from "../components/ui/ProductCard.vue";
 import SearchBar from "../components/ui/SearchBar.vue";
 import { onBeforeRouteUpdate } from "vue-router";
 import { useI18n } from "@/i18n/useI18n";
+import { productMatchesQuery } from "@/i18n/productLocale";
 
 const { t } = useI18n();
 
@@ -73,8 +74,7 @@ function onSearch(textRef) {
 }
 
 function matchesSearch(item) {
-  if (!searchQuery.value) return true;
-  return item.name.toLowerCase().includes(searchQuery.value);
+  return productMatchesQuery(item, searchQuery.value);
 }
 
 const visibleData = computed(() => baseData.value.filter(matchesSearch));

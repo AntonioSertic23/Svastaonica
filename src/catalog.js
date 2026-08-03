@@ -1,12 +1,11 @@
 /**
- * Site catalog — products & blogs loaded from Decap CMS folder collections.
- * Each entry is a JSON file under src/content/{products|blogs}/.
+ * Site catalog — products loaded from Decap CMS folder collection.
+ * Each entry is a JSON file under src/content/products/.
  */
 
 const productModules = import.meta.glob("./content/products/*.json", {
   eager: true,
 });
-const blogModules = import.meta.glob("./content/blogs/*.json", { eager: true });
 
 function toIdList(value) {
   if (!Array.isArray(value)) return [];
@@ -16,15 +15,37 @@ function toIdList(value) {
     .filter((id) => Number.isFinite(id));
 }
 
+function normalizeSizes(sizes) {
+  if (Array.isArray(sizes)) return sizes.map(String).join(", ");
+  if (sizes == null) return "";
+  return String(sizes);
+}
+
+function normalizeDeclaration(declaration) {
+  const d = declaration && typeof declaration === "object" ? declaration : {};
+  return {
+    text: d.text != null ? String(d.text) : "",
+    textEn: d.textEn != null ? String(d.textEn) : "",
+    showStandardsImage: Boolean(d.showStandardsImage),
+    careIcons: Array.isArray(d.careIcons)
+      ? d.careIcons.map(String).filter(Boolean)
+      : [],
+  };
+}
+
 function normalizeProduct(product) {
   return {
     ...product,
     categories: toIdList(product.categories),
     similarItems: toIdList(product.similarItems),
     bundleItems: toIdList(product.bundleItems),
-    bundle: toIdList(product.bundle),
-    sizes: Array.isArray(product.sizes) ? product.sizes.map(String) : [],
+    sizes: normalizeSizes(product.sizes),
+    declaration: normalizeDeclaration(product.declaration),
     badges: Array.isArray(product.badges) ? product.badges.map(String) : [],
+    nameEn: product.nameEn != null ? String(product.nameEn) : "",
+    subheadingEn: product.subheadingEn != null ? String(product.subheadingEn) : "",
+    descriptionEn:
+      product.descriptionEn != null ? String(product.descriptionEn) : "",
   };
 }
 
@@ -36,7 +57,6 @@ function loadEntries(modules, normalize) {
 
 const catalog = {
   data: loadEntries(productModules, normalizeProduct),
-  blogs: loadEntries(blogModules),
 };
 
 export default catalog;

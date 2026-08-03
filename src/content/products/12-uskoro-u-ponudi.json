@@ -1,12 +1,22 @@
 {
   "id": 12,
   "name": "Uskoro u ponudi",
-  "thumbnail": "/assets/img/set/1.jpg",
+  "thumbnail": "/assets/img/products/set/1.jpg",
   "badges": [],
   "keywords": [],
   "categories": [
     2,
     4
   ],
-  "comingSoon": true
+  "comingSoon": true,
+  "sizes": [],
+  "declaration": {
+    "text": "",
+    "showStandardsImage": false,
+    "careIcons": [],
+    "textEn": ""
+  },
+  "nameEn": "",
+  "subheadingEn": "",
+  "descriptionEn": ""
 }

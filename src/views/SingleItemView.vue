@@ -5,18 +5,19 @@ import VLazyImage from "v-lazy-image";
 import { computed, onMounted, onUnmounted, ref } from "vue";
 import { useI18n } from "@/i18n/useI18n";
 
-const { t } = useI18n();
+const { t, pt } = useI18n();
 const route = useRoute();
 const paramId = parseInt(route.params.id, 10);
 
 const data = ref(sourceData.data.find((d) => d.id === paramId));
 
-const aBundles = [];
-if (data.value?.isPartOfBundle) {
-  data.value.bundle.forEach((id) => {
-    aBundles.push(sourceData.data.find((d) => d.id === id));
-  });
-}
+// Bundles that include this product (derived from each bundle's bundleItems).
+const aBundles = sourceData.data.filter(
+  (p) =>
+    p?.isBundle &&
+    Array.isArray(p.bundleItems) &&
+    p.bundleItems.includes(paramId)
+);
 
 const aItems = [];
 if (data.value?.isBundle) {
@@ -90,10 +91,11 @@ function toggleGallery() {
 
 const share = () => {
   if (!navigator.share) return;
+  const title = pt(data.value, "name");
   navigator
     .share({
-      title: data.value.name,
-      text: data.value.name,
+      title,
+      text: title,
       url: "https://svastaonica.netlify.app" + route.fullPath,
     })
     .catch(() => {
@@ -106,8 +108,8 @@ const share = () => {
   <section id="main-div" class="item-section pt-lg-5 pb-5">
     <div class="container-fluid">
       <div class="row wrapper">
-        <p class="mb-2 menu-title-mobile order-1">{{ data.name }}</p>
-        <p class="sub-title-mobile mb-4 px-3 order-2">{{ data.subheading }}</p>
+        <p class="mb-2 menu-title-mobile order-1">{{ pt(data, "name") }}</p>
+        <p class="sub-title-mobile mb-4 px-3 order-2">{{ pt(data, "subheading") }}</p>
 
         <div class="col col-lg-6 item-info order-4 order-lg-1">
           <div class="left-side mx-4 col col-lg-9 ms-lg-auto me-lg-5">
@@ -115,12 +117,17 @@ const share = () => {
               <p>{{ t("product.soldOut") }}</p>
             </div>
 
-            <p class="menu-title mb-2">{{ data.name }}</p>
-            <p class="sub-title mb-5">{{ data.subheading }}</p>
+            <p class="menu-title mb-2">{{ pt(data, "name") }}</p>
+            <p class="sub-title mb-5">{{ pt(data, "subheading") }}</p>
             <p
               class="item-description text-center"
-              v-html="data.description"
+              v-html="pt(data, 'description')"
             ></p>
+
+            <div class="sizes-div my-5 text-center" v-if="data.sizes">
+              <p class="sizes-label mb-2">{{ t("product.availableSizes") }}:</p>
+              <p class="sizes-text mb-0">{{ data.sizes }}</p>
+            </div>
 
             <div class="keywords-div my-5" v-if="data.keywords.length > 0">
               <div class="row">
@@ -132,7 +139,7 @@ const share = () => {
             </div>
 
             <!-- basic item -->
-            <div class="bundle-section" v-if="data.isPartOfBundle">
+            <div class="bundle-section" v-if="aBundles.length">
               <p class="heading text-center mb-4">
                 {{ t("product.partOfBundle") }}
               </p>
@@ -160,13 +167,13 @@ const share = () => {
                       <div class="mask">
                         <img
                           v-if="item.soldout"
-                          src="/assets/img/sold-out.png"
+                          src="/assets/img/ui/sold-out.png"
                           class="soldout-icon"
                           alt=""
                         />
                         <img
                           v-else
-                          src="/assets/img/share.png"
+                          src="/assets/img/ui/share.png"
                           class="open-icon"
                           alt=""
                         />
@@ -177,7 +184,7 @@ const share = () => {
                     class="mt-3 text-center"
                     v-bind:class="aBundles.length == 1 ? 'onlyone mx-auto' : ''"
                   >
-                    {{ item.name }}
+                    {{ pt(item, "name") }}
                   </p>
                 </div>
               </div>
@@ -198,7 +205,7 @@ const share = () => {
                   <RouterLink :to="'/singleitem/' + item.id">
                     <div
                       class="bundle-card"
-                      v-bind:class="aBundles.length == 1 ? 'onlyone' : ''"
+                      v-bind:class="aItems.length == 1 ? 'onlyone' : ''"
                     >
                       <VLazyImage
                         class="d-block bundle-img"
@@ -210,84 +217,64 @@ const share = () => {
                       <div class="mask">
                         <img
                           v-if="item.soldout"
-                          src="/assets/img/sold-out.png"
+                          src="/assets/img/ui/sold-out.png"
                           class="soldout-icon"
                           alt=""
                         />
                         <img
                           v-else
-                          src="/assets/img/share.png"
+                          src="/assets/img/ui/share.png"
                           class="open-icon"
                           alt=""
                         />
                       </div>
                     </div>
                   </RouterLink>
-                  <p class="mt-3 text-center">{{ item.name }}</p>
+                  <p class="mt-3 text-center">{{ pt(item, "name") }}</p>
                 </div>
               </div>
             </div>
 
             <div
               class="my-5 mx-lg-5 px-3 py-4 declaration"
-              v-if="data.declaration.materials.length > 0"
+              v-if="
+                pt(data.declaration, 'text') ||
+                data.declaration.showStandardsImage ||
+                data.declaration.careIcons.length
+              "
             >
-              <ul class="mt-3">
-                <li
-                  v-for="material in data.declaration.materials"
-                  :key="material.id"
-                >
-                  {{ material }}
-                </li>
-              </ul>
+              <div
+                v-if="pt(data.declaration, 'text')"
+                class="declaration-text mt-3"
+                v-html="pt(data.declaration, 'text')"
+              ></div>
 
               <div
                 class="standards"
-                v-for="standard in data.declaration.standards"
-                :key="standard.id"
+                v-if="data.declaration.showStandardsImage"
               >
-                <img :src="standard.image" alt="" />
+                <img
+                  src="/assets/img/ui/OekoTexStandard100.png"
+                  alt="OEKO-TEX Standard 100"
+                />
               </div>
 
               <div
                 class="declaration-icons mt-4 flex-wrap mx-auto"
-                v-if="data.declaration.icons"
+                v-if="data.declaration.careIcons.length"
               >
                 <div
                   class="img-div"
-                  v-for="icon in data.declaration.icons"
-                  :key="icon.id"
+                  v-for="icon in data.declaration.careIcons"
+                  :key="icon"
                 >
-                  <img v-bind:src="icon.icon" v-bind:alt="icon.text" />
+                  <img
+                    :src="`/assets/img/ui/${icon}.png`"
+                    :alt="icon"
+                  />
                 </div>
               </div>
             </div>
-
-            <!-- <div class="reviews-div">
-              <p class="title">Recenzije</p>
-
-              <div
-                class="my-5 row flex-column"
-                v-for="comment in data.reviews"
-                :key="comment.id"
-              >
-                <div class="col">
-                  <div class="row">
-                    <div class="col image-div">
-                      <img class="w-100" v-bind:src="comment.image" alt="" />
-                    </div>
-                    <p class="name mb-0 ps-0 col d-flex align-items-center">
-                      {{ comment.name }}
-                    </p>
-                  </div>
-                </div>
-                <div class="col">
-                  <p class="review mt-3">
-                    {{ comment.comment }}
-                  </p>
-                </div>
-              </div>
-            </div> -->
           </div>
         </div>
 
@@ -301,7 +288,7 @@ const share = () => {
                 data-bs-slide="prev"
                 @click="updateNumber('prev')"
               >
-                <img src="/assets/img/left-chevron.png" alt="" />
+                <img src="/assets/img/ui/left-chevron.png" alt="" />
                 <span class="visually-hidden">Previous</span>
               </button>
 
@@ -321,7 +308,7 @@ const share = () => {
                     <img
                       class="d-block carousel-main-img"
                       :src="image.path"
-                      :alt="data.name"
+                      :alt="pt(data, 'name')"
                       loading="lazy"
                       decoding="async"
                       @click="openLightbox(image.path)"
@@ -331,13 +318,13 @@ const share = () => {
                       <a
                         class="shareBtn"
                         :href="image.path"
-                        :download="data.name + currentIndex"
+                        :download="pt(data, 'name') + currentIndex"
                       >
-                        <img src="/assets/img/download.png" alt="Preuzmi" />
+                        <img src="/assets/img/ui/download.png" alt="Preuzmi" />
                       </a>
 
                       <a class="shareBtn" @click="share()">
-                        <img src="/assets/img/share3.png" alt="Podijeli" />
+                        <img src="/assets/img/ui/share3.png" alt="Podijeli" />
                       </a>
                     </div>
                   </div>
@@ -351,7 +338,7 @@ const share = () => {
                 data-bs-slide="next"
                 @click="updateNumber('next')"
               >
-                <img src="/assets/img/chevron.png" alt="" />
+                <img src="/assets/img/ui/chevron.png" alt="" />
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
@@ -397,7 +384,7 @@ const share = () => {
           >
             <img
               :src="image.path"
-              :alt="data.name + ' ' + (index + 1)"
+              :alt="pt(data, 'name') + ' ' + (index + 1)"
               loading="lazy"
               decoding="async"
             />
@@ -425,21 +412,54 @@ const share = () => {
             <div class="mask">
               <img
                 v-if="item.soldout"
-                src="/assets/img/sold-out.png"
+                src="/assets/img/ui/sold-out.png"
                 class="soldout-icon"
                 alt=""
               />
               <img
                 v-else
-                src="/assets/img/share.png"
+                src="/assets/img/ui/share.png"
                 class="open-icon"
                 alt=""
               />
             </div>
             <div class="similar-item-name">
-              <p class="ms-3 mb-3">{{ item.name }}</p>
+              <p class="ms-3 mb-3">{{ pt(item, "name") }}</p>
             </div>
           </RouterLink>
+        </div>
+      </div>
+
+      <div
+        class="reviews-div px-4 px-lg-5 my-5"
+        v-if="data.reviews && data.reviews.length"
+      >
+        <p class="title">{{ t("product.reviews") }}</p>
+
+        <div
+          class="review-card my-4"
+          v-for="(comment, index) in data.reviews"
+          :key="index"
+          :class="{ 'no-image': !comment.image }"
+        >
+          <div class="review-media" v-if="comment.image">
+            <button
+              type="button"
+              class="photo-thumb"
+              @click="openLightbox(comment.image)"
+            >
+              <img
+                :src="comment.image"
+                :alt="pt(data, 'name')"
+                loading="lazy"
+                decoding="async"
+              />
+            </button>
+          </div>
+          <div class="review-body">
+            <p class="name mb-2">{{ comment.name }}</p>
+            <p class="review mb-0">{{ pt(comment, "comment") }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -461,23 +481,66 @@ const share = () => {
       >
         ✕
       </button>
-      <img class="lightbox-image" :src="lightboxSrc" :alt="data.name" />
+      <img class="lightbox-image" :src="lightboxSrc" :alt="pt(data, 'name')" />
     </div>
   </Teleport>
 </template>
 
 <style scoped>
-.reviews-div img {
+.reviews-div {
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reviews-div .title {
+  font-size: 31.25px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.reviews-div .review-card {
+  display: grid;
+  grid-template-columns: minmax(120px, 200px) 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  padding: 1rem;
+  background: color-mix(in srgb, var(--color-lavender) 28%, transparent);
+  border-radius: 12px;
+}
+
+.reviews-div .review-card.no-image {
+  grid-template-columns: 1fr;
+}
+
+.reviews-div .review-media {
+  overflow: visible;
+}
+
+.reviews-div .review-media .photo-thumb {
   width: 100%;
-  border-radius: 50%;
+  display: block;
 }
 
 .reviews-div .name {
-  font-size: 25px;
+  font-size: 1.25rem;
   font-weight: 500;
 }
+
 .reviews-div .review {
-  font-size: 20px;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 575.98px) {
+  .reviews-div .review-card {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-div .review-media {
+    max-width: 220px;
+    margin: 0 auto;
+  }
 }
 
 .lightbox {
@@ -526,16 +589,6 @@ const share = () => {
 
 .carousel-main-img {
   cursor: zoom-in;
-}
-
-.reviews-div .title {
-  font-size: 39.06px;
-}
-.reviews-div .name {
-  font-size: 25px;
-}
-.reviews-div .image-div {
-  max-width: 88px;
 }
 
 .similar-items-div {
@@ -753,18 +806,32 @@ const share = () => {
   justify-content: center;
 }
 
-.sizes-div ul {
-  list-style-type: none;
-  display: flex;
-  gap: 15px;
+.sizes-div {
+  padding: 1rem 1.25rem;
+  background: color-mix(in srgb, var(--color-lavender) 35%, transparent);
+  border-radius: 12px;
 }
-.sizes-div ul li {
-  background-color: var(--color-lavender);
-  width: 70px;
-  height: 70px;
-  padding: 1rem;
+
+.sizes-div .sizes-label {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.sizes-div .sizes-text {
+  margin: 0;
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+}
+
+.declaration-text {
+  white-space: pre-line;
   text-align: center;
-  border-radius: 15px;
 }
 
 /* BUNDLES OR ITEMS */
@@ -1022,11 +1089,6 @@ const share = () => {
 
   .declaration-icons {
     max-width: 200px;
-  }
-
-  .reviews-div .title {
-    font-size: 31.25px;
-    text-align: center;
   }
 
   .similar-items-div {

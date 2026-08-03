@@ -1,26 +1,25 @@
 {
-  "bundle": [],
   "subheading": "... koliko trakica je dovoljno trakica!? ...",
   "keywords": [
     {
       "text": "Na akciji",
-      "icon": "/assets/img/badge4.png"
+      "icon": "/assets/img/ui/badge4.png"
     },
     {
       "text": "Ručna izrada",
-      "icon": "/assets/img/sewing.png"
+      "icon": "/assets/img/ui/sewing.png"
     },
     {
       "text": "Očuvanje planete",
-      "icon": "/assets/img/planet-earth.png"
+      "icon": "/assets/img/ui/planet-earth.png"
     },
     {
       "text": "Rađeno s ljubavlju",
-      "icon": "/assets/img/give-love.png"
+      "icon": "/assets/img/ui/give-love.png"
     }
   ],
   "name": "Trakice",
-  "thumbnail": "/assets/img/trake/1.jpg",
+  "thumbnail": "/assets/img/products/trake/1.jpg",
   "isBundle": false,
   "badges": [
     "badge4"
@@ -35,50 +34,49 @@
     4,
     6
   ],
-  "isPartOfBundle": false,
   "images": [
     {
-      "path": "/assets/img/trake/1.jpg",
-      "isActive": false
-    },
-    {
-      "path": "/assets/img/trake/2.jpg",
+      "path": "/assets/img/products/trake/1.jpg",
       "isActive": true
     },
     {
-      "path": "/assets/img/trake/3.jpg"
+      "path": "/assets/img/products/trake/2.jpg"
     },
     {
-      "path": "/assets/img/trake/4.jpg"
+      "path": "/assets/img/products/trake/3.jpg"
     },
     {
-      "path": "/assets/img/trake/5.jpg"
+      "path": "/assets/img/products/trake/4.jpg"
     },
     {
-      "path": "/assets/img/trake/6.jpg"
+      "path": "/assets/img/products/trake/5.jpg"
     },
     {
-      "path": "/assets/img/trake/7.jpg"
+      "path": "/assets/img/products/trake/6.jpg"
+    },
+    {
+      "path": "/assets/img/products/trake/7.jpg"
     }
   ],
   "declaration": {
-    "materials": [
-      "100%poliester",
-      "Uni size do 2g",
-      "Izrada i po mjeri OG"
-    ]
+    "text": "100%poliester\nUni size do 2g\nIzrada i po mjeri OG",
+    "textEn": "",
+    "showStandardsImage": false,
+    "careIcons": []
   },
   "soldout": false,
   "reviews": [
     {
-      "image": "/assets/img/profile_picture.jpg",
+      "image": "",
       "name": "Netko",
-      "comment": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur."
+      "comment": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur.",
+      "commentEn": ""
     },
     {
-      "image": "/assets/img/profile_picture.jpg",
+      "image": "",
       "name": "Netko Nekić",
-      "comment": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore amet dicta harum!"
+      "comment": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore amet dicta harum!",
+      "commentEn": ""
     }
   ],
   "id": 1,
@@ -86,5 +84,8 @@
     3
   ],
   "description": "Raznobojne trake za glavu, pogodne za svaki outfit, koje karakterizira velika trendy mašna.<br><br> Izrađene su od extra rastezljivog materijala, što omogućuje dugotrajno korištenje.<br><br> Široke su i korisne u pokrivanju ušeka u vjetrovitim danima, dok su istovremeno uočljiv modni dodatak.",
-  "bundleItems": []
+  "bundleItems": [],
+  "nameEn": "",
+  "subheadingEn": "",
+  "descriptionEn": ""
 }

@@ -77,9 +77,11 @@ export const messages = {
     product: {
       soldOut: "RASPRODANO",
       comingSoon: "Uskoro u ponudi",
+      availableSizes: "Raspoložive veličine",
       partOfBundle: "Ovaj proizvod je dio našeg promo paketa",
       bundleItems: "Proizvodi koji se nalaze u paketu",
       similar: "Slični proizvodi",
+      reviews: "Recenzije",
       allPhotos: "Sve fotografije",
       hidePhotos: "Sakrij pregled",
       photosCount: "fotografija",
@@ -185,9 +187,11 @@ export const messages = {
     product: {
       soldOut: "SOLD OUT",
       comingSoon: "Coming soon",
+      availableSizes: "Available sizes",
       partOfBundle: "This product is part of our promo bundle",
       bundleItems: "Products included in the bundle",
       similar: "Similar products",
+      reviews: "Reviews",
       allPhotos: "All photos",
       hidePhotos: "Hide gallery",
       photosCount: "photos",

@@ -3,47 +3,47 @@
   "name": "Patikice za nehodače",
   "subheading": "... i prije hodanja je bitno ...",
   "description": "Patikice za nehodače u ponudi su u raznim dezenima, ovisno o stanju, veličine ug 11cm (0-6mj) te po Vašoj želji personalizirane akrilnim imenom.<br><br> Modni dodatak koji bi svatko poželio.<br><br> Poklon koji bi svatko imao.<br><br> A zatim uspomena koju bi svatko volio!",
-  "thumbnail": "/assets/img/shuze/1.jpg",
+  "thumbnail": "/assets/img/products/shuze/1.jpg",
   "images": [
     {
-      "path": "/assets/img/shuze/1.jpg",
+      "path": "/assets/img/products/shuze/1.jpg",
       "isActive": true
     },
     {
-      "path": "/assets/img/shuze/2.jpg"
+      "path": "/assets/img/products/shuze/2.jpg"
     },
     {
-      "path": "/assets/img/shuze/3.jpg"
+      "path": "/assets/img/products/shuze/3.jpg"
     },
     {
-      "path": "/assets/img/shuze/4.jpg"
+      "path": "/assets/img/products/shuze/4.jpg"
     },
     {
-      "path": "/assets/img/shuze/5.jpg"
+      "path": "/assets/img/products/shuze/5.jpg"
     },
     {
-      "path": "/assets/img/shuze/6.jpg"
+      "path": "/assets/img/products/shuze/6.jpg"
     },
     {
-      "path": "/assets/img/shuze/7.jpg"
+      "path": "/assets/img/products/shuze/7.jpg"
     },
     {
-      "path": "/assets/img/shuze/8.jpg"
+      "path": "/assets/img/products/shuze/8.jpg"
     },
     {
-      "path": "/assets/img/shuze/9.jpg"
+      "path": "/assets/img/products/shuze/9.jpg"
     },
     {
-      "path": "/assets/img/shuze/10.jpg"
+      "path": "/assets/img/products/shuze/10.jpg"
     },
     {
-      "path": "/assets/img/shuze/11.jpg"
+      "path": "/assets/img/products/shuze/11.jpg"
     },
     {
-      "path": "/assets/img/shuze/12.jpg"
+      "path": "/assets/img/products/shuze/12.jpg"
     },
     {
-      "path": "/assets/img/shuze/13.jpg"
+      "path": "/assets/img/products/shuze/13.jpg"
     }
   ],
   "sizes": [
@@ -51,21 +51,23 @@
     "XL"
   ],
   "declaration": {
-    "materials": [
-      "Veličina 11 cm (0-6mj)",
-      "Razni dezeni"
-    ]
+    "text": "Veličina 11 cm (0-6mj)\nRazni dezeni",
+    "showStandardsImage": false,
+    "careIcons": [],
+    "textEn": ""
   },
   "reviews": [
     {
-      "image": "/assets/img/profile_picture.jpg",
+      "image": "",
       "name": "Netko",
-      "comment": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur."
+      "comment": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur.",
+      "commentEn": ""
     },
     {
-      "image": "/assets/img/profile_picture.jpg",
+      "image": "",
       "name": "Netko Nekić",
-      "comment": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore amet dicta harum!"
+      "comment": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore amet dicta harum!",
+      "commentEn": ""
     }
   ],
   "similarItems": [
@@ -84,23 +86,24 @@
   "keywords": [
     {
       "text": "U trendu",
-      "icon": "/assets/img/badge2.png"
+      "icon": "/assets/img/ui/badge2.png"
     },
     {
       "text": "Ručna izrada",
-      "icon": "/assets/img/sewing.png"
+      "icon": "/assets/img/ui/sewing.png"
     },
     {
       "text": "Izvrsno kao poklon",
-      "icon": "/assets/img/gift.png"
+      "icon": "/assets/img/ui/gift.png"
     },
     {
       "text": "Siguran za vaše dijete",
-      "icon": "/assets/img/badge6.png"
+      "icon": "/assets/img/ui/badge6.png"
     }
   ],
   "isBundle": false,
   "bundleItems": [],
-  "isPartOfBundle": false,
-  "bundle": []
+  "nameEn": "",
+  "subheadingEn": "",
+  "descriptionEn": ""
 }

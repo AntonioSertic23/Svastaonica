@@ -3,101 +3,101 @@
   "name": "Kugle",
   "subheading": "... kuglica osvjetljava drvce čarobnom svjetlošću Božića ...",
   "description": "Personalizirane božićne kugle, idealan poklon za blagadane koji će unijeti dašak topline na svako božićno drvce.",
-  "thumbnail": "/assets/img/kugle/1.jpg",
+  "thumbnail": "/assets/img/products/kugle/1.jpg",
   "images": [
     {
-      "path": "/assets/img/kugle/1.jpg",
+      "path": "/assets/img/products/kugle/1.jpg",
       "isActive": true
     },
     {
-      "path": "/assets/img/kugle/2.jpg"
+      "path": "/assets/img/products/kugle/2.jpg"
     },
     {
-      "path": "/assets/img/kugle/3.jpg"
+      "path": "/assets/img/products/kugle/3.jpg"
     },
     {
-      "path": "/assets/img/kugle/4.jpg"
+      "path": "/assets/img/products/kugle/4.jpg"
     },
     {
-      "path": "/assets/img/kugle/5.jpg"
+      "path": "/assets/img/products/kugle/5.jpg"
     },
     {
-      "path": "/assets/img/kugle/6.jpg"
+      "path": "/assets/img/products/kugle/6.jpg"
     },
     {
-      "path": "/assets/img/kugle/7.jpg"
+      "path": "/assets/img/products/kugle/7.jpg"
     },
     {
-      "path": "/assets/img/kugle/8.jpg"
+      "path": "/assets/img/products/kugle/8.jpg"
     },
     {
-      "path": "/assets/img/kugle/9.jpg"
+      "path": "/assets/img/products/kugle/9.jpg"
     },
     {
-      "path": "/assets/img/kugle/10.jpg"
+      "path": "/assets/img/products/kugle/10.jpg"
     },
     {
-      "path": "/assets/img/kugle/11.jpg"
+      "path": "/assets/img/products/kugle/11.jpg"
     },
     {
-      "path": "/assets/img/kugle/12.jpg"
+      "path": "/assets/img/products/kugle/12.jpg"
     },
     {
-      "path": "/assets/img/kugle/13.jpg"
+      "path": "/assets/img/products/kugle/13.jpg"
     },
     {
-      "path": "/assets/img/kugle/14.jpg"
+      "path": "/assets/img/products/kugle/14.jpg"
     },
     {
-      "path": "/assets/img/kugle/15.jpg"
+      "path": "/assets/img/products/kugle/15.jpg"
     },
     {
-      "path": "/assets/img/kugle/16.jpg"
+      "path": "/assets/img/products/kugle/16.jpg"
     },
     {
-      "path": "/assets/img/kugle/17.jpg"
+      "path": "/assets/img/products/kugle/17.jpg"
     },
     {
-      "path": "/assets/img/kugle/18.jpg"
+      "path": "/assets/img/products/kugle/18.jpg"
     },
     {
-      "path": "/assets/img/kugle/19.jpg"
+      "path": "/assets/img/products/kugle/19.jpg"
     },
     {
-      "path": "/assets/img/kugle/20.jpg"
+      "path": "/assets/img/products/kugle/20.jpg"
     },
     {
-      "path": "/assets/img/kugle/21.jpg"
+      "path": "/assets/img/products/kugle/21.jpg"
     },
     {
-      "path": "/assets/img/kugle/22.jpg"
+      "path": "/assets/img/products/kugle/22.jpg"
     },
     {
-      "path": "/assets/img/kugle/23.jpg"
+      "path": "/assets/img/products/kugle/23.jpg"
     },
     {
-      "path": "/assets/img/kugle/24.jpg"
+      "path": "/assets/img/products/kugle/24.jpg"
     },
     {
-      "path": "/assets/img/kugle/25.jpg"
+      "path": "/assets/img/products/kugle/25.jpg"
     },
     {
-      "path": "/assets/img/kugle/26.jpg"
+      "path": "/assets/img/products/kugle/26.jpg"
     },
     {
-      "path": "/assets/img/kugle/27.jpg"
+      "path": "/assets/img/products/kugle/27.jpg"
     },
     {
-      "path": "/assets/img/kugle/28.jpg"
+      "path": "/assets/img/products/kugle/28.jpg"
     },
     {
-      "path": "/assets/img/kugle/29.jpg"
+      "path": "/assets/img/products/kugle/29.jpg"
     },
     {
-      "path": "/assets/img/kugle/30.jpg"
+      "path": "/assets/img/products/kugle/30.jpg"
     },
     {
-      "path": "/assets/img/kugle/31.jpg"
+      "path": "/assets/img/products/kugle/31.jpg"
     }
   ],
   "sizes": [
@@ -106,21 +106,23 @@
     "XL"
   ],
   "declaration": {
-    "materials": [
-      "100% akril",
-      "o fi 8cm"
-    ]
+    "text": "100% akril\no fi 8cm",
+    "showStandardsImage": false,
+    "careIcons": [],
+    "textEn": ""
   },
   "reviews": [
     {
-      "image": "/assets/img/profile_picture.jpg",
+      "image": "",
       "name": "Netko",
-      "comment": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur."
+      "comment": "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur.",
+      "commentEn": ""
     },
     {
-      "image": "/assets/img/profile_picture.jpg",
+      "image": "",
       "name": "Netko Nekić",
-      "comment": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore amet dicta harum!"
+      "comment": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore amet dicta harum!",
+      "commentEn": ""
     }
   ],
   "similarItems": [],
@@ -130,6 +132,7 @@
   "keywords": [],
   "isBundle": false,
   "bundleItems": [],
-  "isPartOfBundle": false,
-  "bundle": []
+  "nameEn": "",
+  "subheadingEn": "",
+  "descriptionEn": ""
 }

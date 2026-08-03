@@ -5,7 +5,7 @@ import VLazyImage from "v-lazy-image";
 import { ref } from "vue";
 import { useI18n } from "@/i18n/useI18n";
 
-const { t } = useI18n();
+const { t, pt } = useI18n();
 var data = ref(sourceData.data.slice(0, 5));
 </script>
 
@@ -17,10 +17,10 @@ var data = ref(sourceData.data.slice(0, 5));
           <div class="item-big">
             <VLazyImage class="product-image" v-bind:src="data[0].thumbnail" />
             <div class="mask">
-              <img src="/assets/img/share.png" alt="" />
+              <img src="/assets/img/ui/share.png" alt="" />
             </div>
             <div class="product-name">
-              <p class="ms-3 mb-3">{{ data[0].name }}</p>
+              <p class="ms-3 mb-3">{{ pt(data[0], "name") }}</p>
             </div>
           </div>
         </RouterLink>
@@ -36,10 +36,10 @@ var data = ref(sourceData.data.slice(0, 5));
                   v-bind:src="data[1].thumbnail"
                 />
                 <div class="mask">
-                  <img src="/assets/img/share.png" alt="" />
+                  <img src="/assets/img/ui/share.png" alt="" />
                 </div>
                 <div class="product-name">
-                  <p class="ms-3 mb-3">{{ data[1].name }}</p>
+                  <p class="ms-3 mb-3">{{ pt(data[1], "name") }}</p>
                 </div>
               </div>
             </RouterLink>
@@ -53,10 +53,10 @@ var data = ref(sourceData.data.slice(0, 5));
                   v-bind:src="data[2].thumbnail"
                 />
                 <div class="mask">
-                  <img src="/assets/img/share.png" alt="" />
+                  <img src="/assets/img/ui/share.png" alt="" />
                 </div>
                 <div class="product-name">
-                  <p class="ms-3 mb-3">{{ data[2].name }}</p>
+                  <p class="ms-3 mb-3">{{ pt(data[2], "name") }}</p>
                 </div>
               </div>
             </RouterLink>
@@ -72,10 +72,10 @@ var data = ref(sourceData.data.slice(0, 5));
                   v-bind:src="data[3].thumbnail"
                 />
                 <div class="mask">
-                  <img src="/assets/img/share.png" alt="" />
+                  <img src="/assets/img/ui/share.png" alt="" />
                 </div>
                 <div class="product-name">
-                  <p class="ms-3 mb-3">{{ data[3].name }}</p>
+                  <p class="ms-3 mb-3">{{ pt(data[3], "name") }}</p>
                 </div>
               </div>
             </RouterLink>
@@ -89,10 +89,10 @@ var data = ref(sourceData.data.slice(0, 5));
                   v-bind:src="data[4].thumbnail"
                 />
                 <div class="mask">
-                  <img src="/assets/img/share.png" alt="" />
+                  <img src="/assets/img/ui/share.png" alt="" />
                 </div>
                 <div class="product-name">
-                  <p class="ms-3 mb-3">{{ data[4].name }}</p>
+                  <p class="ms-3 mb-3">{{ pt(data[4], "name") }}</p>
                 </div>
               </div>
             </RouterLink>

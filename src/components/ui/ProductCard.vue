@@ -7,7 +7,7 @@ const props = defineProps({
   cardData: Object,
 });
 
-const { t } = useI18n();
+const { t, pt } = useI18n();
 const item = props.cardData;
 </script>
 
@@ -16,7 +16,7 @@ const item = props.cardData;
     <div class="image-div" v-if="item.badges.length == 1">
       <div class="image-div-background oneBadge"></div>
       <VLazyImage
-        v-bind:src="'/assets/img/' + item.badges[0] + '.png'"
+        v-bind:src="'/assets/img/ui/' + item.badges[0] + '.png'"
         v-bind:class="[item.soldout ? 'soldout-img' : '']"
       />
     </div>
@@ -24,11 +24,11 @@ const item = props.cardData;
     <div class="multi-image-div" v-if="item.badges.length > 1">
       <div class="image-div-background moreBadges gap-3">
         <VLazyImage
-          v-bind:src="'/assets/img/' + item.badges[0] + '.png'"
+          v-bind:src="'/assets/img/ui/' + item.badges[0] + '.png'"
           v-bind:class="[item.soldout ? 'soldout-img' : '']"
         />
         <VLazyImage
-          v-bind:src="'/assets/img/' + item.badges[1] + '.png'"
+          v-bind:src="'/assets/img/ui/' + item.badges[1] + '.png'"
           v-bind:class="[item.soldout ? 'soldout-img' : '']"
         />
       </div>
@@ -44,7 +44,7 @@ const item = props.cardData;
 
         <div class="mask">
           <p v-if="item.soldout">{{ t("product.soldOut") }}</p>
-          <img v-else src="/assets/img/share.png" class="open-icon" alt="" />
+          <img v-else src="/assets/img/ui/share.png" class="open-icon" alt="" />
         </div>
       </div>
     </RouterLink>
@@ -62,7 +62,7 @@ const item = props.cardData;
     </div>
 
     <h1 v-bind:style="[item.soldout || item.comingSoon ? 'opacity: 0.5' : '']">
-      {{ item.name }}
+      {{ pt(item, "name") }}
     </h1>
   </div>
 </template>
