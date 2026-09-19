@@ -29,3 +29,8 @@ coverage
 
 # Local product snapshots (npm run backup:products)
 backups/
+
+# Generated price-list files (created at build / npm run cjenik)
+public/cjenici/*.csv
+public/cjenici/files.json
+public/cjenici/index.html

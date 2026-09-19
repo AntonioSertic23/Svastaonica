@@ -4,6 +4,7 @@ import { useRoute, RouterLink } from "vue-router";
 import VLazyImage from "v-lazy-image";
 import { computed, onMounted, onUnmounted, ref } from "vue";
 import { useI18n } from "@/i18n/useI18n";
+import ProductPrice from "@/components/ui/ProductPrice.vue";
 
 const { t, pt } = useI18n();
 const route = useRoute();
@@ -109,7 +110,10 @@ const share = () => {
     <div class="container-fluid">
       <div class="row wrapper">
         <p class="mb-2 menu-title-mobile order-1">{{ pt(data, "name") }}</p>
-        <p class="sub-title-mobile mb-4 px-3 order-2">{{ pt(data, "subheading") }}</p>
+        <p class="sub-title-mobile mb-2 px-3 order-2">{{ pt(data, "subheading") }}</p>
+        <div class="d-lg-none order-2 px-3 mb-4">
+          <ProductPrice :product="data" />
+        </div>
 
         <div class="col col-lg-6 item-info order-4 order-lg-1">
           <div class="left-side mx-4 col col-lg-9 ms-lg-auto me-lg-5">
@@ -119,6 +123,9 @@ const share = () => {
 
             <p class="menu-title mb-2">{{ pt(data, "name") }}</p>
             <p class="sub-title mb-5">{{ pt(data, "subheading") }}</p>
+            <div class="d-none d-lg-block mb-5">
+              <ProductPrice :product="data" />
+            </div>
             <p
               class="item-description text-center"
               v-html="pt(data, 'description')"

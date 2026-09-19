@@ -39,6 +39,12 @@ function closeNavbar() {
         to="/contact"
         >{{ t("nav.contact") }}</RouterLink
       >
+      <RouterLink
+        class="nav-link site-link"
+        @click="closeNavbar()"
+        to="/cjenik"
+        >{{ t("nav.cjenik") }}</RouterLink
+      >
     </nav>
 
     <div class="mobile-footer">

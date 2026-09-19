@@ -7,9 +7,10 @@
     "preview": "vite preview --port 4173",
     "cms": "npx --yes decap-server",
     "cms:index": "node scripts/generate-cms-product-index.mjs",
+    "cjenik": "node scripts/generate-cjenik.mjs",
     "backup:products": "node scripts/backup-products.mjs",
     "dev:cms": "npm run cms:index && npx --yes concurrently -k -n web,cms -c magenta,cyan \"npm run dev\" \"npm run cms\"",
-    "prebuild": "npm run cms:index"
+    "prebuild": "npm run cms:index && npm run cjenik"
   },
   "dependencies": {
     "v-lazy-image": "^2.1.1",

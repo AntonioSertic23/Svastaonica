@@ -85,6 +85,9 @@ function closeMobileNavbar() {
             <RouterLink class="nav-link site-link" to="/contact">{{
               t("nav.contact")
             }}</RouterLink>
+            <RouterLink class="nav-link site-link" to="/cjenik">{{
+              t("nav.cjenik")
+            }}</RouterLink>
           </div>
           <div class="navbar-end">
             <LanguageSwitcher />
@@ -208,7 +211,7 @@ function closeMobileNavbar() {
   }
 
   .nav-link {
-    font-size: 1.45rem !important;
+    font-size: 1.3rem !important;
   }
 }
 

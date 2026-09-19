@@ -2,6 +2,7 @@ import { fileURLToPath, URL } from "node:url";
 
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
+import { generateCjenik } from "./scripts/generate-cjenik.mjs";
 
 /** Serve Decap CMS from /public/admin instead of the Vue SPA. */
 function adminStaticPlugin() {
@@ -27,9 +28,42 @@ function adminStaticPlugin() {
   };
 }
 
+function cjenikPlugin() {
+  const regenerate = () => {
+    try {
+      generateCjenik();
+    } catch (err) {
+      console.error("[cjenik]", err);
+    }
+  };
+
+  return {
+    name: "generate-cjenik",
+    buildStart() {
+      regenerate();
+    },
+    configureServer(server) {
+      regenerate();
+      server.middlewares.use((req, res, next) => {
+        const url = req.url?.split("?")[0] ?? "";
+        if (url === "/cjenici" || url === "/cjenici/") {
+          req.url = "/cjenici/index.html";
+        }
+        next();
+      });
+      server.watcher.add("src/content/products");
+      server.watcher.on("change", (file) => {
+        if (file.includes("content/products") && file.endsWith(".json")) {
+          regenerate();
+        }
+      });
+    },
+  };
+}
+
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [adminStaticPlugin(), vue()],
+  plugins: [adminStaticPlugin(), cjenikPlugin(), vue()],
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),

@@ -33,6 +33,12 @@ function normalizeDeclaration(declaration) {
   };
 }
 
+function optionalMoney(value) {
+  if (value === "" || value == null) return null;
+  const n = Number(value);
+  return Number.isFinite(n) ? n : null;
+}
+
 function normalizeProduct(product) {
   return {
     ...product,
@@ -46,6 +52,9 @@ function normalizeProduct(product) {
     subheadingEn: product.subheadingEn != null ? String(product.subheadingEn) : "",
     descriptionEn:
       product.descriptionEn != null ? String(product.descriptionEn) : "",
+    price: optionalMoney(product.price),
+    sidrenaCijena: optionalMoney(product.sidrenaCijena),
+    najnizaCijena30dana: optionalMoney(product.najnizaCijena30dana),
   };
 }
 

@@ -1,0 +1,31 @@
+# Publishes a fresh CSV price list every working day before 08:00 Europe/Zagreb,
+# even when prices have not changed (NN 101/2026 — products).
+#
+# Setup (once):
+# 1. Netlify → Site configuration → Build & deploy → Build hooks
+#    → Add build hook, e.g. "Daily cjenik"
+# 2. GitHub repo → Settings → Secrets and variables → Actions
+#    → New repository secret NETLIFY_BUILD_HOOK = the hook URL
+
+name: Daily cjenik rebuild
+
+on:
+  schedule:
+    # 05:00 UTC = 07:00 CEST / 06:00 CET (always before 08:00 in Zagreb)
+    - cron: "0 5 * * 1-5"
+  workflow_dispatch:
+
+jobs:
+  trigger-netlify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Netlify production build
+        env:
+          HOOK: ${{ secrets.NETLIFY_BUILD_HOOK }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "Missing secret NETLIFY_BUILD_HOOK. Add the Netlify build hook URL in GitHub Actions secrets."
+            exit 1
+          fi
+          curl -fsS -X POST "$HOOK"
+          echo "Netlify build hook triggered."

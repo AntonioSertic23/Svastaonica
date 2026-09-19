@@ -1,43 +1,76 @@
 # Svaštaonica
 
-## Website for Svaštaonica
+Website for **Svaštaonica** — handmade baby gifts. Vue 3 SPA (Composition API) + Bootstrap 5, hosted on Netlify.
 
-The Svaštaonica website is a small passion-driven project through which I expanded my knowledge of Vue.js and wanted to showcase my creativity. It was also created for the client's needs to showcase all their products in one place.
-
-The website was built as a **Single Page Application**, using the latest **Vue.js 3** with the **Composition API** and **Bootstrap 5.0.2** for design.
-
-[![My Skills](https://skillicons.dev/icons?i=vue,js,bootstrap,netlify)](https://skillicons.dev)
-
-The website design follows modern web design principles, such as font scaling, spacing between elements and texts, and various other aspects. It contains several interactive _hover_ effects that are not overly intrusive.
-
-The website is responsive and adapted for both desktop and mobile devices.
-
-The appearance resembles a personal web store with a touch of creativity and something new.
-
-The website is hosted on **Netlify** and can be visited [through this link](https://svastaonica.netlify.app/).
+Live site: [https://svastaonica.netlify.app/](https://svastaonica.netlify.app/)
 
 ---
 
-### The website includes sections for:
+## Update products (CMS)
 
-- Short messages related to children and toys.
-- Featured and/or best-selling products.
-- Order process.
-- Gallery with all products and sorting options.
-- Individual products with descriptions, images, related products, and specifications.
-- "About us" section with a story about its origin and growth.
-- All contact information.
+Production (GitHub login):
+
+**[https://svastaonica.netlify.app/admin/](https://svastaonica.netlify.app/admin/)**
+
+Trailing slash matters. Open **Proizvodi**, pick an item, edit, then **Publish / Save**. That commits to GitHub and Netlify rebuilds.
+
+On each product you can set:
+
+- **Maloprodajna cijena**, **sidrena/dodatna cijena**, **najniža cijena u 30 dana** — empty fields are not shown on the site
+- **Akcija** — bedž *Akcija*
+- **Rasprodano** — availability
+
+Local editor: `npm run dev:cms` then [http://localhost:5173/admin/](http://localhost:5173/admin/)
+
+More detail (OAuth, backups): [`public/admin/README.md`](public/admin/README.md)
 
 ---
 
-### Project Setup
+## What’s on the site
 
-To start the project, open it in Visual Studio Code and in the terminal, run the following commands:
+- Home: welcome, featured products, order process
+- Gallery with search and grouping
+- Product pages (gallery, sizes, related items, reviews)
+- About, contact
+- HR / EN
+- **Cjenik** (`/cjenik`) — machine-readable CSV for the price-list decision (NN 101/2026). A CSV is generated at **build time** only after at least one product has a retail price. Files stay public for 30 days.
+
+### Daily rebuild (working days before 08:00 Zagreb)
+
+GitHub Action `.github/workflows/daily-cjenik.yml` triggers a Netlify production build Mon–Fri at 05:00 UTC (07:00 in summer / 06:00 in winter).
+
+One-time setup:
+
+1. Netlify → **Site configuration → Build & deploy → Build hooks** → **Add build hook** (name e.g. `Daily cjenik`)
+2. Copy the hook URL
+3. GitHub repo → **Settings → Secrets and variables → Actions** → secret `NETLIFY_BUILD_HOOK`
+
+You can also run it by hand: GitHub → **Actions → Daily cjenik rebuild → Run workflow**. A CMS save still rebuilds immediately.
+
+---
+
+## Local setup
 
 ```sh
 npm install
-```
-
-```sh
 npm run dev
 ```
+
+App: [http://localhost:5173/](http://localhost:5173/)
+
+CMS + app together:
+
+```sh
+npm run dev:cms
+```
+
+Useful scripts:
+
+| Command | What it does |
+|---|---|
+| `npm run dev` | Vite dev server |
+| `npm run dev:cms` | Site + Decap local backend |
+| `npm run build` | Production build (also regenerates CMS index + cjenik CSV) |
+| `npm run backup:products` | Snapshot `src/content/products/` |
+
+Products live in `src/content/products/`. The catalog is assembled in `src/catalog.js`.

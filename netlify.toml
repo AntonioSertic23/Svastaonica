@@ -8,8 +8,19 @@
   to = "/admin/"
   status = 301
 
+[[redirects]]
+  from = "/cjenici"
+  to = "/cjenici/"
+  status = 301
+
 # Vue Router SPA fallback (existing files like /admin/config.yml win first)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+[[headers]]
+  for = "/cjenici/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=300"

@@ -11,7 +11,7 @@ const { t } = useI18n();
       <div class="container d-flex flex-column">
         <section>
           <div
-            class="row row-cols-1 row-cols-lg-4 justify-content-center g-3 mt-4 col-lg-8 mx-auto"
+            class="row row-cols-1 row-cols-lg-5 justify-content-center g-3 mt-4 col-lg-10 mx-auto"
           >
             <div class="">
               <h6 class="text-uppercase">
@@ -41,6 +41,14 @@ const { t } = useI18n();
               <h6 class="text-uppercase">
                 <RouterLink class="nav-link site-link" to="/contact">{{
                   t("nav.contact")
+                }}</RouterLink>
+              </h6>
+            </div>
+
+            <div class="">
+              <h6 class="text-uppercase">
+                <RouterLink class="nav-link site-link" to="/cjenik">{{
+                  t("nav.cjenik")
                 }}</RouterLink>
               </h6>
             </div>

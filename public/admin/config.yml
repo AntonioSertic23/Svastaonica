@@ -76,6 +76,31 @@ collections:
         hint: >-
           Engleski opis (HTML kao i gore). Prazno = prikaži hrvatski opis.
 
+      - label: Maloprodajna cijena (€)
+        name: price
+        widget: number
+        value_type: float
+        required: false
+        hint: >-
+          Aktualna cijena s PDV-om. Ako ostane prazno, cijena se ne prikazuje
+          na webu niti u CSV cjeniku.
+
+      - label: Sidrena / dodatna cijena (€)
+        name: sidrenaCijena
+        widget: number
+        value_type: float
+        required: false
+        hint: Cijena koja je vrijedila 10. 9. 2026. (bez akcija). Prazno = ne prikazuje se.
+
+      - label: Najniža cijena u zadnjih 30 dana (€)
+        name: najnizaCijena30dana
+        widget: number
+        value_type: float
+        required: false
+        hint: >-
+          Treća cijena (zaštita potrošača kod akcija). Prazno = ne prikazuje se.
+          Upisuje se kad se bude trebalo.
+
       - label: Thumbnail
         name: thumbnail
         widget: image
@@ -159,7 +184,9 @@ collections:
         name: badges
         widget: icon-multiselect
         required: false
-        hint: Klikni bedževe koji se prikazuju na kartici proizvoda.
+        hint: >-
+          Klikni bedževe na kartici proizvoda. Bedž "Akcija" označava da je
+          proizvod na akciji (i u cjeniku).
         options:
           - { label: "Novo u ponudi", value: badge1 }
           - { label: "U trendu", value: badge2 }
@@ -173,6 +200,7 @@ collections:
         widget: boolean
         default: false
         required: false
+        hint: Uključi ako proizvod trenutno nije dostupan. U cjeniku piše "nedostupno".
 
       - label: Uskoro
         name: comingSoon

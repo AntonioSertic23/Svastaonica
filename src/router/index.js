@@ -25,6 +25,11 @@ const router = createRouter({
       component: () => import("../views/ContactView.vue"),
     },
     {
+      path: "/cjenik",
+      name: "cjenik",
+      component: () => import("../views/CjenikView.vue"),
+    },
+    {
       path: "/singleitem/:id",
       name: "singleitem",
       component: () => import("../views/SingleItemView.vue"),
