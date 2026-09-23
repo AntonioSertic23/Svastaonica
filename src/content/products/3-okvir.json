@@ -1,9 +1,39 @@
 {
-  "id": 3,
-  "name": "Okvir",
   "subheading": "... savršeni način za sačuvati uspomenu na Vama važan događaj ...",
-  "description": "Trebate li poklon za uspomenu na rođenje, mjesto za čuvanje narukvica iz rodilišta, uspomenu na svete sakramente ili razne prigode<br><span class='important'> – Okvir je pravi izbor za Vas!</span><br><br> Okvir je bijele boje, može stajati samostalno ili na zidu, a <span class='important'>izrada je po primjerku ili u potpunosti po Vašoj želji.</span>",
+  "descriptionEn": "",
+  "sidrenaCijena": 23,
+  "price": 25,
+  "keywords": [
+    {
+      "text": "Preporuka kupaca",
+      "icon": "/assets/img/ui/badge3.png"
+    },
+    {
+      "text": "Ručna izrada",
+      "icon": "/assets/img/ui/sewing.png"
+    },
+    {
+      "text": "Izvrsno kao poklon",
+      "icon": "/assets/img/ui/gift.png"
+    }
+  ],
+  "subheadingEn": "",
+  "name": "Okvir",
   "thumbnail": "/assets/img/products/okviri/10.jpg",
+  "isBundle": false,
+  "badges": [
+    "badge3"
+  ],
+  "sizes": [
+    "L"
+  ],
+  "nameEn": "",
+  "similarItems": [
+    9,
+    8,
+    6,
+    5
+  ],
   "images": [
     {
       "path": "/assets/img/products/okviri/10.jpg",
@@ -244,44 +274,16 @@
       "path": "/assets/img/products/okviri/79.jpg"
     }
   ],
-  "sizes": [
-    "L"
-  ],
   "declaration": {
     "text": "90% drvo\n10% staklo\n26x26x4cm",
     "showStandardsImage": false,
     "careIcons": [],
     "textEn": ""
   },
-  "reviews": [],
-  "similarItems": [
-    9,
-    8,
-    6,
-    5
-  ],
-  "badges": [
-    "badge3"
-  ],
   "soldout": false,
+  "reviews": [],
+  "id": 3,
   "categories": [],
-  "keywords": [
-    {
-      "text": "Preporuka kupaca",
-      "icon": "/assets/img/ui/badge3.png"
-    },
-    {
-      "text": "Ručna izrada",
-      "icon": "/assets/img/ui/sewing.png"
-    },
-    {
-      "text": "Izvrsno kao poklon",
-      "icon": "/assets/img/ui/gift.png"
-    }
-  ],
-  "isBundle": false,
-  "bundleItems": [],
-  "nameEn": "",
-  "subheadingEn": "",
-  "descriptionEn": ""
+  "description": "Trebate li poklon za uspomenu na rođenje, mjesto za čuvanje narukvica iz rodilišta, uspomenu na svete sakramente ili razne prigode<br><span class='important'> – Okvir je pravi izbor za Vas!</span><br><br> Okvir je bijele boje, može stajati samostalno ili na zidu, a <span class='important'>izrada je po primjerku ili u potpunosti po Vašoj želji.</span>",
+  "bundleItems": []
 }
