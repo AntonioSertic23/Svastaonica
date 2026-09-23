@@ -1,9 +1,40 @@
 {
-  "id": 9,
-  "name": "Didaktička Kocka",
-  "subheading": "... dizajnirano kao poklon, stvoreno kao uspomena ...",
-  "description": "Personalizirane zveckave kocke, posebno su dizajnirane u veselim bojama i šarenim uzorcima kako bi odmah privukle pozornost bebinih okica! <br><br> Ispunjene su mekim punjenjem, zveckavcem u sredini, šuškavom stranicom i mnoštvom etiketa i trakica koje pospješuju razvoj fine motorike, ponajprije hvatanja, prepoznavanja boja, vježbe sluha kroz igru, ravnoteže te pokretanje cijelog lokomotornog sustava.<br><br> Kvaliteta tkanina i izrada preduvjet su ovako kvalitetnog i dugotrajnog proizvoda. <br><br> <span class='important'>Svaku kocku možete sami dizajnirati, samostalnim odabirom tkanina iz ponude, boja, dezena, imena.</span>",
+  "subheading": "Izrađeno za igru, stvoreno za učenje, čuvano za uspomenu.<br><br>Jedna kocka, bezbroj otkrića.<br><br>Razvija motoriku, potiče maštu.",
+  "descriptionEn": "",
+  "sidrenaCijena": 12,
+  "price": 12,
+  "keywords": [
+    {
+      "text": "Najprodavaniji proizvod",
+      "icon": "/assets/img/ui/medal1.png"
+    },
+    {
+      "text": "Ručna izrada",
+      "icon": "/assets/img/ui/sewing.png"
+    },
+    {
+      "text": "100% zabavno",
+      "icon": "/assets/img/ui/playtime.png"
+    }
+  ],
+  "subheadingEn": "",
+  "name": "Kocka",
   "thumbnail": "/assets/img/products/kocke/1.jpg",
+  "isBundle": false,
+  "badges": [
+    "bow",
+    "badge3",
+    "badge6",
+    "badge2"
+  ],
+  "sizes": null,
+  "nameEn": "cca 10 cm",
+  "similarItems": [
+    6,
+    5,
+    3,
+    2
+  ],
   "images": [
     {
       "path": "/assets/img/products/kocke/1.jpg",
@@ -121,13 +152,8 @@
       "path": "/assets/img/products/kocke/38.jpg"
     }
   ],
-  "sizes": [
-    "S",
-    "L",
-    "XL"
-  ],
   "declaration": {
-    "text": "90% Pamuk\n10% Poliester\n10x10x10 cm",
+    "text": "90% Pamuk\n10% Poliester\n\ncca10x10x10 cm",
     "showStandardsImage": true,
     "careIcons": [
       "tc-wash-one",
@@ -138,37 +164,12 @@
     ],
     "textEn": ""
   },
-  "reviews": [],
-  "similarItems": [
-    6,
-    5,
-    3,
-    2
-  ],
-  "badges": [
-    "bow"
-  ],
   "soldout": false,
+  "reviews": [],
+  "id": 9,
   "categories": [
     1
   ],
-  "keywords": [
-    {
-      "text": "Najprodavaniji proizvod",
-      "icon": "/assets/img/ui/medal1.png"
-    },
-    {
-      "text": "Ručna izrada",
-      "icon": "/assets/img/ui/sewing.png"
-    },
-    {
-      "text": "100% zabavno",
-      "icon": "/assets/img/ui/playtime.png"
-    }
-  ],
-  "isBundle": false,
-  "bundleItems": [],
-  "nameEn": "",
-  "subheadingEn": "",
-  "descriptionEn": ""
+  "description": "Personalizirane zveckave kocke, posebno su dizajnirane u veselim bojama i šarenim uzorcima kako bi odmah privukle pozornost bebinih okica! <br><br> Ispunjene su mekim punjenjem, zveckavcem u sredini, šuškavom stranicom i mnoštvom etiketa i trakica koje pospješuju razvoj fine motorike, ponajprije hvatanja, prepoznavanja boja, vježbe sluha kroz igru, ravnoteže te pokretanje cijelog lokomotornog sustava.<br><br> Kvaliteta tkanina i izrada preduvjet su ovako kvalitetnog i dugotrajnog proizvoda. ",
+  "bundleItems": []
 }
