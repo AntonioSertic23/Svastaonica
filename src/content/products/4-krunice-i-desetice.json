@@ -1,9 +1,33 @@
 {
-  "id": 4,
-  "name": "Krunice i desetice",
   "subheading": "... zapovijediti ću anđelima da idu pred tobom ...",
-  "description": "Sakralni poklončić za uspomenu na sakrament Krštenja, Prve pričesti, Svete potvrde, sklapanja braka ili za osobne potrebe molitve.<br><br><span class='important'> Boje, oblici i imena po Vašem izboru.</span>",
+  "descriptionEn": "",
+  "sidrenaCijena": 6,
+  "price": 6,
+  "keywords": [
+    {
+      "text": "Ručna izrada",
+      "icon": "/assets/img/ui/sewing.png"
+    },
+    {
+      "text": "Rađeno s ljubavlju",
+      "icon": "/assets/img/ui/give-love.png"
+    }
+  ],
+  "subheadingEn": "",
+  "name": "Krunice i desetice",
   "thumbnail": "/assets/img/products/krun/1.jpg",
+  "isBundle": false,
+  "badges": [
+    "badge3"
+  ],
+  "sizes": null,
+  "nameEn": "",
+  "similarItems": [
+    1,
+    3,
+    7,
+    9
+  ],
   "images": [
     {
       "path": "/assets/img/products/krun/1.jpg",
@@ -139,46 +163,16 @@
       "path": "/assets/img/products/krun/44.jpg"
     }
   ],
-  "sizes": [
-    "S",
-    "L",
-    "XL"
-  ],
   "declaration": {
     "text": "80% akril\n20% metal",
     "showStandardsImage": false,
     "careIcons": [],
     "textEn": ""
   },
-  "reviews": [],
-  "similarItems": [
-    1,
-    3,
-    7,
-    9
-  ],
-  "badges": [
-    "badge3"
-  ],
   "soldout": false,
+  "reviews": [],
+  "id": 4,
   "categories": [],
-  "keywords": [
-    {
-      "text": "Preporuka kupaca",
-      "icon": "/assets/img/ui/badge3.png"
-    },
-    {
-      "text": "Ručna izrada",
-      "icon": "/assets/img/ui/sewing.png"
-    },
-    {
-      "text": "Rađeno s ljubavlju",
-      "icon": "/assets/img/ui/give-love.png"
-    }
-  ],
-  "isBundle": false,
-  "bundleItems": [],
-  "nameEn": "",
-  "subheadingEn": "",
-  "descriptionEn": ""
+  "description": "Sakralni poklončić za uspomenu na sakrament Krštenja, Prve pričesti, Svete potvrde, sklapanja braka ili za osobne potrebe molitve.<br><br><span class='important'> Boje, oblici i imena po Vašem izboru.</span>",
+  "bundleItems": []
 }
