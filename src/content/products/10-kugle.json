@@ -1,9 +1,15 @@
 {
-  "id": 10,
-  "name": "Kugle",
-  "subheading": "... kuglica osvjetljava drvce čarobnom svjetlošću Božića ...",
-  "description": "Personalizirane božićne kugle, idealan poklon za blagadane koji će unijeti dašak topline na svako božićno drvce.",
+  "subheading": "\"Detalji koji Božić čine vašim. Personalizirani dodir blagdanske čarolije.\"",
+  "descriptionEn": "",
+  "keywords": [],
+  "subheadingEn": "",
+  "name": "Božić",
   "thumbnail": "/assets/img/products/kugle/1.jpg",
+  "isBundle": false,
+  "badges": [],
+  "sizes": null,
+  "nameEn": "",
+  "similarItems": [],
   "images": [
     {
       "path": "/assets/img/products/kugle/1.jpg",
@@ -100,26 +106,16 @@
       "path": "/assets/img/products/kugle/31.jpg"
     }
   ],
-  "sizes": [
-    "S",
-    "L",
-    "XL"
-  ],
   "declaration": {
     "text": "100% akril\no fi 8cm",
     "showStandardsImage": false,
     "careIcons": [],
     "textEn": ""
   },
+  "soldout": false,
   "reviews": [],
-  "similarItems": [],
-  "badges": [],
-  "soldout": true,
+  "id": 10,
   "categories": [],
-  "keywords": [],
-  "isBundle": false,
-  "bundleItems": [],
-  "nameEn": "",
-  "subheadingEn": "",
-  "descriptionEn": ""
+  "description": "",
+  "bundleItems": []
 }
