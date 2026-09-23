@@ -3,8 +3,8 @@
   "price": 2,
   "keywords": [
     {
-      "text": "Novo u prodaji",
-      "icon": "/assets/img/ui/badge1.png"
+      "text": "Najprodavanije",
+      "icon": "/assets/img/ui/badge2.png"
     },
     {
       "text": "Ručna izrada",
@@ -20,7 +20,7 @@
   "thumbnail": "/assets/img/products/zahvalnice/1.jpg",
   "isBundle": false,
   "badges": [
-    "badge1"
+    "badge2"
   ],
   "sizes": [],
   "nameEn": "",
@@ -67,6 +67,18 @@
     },
     {
       "path": "/assets/img/products/zahvalnice/12.jpg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20250414_111408.jpg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20250414_111408.jpg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20250513_150317.jpg"
     }
   ],
   "declaration": {
@@ -79,7 +91,7 @@
   "reviews": [],
   "id": 13,
   "categories": [
-    2
+    1
   ],
   "description": "Zahvalnice za Krštenje, Pričest, Krizmu i ostale prigode\n\nPlastificirane zahvalnice s privjeskom za ključeve, boja i dizajna po Vašem izboru (cca10*14cm)\nili u obliku magneta (cca 7*5cm)\n\n1-20kom---- 2,00€ kom\n21-70kom---1,70€ kom \n71+ kom-----1,50€ kom\n",
   "bundleItems": []
