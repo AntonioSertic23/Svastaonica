@@ -1,75 +1,6 @@
 {
-  "id": 6,
-  "name": "Patikice za nehodače",
-  "subheading": "... i prije hodanja je bitno ...",
-  "description": "Patikice za nehodače u ponudi su u raznim dezenima, ovisno o stanju, veličine ug 11cm (0-6mj) te po Vašoj želji personalizirane akrilnim imenom.<br><br> Modni dodatak koji bi svatko poželio.<br><br> Poklon koji bi svatko imao.<br><br> A zatim uspomena koju bi svatko volio!",
-  "thumbnail": "/assets/img/products/shuze/1.jpg",
-  "images": [
-    {
-      "path": "/assets/img/products/shuze/1.jpg",
-      "isActive": true
-    },
-    {
-      "path": "/assets/img/products/shuze/2.jpg"
-    },
-    {
-      "path": "/assets/img/products/shuze/3.jpg"
-    },
-    {
-      "path": "/assets/img/products/shuze/4.jpg"
-    },
-    {
-      "path": "/assets/img/products/shuze/5.jpg"
-    },
-    {
-      "path": "/assets/img/products/shuze/6.jpg"
-    },
-    {
-      "path": "/assets/img/products/shuze/7.jpg"
-    },
-    {
-      "path": "/assets/img/products/shuze/8.jpg"
-    },
-    {
-      "path": "/assets/img/products/shuze/9.jpg"
-    },
-    {
-      "path": "/assets/img/products/shuze/10.jpg"
-    },
-    {
-      "path": "/assets/img/products/shuze/11.jpg"
-    },
-    {
-      "path": "/assets/img/products/shuze/12.jpg"
-    },
-    {
-      "path": "/assets/img/products/shuze/13.jpg"
-    }
-  ],
-  "sizes": [
-    "L",
-    "XL"
-  ],
-  "declaration": {
-    "text": "Veličina 11 cm (0-6mj)\nRazni dezeni",
-    "showStandardsImage": false,
-    "careIcons": [],
-    "textEn": ""
-  },
-  "reviews": [],
-  "similarItems": [
-    3,
-    2,
-    9,
-    8
-  ],
-  "badges": [
-    "badge2"
-  ],
-  "soldout": false,
-  "categories": [
-    1
-  ],
+  "subheading": "Možda u njima još neće napraviti prve korake, ali će u njima ostati zapisana njihova prva najljepša sjećanja!",
+  "descriptionEn": "",
   "keywords": [
     {
       "text": "U trendu",
@@ -88,9 +19,66 @@
       "icon": "/assets/img/ui/badge6.png"
     }
   ],
-  "isBundle": false,
-  "bundleItems": [],
-  "nameEn": "",
   "subheadingEn": "",
-  "descriptionEn": ""
+  "name": "Patikice za nehodače",
+  "thumbnail": "/assets/img/products/shuze/1.jpg",
+  "isBundle": false,
+  "badges": [
+    "badge2"
+  ],
+  "sizes": null,
+  "nameEn": "",
+  "similarItems": [
+    3,
+    2,
+    9,
+    8
+  ],
+  "images": [
+    {
+      "path": "/assets/img/products/shuze/3.jpg"
+    },
+    {
+      "path": "/assets/img/products/shuze/4.jpg"
+    },
+    {
+      "path": "/assets/img/uploads/20260128_151220.jpeg"
+    },
+    {
+      "path": "/assets/img/products/shuze/6.jpg"
+    },
+    {
+      "path": "/assets/img/products/shuze/7.jpg"
+    },
+    {
+      "path": "/assets/img/products/shuze/9.jpg"
+    },
+    {
+      "path": "/assets/img/products/shuze/10.jpg",
+      "isActive": true
+    },
+    {
+      "path": "/assets/img/products/shuze/11.jpg"
+    },
+    {
+      "path": "/assets/img/products/shuze/12.jpg"
+    },
+    {
+      "path": "/assets/img/products/shuze/13.jpg"
+    }
+  ],
+  "declaration": {
+    "text": "",
+    "showStandardsImage": false,
+    "careIcons": [],
+    "textEn": ""
+  },
+  "soldout": false,
+  "reviews": [],
+  "id": 6,
+  "categories": [
+    1
+  ],
+  "description": "Patikice za nehodače  veličine ug 11cm (0-6mj), te po Vašoj želji personalizirane akrilnim imenom. ",
+  "bundleItems": []
 }
