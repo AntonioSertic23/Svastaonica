@@ -1,13 +1,9 @@
 {
   "subheading": "... poklončić koji je uvijek uz vas ...",
   "descriptionEn": "",
-  "sidrenaCijena": 1,
+  "sidrenaCijena": 2,
   "price": 2,
   "keywords": [
-    {
-      "text": "Preporuka kupaca",
-      "icon": "/assets/img/ui/badge3.png"
-    },
     {
       "text": "Ručna izrada",
       "icon": "/assets/img/ui/sewing.png"
@@ -21,9 +17,7 @@
   "name": "Privjesci za ključeve",
   "thumbnail": "/assets/img/products/privj/1.jpg",
   "isBundle": false,
-  "badges": [
-    "badge3"
-  ],
+  "badges": [],
   "sizes": null,
   "nameEn": "",
   "similarItems": [
@@ -125,9 +119,7 @@
   "soldout": false,
   "reviews": [],
   "id": 5,
-  "categories": [
-    1
-  ],
+  "categories": [],
   "description": "Privjesci suu zradi po Vašoj želji i personalizaciji, s jednim ili više imena, ili pak bez.<br><br> Maleni znak pažnje a poklončić od srca.",
   "bundleItems": []
 }
