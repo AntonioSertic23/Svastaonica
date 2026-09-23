@@ -1,9 +1,38 @@
 {
-  "id": 7,
+  "subheading": "Tražite koristan, a ujedno poseban dar? Personalizirana vezica je pun pogodak.",
+  "descriptionEn": "",
+  "sidrenaCijena": 12,
+  "price": 12,
+  "keywords": [
+    {
+      "text": "Treći najprodavaniji proizvod",
+      "icon": "/assets/img/ui/medal3.png"
+    },
+    {
+      "text": "Siguran za vaše dijete",
+      "icon": "/assets/img/ui/badge6.png"
+    },
+    {
+      "text": "Ručna izrada",
+      "icon": "/assets/img/ui/sewing.png"
+    }
+  ],
+  "subheadingEn": "",
   "name": "Silikonska vezica",
-  "subheading": "... jer cucla bez vezice dobije krila ...",
-  "description": "Silikonska vezica neizostavan je modni dodatak, a svrsihodan u sprječavanju padanja na pod i gubitka dude.<br><br> Izrađena je od akril kopče i imena po Vašoj želji, te silikonskih perli i oblika bez štetnih tvari, koji su otporni na sva grickanja, slinu i zubiće.<br><br> Izrada u preporučenim dužinama po EU standardima 22-25cm (bez kopče), ali <span class='important'>dužine mogu biti prilagođene željama i potrebama kupca.</span>",
   "thumbnail": "/assets/img/products/vezice/12.jpg",
+  "isBundle": false,
+  "badges": [
+    "badge6",
+    "badge3"
+  ],
+  "sizes": null,
+  "nameEn": "",
+  "similarItems": [
+    4,
+    6,
+    1,
+    3
+  ],
   "images": [
     {
       "path": "/assets/img/products/vezice/1.jpg",
@@ -145,46 +174,18 @@
       "path": "/assets/img/products/vezice/46.jpg"
     }
   ],
-  "sizes": [
-    "L"
-  ],
   "declaration": {
-    "text": "90% silikon\n10% akril\nBPA free",
+    "text": "",
     "showStandardsImage": false,
     "careIcons": [],
     "textEn": ""
   },
-  "reviews": [],
-  "similarItems": [
-    4,
-    6,
-    1,
-    3
-  ],
-  "badges": [
-    "badge6"
-  ],
   "soldout": false,
+  "reviews": [],
+  "id": 7,
   "categories": [
     1
   ],
-  "keywords": [
-    {
-      "text": "Treći najprodavaniji proizvod",
-      "icon": "/assets/img/ui/medal3.png"
-    },
-    {
-      "text": "Siguran za vaše dijete",
-      "icon": "/assets/img/ui/badge6.png"
-    },
-    {
-      "text": "Ručna izrada",
-      "icon": "/assets/img/ui/sewing.png"
-    }
-  ],
-  "isBundle": false,
-  "bundleItems": [],
-  "nameEn": "",
-  "subheadingEn": "",
-  "descriptionEn": ""
+  "description": "Silikonska vezica je najslađi čuvar svake dude<br><br> Izrađena je od akril kopče i imena po Vašoj želji, te silikonskih perli i oblika, koji su otporni na grickanja, slinu i zubiće.",
+  "bundleItems": []
 }
