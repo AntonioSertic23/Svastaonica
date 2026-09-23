@@ -1,5 +1,6 @@
 {
   "descriptionEn": "",
+  "sidrenaCijena": 2,
   "price": 2,
   "keywords": [
     {
@@ -71,14 +72,6 @@
     {
       "isActive": false,
       "path": "/assets/img/uploads/20250414_111408.jpg"
-    },
-    {
-      "isActive": false,
-      "path": "/assets/img/uploads/20250414_111408.jpg"
-    },
-    {
-      "isActive": false,
-      "path": "/assets/img/uploads/20250513_150317.jpg"
     }
   ],
   "declaration": {
