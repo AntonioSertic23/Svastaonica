@@ -14,7 +14,7 @@
     }
   ],
   "subheadingEn": "",
-  "name": "Krunice i desetice",
+  "name": "Krunice",
   "thumbnail": "/assets/img/products/krun/1.jpg",
   "isBundle": false,
   "badges": [
@@ -31,13 +31,10 @@
   "images": [
     {
       "path": "/assets/img/products/krun/1.jpg",
-      "isActive": true
+      "isActive": false
     },
     {
       "path": "/assets/img/products/krun/2.jpg"
-    },
-    {
-      "path": "/assets/img/products/krun/3.jpg"
     },
     {
       "path": "/assets/img/products/krun/4.jpg"
@@ -52,34 +49,8 @@
       "path": "/assets/img/products/krun/7.jpg"
     },
     {
-      "path": "/assets/img/products/krun/8.jpg"
-    },
-    {
-      "path": "/assets/img/products/krun/9.jpg"
-    },
-    {
-      "path": "/assets/img/products/krun/10.jpg"
-    },
-    {
-      "path": "/assets/img/products/krun/11.jpg"
-    },
-    {
-      "path": "/assets/img/products/krun/12.jpg"
-    },
-    {
-      "path": "/assets/img/products/krun/13.jpg"
-    },
-    {
-      "path": "/assets/img/products/krun/14.jpg"
-    },
-    {
-      "path": "/assets/img/products/krun/15.jpg"
-    },
-    {
-      "path": "/assets/img/products/krun/16.jpg"
-    },
-    {
-      "path": "/assets/img/products/krun/17.jpg"
+      "path": "/assets/img/products/krun/17.jpg",
+      "isActive": true
     },
     {
       "path": "/assets/img/products/krun/18.jpg"
@@ -91,58 +62,13 @@
       "path": "/assets/img/products/krun/20.jpg"
     },
     {
-      "path": "/assets/img/products/krun/21.jpg"
-    },
-    {
-      "path": "/assets/img/products/krun/22.jpg"
-    },
-    {
-      "path": "/assets/img/products/krun/23.jpg"
-    },
-    {
-      "path": "/assets/img/products/krun/24.jpg"
-    },
-    {
-      "path": "/assets/img/products/krun/25.jpg"
-    },
-    {
       "path": "/assets/img/products/krun/26.jpg"
-    },
-    {
-      "path": "/assets/img/products/krun/27.jpg"
-    },
-    {
-      "path": "/assets/img/products/krun/28.jpg"
-    },
-    {
-      "path": "/assets/img/products/krun/29.jpg"
-    },
-    {
-      "path": "/assets/img/products/krun/30.jpg"
     },
     {
       "path": "/assets/img/products/krun/31.jpg"
     },
     {
-      "path": "/assets/img/products/krun/32.jpg"
-    },
-    {
-      "path": "/assets/img/products/krun/33.jpg"
-    },
-    {
-      "path": "/assets/img/products/krun/34.jpg"
-    },
-    {
-      "path": "/assets/img/products/krun/35.jpg"
-    },
-    {
       "path": "/assets/img/products/krun/36.jpg"
-    },
-    {
-      "path": "/assets/img/products/krun/37.jpg"
-    },
-    {
-      "path": "/assets/img/products/krun/38.jpg"
     },
     {
       "path": "/assets/img/products/krun/39.jpg"
@@ -152,9 +78,6 @@
     },
     {
       "path": "/assets/img/products/krun/41.jpg"
-    },
-    {
-      "path": "/assets/img/products/krun/42.jpg"
     },
     {
       "path": "/assets/img/products/krun/43.jpg"
