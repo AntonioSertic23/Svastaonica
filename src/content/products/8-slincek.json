@@ -1,9 +1,38 @@
 {
-  "id": 8,
+  "subheading": "Pamuk koji mazi, sloj koji štiti. <br><br> 100% pamuk. 0% propuštanja.",
+  "descriptionEn": "",
+  "sidrenaCijena": 5,
+  "price": 5,
+  "keywords": [
+    {
+      "text": "Drugi najprodavaniji proizvod",
+      "icon": "/assets/img/ui/medal2.png"
+    },
+    {
+      "text": "U trendu",
+      "icon": "/assets/img/ui/badge2.png"
+    },
+    {
+      "text": "Ručna izrada",
+      "icon": "/assets/img/ui/sewing.png"
+    }
+  ],
+  "subheadingEn": "",
   "name": "Slinček",
-  "subheading": "... jer slinčeka nikad nema dovoljno ...",
-  "description": "<i>Slinček, partikla, bavarin, balavac, podbradnjak, barbajol </i>- mnoštvo imena za jedan nezamjenjiv proizvod! <br><br> Spoj kvalitetnog pamuka u raznim dezenima i pamučnog frotira, nosiv s obje strane (lica) a u potpunosti nepromočiv, neizostavan je dodatak pri svakom hranjenju, a posebice pri pojačanom slinjenju uzrokovanog rastom zubića. <br><br> Kopčanje je na drukere, na dva nivoa, što omogućuje lakšu prilagodbu svakom vratiću.",
   "thumbnail": "/assets/img/products/slinceki/12.jpg",
+  "isBundle": false,
+  "badges": [
+    "badge2",
+    "badge4"
+  ],
+  "sizes": null,
+  "nameEn": "",
+  "similarItems": [
+    5,
+    4,
+    2,
+    1
+  ],
   "images": [
     {
       "path": "/assets/img/products/slinceki/1.jpg",
@@ -223,12 +252,8 @@
       "path": "/assets/img/products/slinceki/72.jpg"
     }
   ],
-  "sizes": [
-    "L",
-    "XL"
-  ],
   "declaration": {
-    "text": "97% pamuk\n2% poliester\nZnakići za tkanine",
+    "text": "97% pamuk\n2% poliester\n",
     "showStandardsImage": true,
     "careIcons": [
       "tc-wash-two",
@@ -239,43 +264,12 @@
     ],
     "textEn": ""
   },
+  "soldout": false,
   "reviews": [],
-  "similarItems": [
-    5,
-    4,
-    2,
+  "id": 8,
+  "categories": [
     1
   ],
-  "badges": [
-    "badge2",
-    "badge4"
-  ],
-  "soldout": false,
-  "categories": [
-    1,
-    3
-  ],
-  "keywords": [
-    {
-      "text": "Drugi najprodavaniji proizvod",
-      "icon": "/assets/img/ui/medal2.png"
-    },
-    {
-      "text": "U trendu",
-      "icon": "/assets/img/ui/badge2.png"
-    },
-    {
-      "text": "Na akciji",
-      "icon": "/assets/img/ui/badge4.png"
-    },
-    {
-      "text": "Ručna izrada",
-      "icon": "/assets/img/ui/sewing.png"
-    }
-  ],
-  "isBundle": false,
-  "bundleItems": [],
-  "nameEn": "",
-  "subheadingEn": "",
-  "descriptionEn": ""
+  "description": "<i>Slinček, partikla, bavarin, balavac, podbradnjak, barbajol </i>- mnoštvo imena za jedan nezamjenjiv proizvod! <br><br> Spoj kvalitetnog pamuka u raznim dezenima i pamučnog frotira, nosiv s obje strane (lica) a u potpunosti nepromočiv, neizostavan je dodatak pri svakom hranjenju, a posebice pri pojačanom slinjenju uzrokovanog rastom zubića. <br><br> Kopčanje na drukere, na dva nivoa.",
+  "bundleItems": []
 }
