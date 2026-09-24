@@ -1,0 +1,25 @@
+{
+  "subheading": "Poklonite krizmaniku trajnu mapu za životni put",
+  "sidrenaCijena": 50,
+  "price": 50,
+  "name": "Biblija - Krizma",
+  "thumbnail": "/assets/img/uploads/20260420_115451.jpeg",
+  "isBundle": false,
+  "images": [
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260420_115451.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260127_150732.jpeg"
+    }
+  ],
+  "declaration": {
+    "showStandardsImage": false
+  },
+  "soldout": false,
+  "id": 28,
+  "comingSoon": false,
+  "description": "Personalizirana Biblija<br>Uvez: Tvrdi<br>\nBroj Stranica: 1560<br>Visina: 220 mm<br>Širina: 140 mm"
+}
