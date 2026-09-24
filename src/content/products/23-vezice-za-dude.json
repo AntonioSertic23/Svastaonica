@@ -1,0 +1,23 @@
+{
+  "subheading": "Stvoreno za male istraživače koji lako gube dude",
+  "sidrenaCijena": 7,
+  "price": 7,
+  "name": "Vezice za dude",
+  "isBundle": false,
+  "badges": [
+    "badge6"
+  ],
+  "images": [
+    {
+      "isActive": true,
+      "path": "/assets/img/uploads/1000064009.jpg"
+    }
+  ],
+  "declaration": {
+    "showStandardsImage": false
+  },
+  "soldout": false,
+  "id": 23,
+  "comingSoon": false,
+  "description": "drvena kopča, drveni oblici, akril perle"
+}
