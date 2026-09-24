@@ -1,0 +1,19 @@
+{
+  "sidrenaCijena": 15,
+  "price": 15,
+  "name": "Biblija za djecu",
+  "isBundle": false,
+  "images": [
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/biblija_za_djecu.gif"
+    }
+  ],
+  "declaration": {
+    "showStandardsImage": false
+  },
+  "soldout": false,
+  "id": 30,
+  "comingSoon": false,
+  "description": "Kako djeci približiti velike biblijske istine? <br>Preko priča prilagođenih njihovim malim glavicama i predivnih ilustracija koje potiču maštu! 📖✨<br> Dječje Biblije savršen su poklon za krštenje, rođendan ili prvu pričest. To je knjiga koja se ne lista samo jednom, već se čuva na polici cijeli život kao podsjetnik na prve korake u vjeri. 🕊️👶\n<br>Uvez: Tvrdi<br>Visina: 125 mm<br>Širina: 110 mm"
+}
