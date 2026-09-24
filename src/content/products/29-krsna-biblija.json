@@ -1,0 +1,23 @@
+{
+  "subheading": "Personalizirana krsna Biblija – dar koji se čuva cijeli život",
+  "name": "Krsna Biblija",
+  "thumbnail": "/assets/img/uploads/20260127_163545.jpeg",
+  "isBundle": false,
+  "images": [
+    {
+      "isActive": true,
+      "path": "/assets/img/uploads/20260127_163545.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260127_150139.jpeg"
+    }
+  ],
+  "declaration": {
+    "showStandardsImage": false
+  },
+  "soldout": false,
+  "id": 29,
+  "comingSoon": false,
+  "description": "Personalizirana krsna Biblija<br>Uvez: Tvrdi<br>\nBroj Stranica: 144<br>Visina: 225<br>Širina: 185"
+}
