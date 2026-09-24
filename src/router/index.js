@@ -30,6 +30,11 @@ const router = createRouter({
       component: () => import("../views/CjenikView.vue"),
     },
     {
+      path: "/cjenik-slika",
+      name: "cjenik-slika",
+      component: () => import("../views/CjenikFlyerView.vue"),
+    },
+    {
       path: "/singleitem/:id",
       name: "singleitem",
       component: () => import("../views/SingleItemView.vue"),

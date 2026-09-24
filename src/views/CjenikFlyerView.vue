@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from "vue";
-import { RouterLink } from "vue-router";
 import { useI18n } from "@/i18n/useI18n";
 import PriceListFlyerLightbox from "@/components/layout/PriceListFlyerLightbox.vue";
 
@@ -19,11 +18,10 @@ function closeLightbox() {
 </script>
 
 <template>
-  <section class="flyer-section">
+  <section class="flyer-page py-4">
     <div class="container">
-      <div class="section-intro">
-        <h2 class="section-heading">{{ t("home.flyerTitle") }}</h2>
-      </div>
+      <h1 class="page-title text-center">{{ t("home.flyerTitle") }}</h1>
+      <p class="page-hint text-center mx-auto">{{ t("home.flyerShareHint") }}</p>
 
       <button
         type="button"
@@ -34,18 +32,11 @@ function closeLightbox() {
         <img
           :src="FLYER_SRC"
           :alt="t('home.flyerAlt')"
-          loading="lazy"
           decoding="async"
           width="720"
           height="1280"
         />
       </button>
-
-      <div class="flyer-actions">
-        <RouterLink class="btn-cta" to="/cjenik-slika">
-          {{ t("home.flyerOpen") }}
-        </RouterLink>
-      </div>
     </div>
 
     <PriceListFlyerLightbox
@@ -57,25 +48,27 @@ function closeLightbox() {
 </template>
 
 <style scoped>
-.flyer-section {
-  padding: 1rem 0 2rem;
+.flyer-page {
+  padding-bottom: 2.5rem;
 }
 
-.section-intro {
-  margin: 2.5rem auto 1.75rem;
-  padding: 0 1.25rem;
-  max-width: 820px;
-  text-align: center;
-}
-
-.section-heading {
-  margin: 0;
+.page-title {
+  margin: 0 0 0.75rem;
   font-family: var(--font-body);
   font-size: clamp(2rem, 4.2vw, 2.85rem);
   font-weight: 400;
   letter-spacing: -0.02em;
   color: var(--color-text);
   line-height: 1.2;
+}
+
+.page-hint {
+  margin: 0 auto 1.75rem;
+  max-width: 28rem;
+  padding: 0 1rem;
+  font-size: 1.05rem;
+  line-height: 1.45;
+  color: var(--color-text-muted);
 }
 
 .flyer-preview {
@@ -103,18 +96,7 @@ function closeLightbox() {
   height: auto;
 }
 
-.flyer-actions {
-  display: flex;
-  justify-content: center;
-  margin-top: 1.75rem;
-  padding: 0 1rem;
-}
-
 @media (min-width: 992px) {
-  .flyer-section {
-    padding: 1.5rem 0 2.5rem;
-  }
-
   .flyer-preview {
     width: min(100%, 480px);
   }
