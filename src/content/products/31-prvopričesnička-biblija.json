@@ -1,0 +1,61 @@
+{
+  "subheading": "Božja riječ u svečanom ruhu za poseban dan svakog prvopričesnika",
+  "sidrenaCijena": 40,
+  "price": 40,
+  "name": "Prvopričesnička biblija",
+  "thumbnail": "/assets/img/uploads/20260127_155919.jpeg",
+  "isBundle": false,
+  "images": [
+    {
+      "isActive": true,
+      "path": "/assets/img/uploads/20260127_155919.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260127_150517.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260127_150646.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260220_142233.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260319_161741.jpg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260319_161824.jpg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260319_161948.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260319_162033.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260321_122007.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260321_122059.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260324_173124.jpeg"
+    }
+  ],
+  "declaration": {
+    "showStandardsImage": false
+  },
+  "soldout": false,
+  "id": 31,
+  "comingSoon": false,
+  "description": "Biblija za Prvu Pričest<br>savšeno se spaja i s krunicama iz naše ponude<br>\nUvez: Tvrdi<br>\nBroj Stranica: 423<br>\nVisina: 245 mm<br>Širina: 175 mm"
+}
