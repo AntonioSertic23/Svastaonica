@@ -15,7 +15,7 @@ export const messages = {
     hero: {
       welcome: "Dobrodošli u",
       subtitle:
-        "radionicu ručnog rada iz Našica — pokloni i rukotvorine izrađeni s pažnjom, za svaku prigodu.",
+        "obrt za rukotvorine iz Našica — pokloni i rukotvorine izrađeni s pažnjom, za svaku prigodu.",
       cta: "Galerija",
     },
     home: {
@@ -26,6 +26,12 @@ export const messages = {
       statsKicker: "U brojkama",
       statsTitle: "Što smo zajedno stvorili",
       viewAll: "Pogledaj sve",
+      flyerTitle: "Cjenik",
+      flyerOpen: "Povećaj cjenik",
+      flyerClose: "Zatvori",
+      flyerZoomIn: "Uvećaj",
+      flyerZoomOut: "Smanji",
+      flyerAlt: "Svaštaonica — vizualni cjenik",
     },
     order: {
       title: "Proces narudžbe",
@@ -62,8 +68,8 @@ export const messages = {
       title: "Kontakt",
       reachUs: "Obratite nam se putem:",
       glad: "Radujemo se svakom vašem upitu i narudžbi!",
-      place: "Mjesto",
-      placeValue: "Našice, Hrvatska",
+      place: "Lokacija",
+      placeValue: "Vatroslava Lisinskog 172, Našice, Hrvatska",
       phone: "Telefon",
       email: "Email",
     },
@@ -146,7 +152,7 @@ export const messages = {
     hero: {
       welcome: "Welcome to",
       subtitle:
-        "a handmade workshop from Našice — gifts and crafts made with care, for every occasion.",
+        "a handicraft workshop from Našice — gifts and crafts made with care, for every occasion.",
       cta: "Gallery",
     },
     home: {
@@ -157,6 +163,12 @@ export const messages = {
       statsKicker: "In numbers",
       statsTitle: "What we have created together",
       viewAll: "View all",
+      flyerTitle: "Price list",
+      flyerOpen: "Enlarge price list",
+      flyerClose: "Close",
+      flyerZoomIn: "Zoom in",
+      flyerZoomOut: "Zoom out",
+      flyerAlt: "Svaštaonica — visual price list",
     },
     order: {
       title: "Order process",
@@ -194,7 +206,7 @@ export const messages = {
       reachUs: "Reach us via:",
       glad: "We look forward to every inquiry and order!",
       place: "Location",
-      placeValue: "Našice, Croatia",
+      placeValue: "Vatroslava Lisinskog 172, Našice, Croatia",
       phone: "Phone",
       email: "Email",
     },

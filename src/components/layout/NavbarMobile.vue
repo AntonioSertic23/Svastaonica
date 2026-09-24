@@ -70,7 +70,7 @@ function closeNavbar() {
         >
           <img src="/assets/img/ui/sm-instagram.png" alt="" />
         </a>
-        <a href="mailto:svastaonicazabebe@gmail.com" aria-label="Email">
+        <a href="mailto:svastaonica.rukotvorine@gmail.com" aria-label="Email">
           <img src="/assets/img/ui/sm-google.png" alt="" />
         </a>
       </div>

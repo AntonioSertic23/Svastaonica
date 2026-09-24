@@ -34,7 +34,7 @@ const { t } = useI18n();
               <img src="/assets/img/ui/sm-instagram.png" />
             </a>
 
-            <a href="mailto:svastaonicazabebe@gmail.com" class="">
+            <a href="mailto:svastaonica.rukotvorine@gmail.com" class="">
               <img src="/assets/img/ui/sm-google.png" />
             </a>
           </div>
@@ -66,7 +66,7 @@ const { t } = useI18n();
             <div class="text-center">
               <img src="/assets/img/ui/email.png" alt="" />
               <h6 class="card-label">{{ t("contact.email") }}</h6>
-              <p class="info">svastaonicazabebe@gmail.com</p>
+              <p class="info">svastaonica.rukotvorine@gmail.com</p>
             </div>
           </div>
         </div>

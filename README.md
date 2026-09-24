@@ -33,12 +33,12 @@ More detail (OAuth, backups): [`public/admin/README.md`](public/admin/README.md)
 
 ## What’s on the site
 
-- Home: brand hero, product slider (random catalog photos), featured bestsellers, gallery preview, order process, stats
+- Home: brand hero, product slider (random catalog photos), featured bestsellers, gallery preview, order process, visual price-list flyer, stats
 - Gallery with search (no category filters)
 - Product pages (open photo gallery, sizes, related items, reviews)
 - About, contact
 - HR / EN
-- **Cjenik** (`/cjenik`) — machine-readable CSV for the price-list decision (NN 101/2026). Generated at **build time** once at least one product has a retail price. Files stay public for 30 days. Prices are VAT-exempt (Art. 90(1)); filenames use the workshop / remote-sale naming scheme.
+- **Cjenik** (`/cjenik`) — machine-readable CSV for the price-list decision (NN 101/2026). Generated at **build time** once at least one product has a retail price. Files stay public for 30 days. Prices are VAT-exempt (Art. 90(1)); filenames use the workshop / remote-sale naming scheme. A designed flyer also appears on the home page.
 
 ### Daily rebuild (working days before 08:00 Zagreb)
 

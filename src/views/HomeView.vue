@@ -4,6 +4,7 @@ import Slider from "../components/ui/Slider.vue";
 import TopThreeProducts from "../components/layout/TopThreeProductsSection.vue";
 import PreviewProducts from "../components/layout/PreviewProductsSection.vue";
 import AboutUs from "../components/layout/AboutUsSection.vue";
+import PriceListFlyer from "../components/layout/PriceListFlyerSection.vue";
 import RealNumbers from "../components/layout/RealNumbersSection.vue";
 import { useI18n } from "@/i18n/useI18n";
 
@@ -35,6 +36,8 @@ const { t } = useI18n();
 
     <AboutUs />
 
+    <PriceListFlyer />
+
     <div class="container section-intro section-intro--stats">
       <p class="section-kicker">{{ t("home.statsKicker") }}</p>
       <h2 class="section-heading">{{ t("home.statsTitle") }}</h2>
@@ -55,6 +58,7 @@ const { t } = useI18n();
   justify-content: center;
   padding: 0;
   width: 100%;
+  margin-top: 1.75rem;
 }
 
 .section-intro {

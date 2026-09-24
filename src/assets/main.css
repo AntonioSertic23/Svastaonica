@@ -68,6 +68,19 @@ body {
   overflow: hidden;
 }
 
+body.hide-navbar .navbar {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+body.hide-scroll-top .progress-wrap {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
 #app {
   min-height: 100vh;
   background-color: var(--color-bg);

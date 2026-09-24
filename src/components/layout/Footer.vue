@@ -82,7 +82,7 @@ const { t } = useI18n();
             <img src="/assets/img/ui/sm-instagram.png" alt="Instagram" />
           </a>
 
-          <a href="mailto:svastaonicazabebe@gmail.com">
+          <a href="mailto:svastaonica.rukotvorine@gmail.com">
             <img src="/assets/img/ui/sm-google.png" alt="Email" />
           </a>
         </section>

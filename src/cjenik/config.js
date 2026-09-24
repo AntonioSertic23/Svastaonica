@@ -3,7 +3,7 @@ export const cjenikMeta = {
   oblikObjekta: "Radionica s prodajom na daljinu",
   adresa: "V.Lisinskog172",
   mjesto: "Našice",
-  adresaPrikaz: "V. Lisinskog 172, Našice, Hrvatska",
+  adresaPrikaz: "Vatroslava Lisinskog 172, Našice, Hrvatska",
   oznakaObjekta: "Svaštaonica",
   oznakaPoslovnice: "POSL1",
   brojPohrane: "001",

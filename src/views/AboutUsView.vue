@@ -72,7 +72,7 @@ const { t } = useI18n();
               <img src="/assets/img/ui/sm-viber.png" />
             </a> -->
 
-            <a href="mailto:svastaonicazabebe@gmail.com" class="">
+            <a href="mailto:svastaonica.rukotvorine@gmail.com" class="">
               <img src="/assets/img/ui/sm-google.png" />
             </a>
           </div>
