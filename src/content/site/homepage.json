@@ -1,3 +1,8 @@
 {
-  "featuredProducts": [3, 5, 10]
+  "featuredProducts": [
+    10,
+    32,
+    9
+  ],
+  "id": 37
 }
