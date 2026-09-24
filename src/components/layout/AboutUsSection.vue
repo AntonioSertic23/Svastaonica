@@ -45,11 +45,9 @@ const { t } = useI18n();
           {{ t("order.deliveryTextBefore") }}
           <span class="bolded-text">{{ t("order.deliveryPost") }}</span
           >,
-          <span class="bolded-text">{{ t("order.deliveryParcel") }}</span
-          >,
-          <span class="bolded-text">{{ t("order.deliveryTisak") }}</span
-          >{{ t("order.deliveryAnd") }}
-          <span class="bolded-text">{{ t("order.deliveryPickup") }}</span
+          <span class="bolded-text">{{ t("order.deliveryParcel") }}</span>
+          {{ t("order.deliveryOr") }}
+          <span class="bolded-text">{{ t("order.deliveryCourier") }}</span
           >.
         </p>
       </div>

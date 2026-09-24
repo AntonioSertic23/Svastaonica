@@ -39,7 +39,7 @@ export const messages = {
       title: "Proces narudžbe",
       contact: "Kontakt",
       contactText:
-        "Za sve informacije obratite nam se putem mreže po vašem izboru. Posjetite našu",
+        "Za sve informacije javite nam se porukom — Instagram, Facebook, WhatsApp ili e-mail. Posjetite našu",
       contactLink: "kontakt stranicu",
       crafting: "Izrada",
       craftingText:
@@ -48,9 +48,8 @@ export const messages = {
       deliveryTextBefore: "Vašu narudžbu dostavljamo putem:",
       deliveryPost: "Hrvatske pošte",
       deliveryParcel: "Paketomata",
-      deliveryTisak: "Tiska",
-      deliveryAnd: ", a moguće je i",
-      deliveryPickup: "osobno preuzimanje",
+      deliveryOr: "ili",
+      deliveryCourier: "dostavnom službom po dogovoru",
     },
     stats: {
       hours: "uloženih sati rada",
@@ -176,7 +175,7 @@ export const messages = {
       title: "Order process",
       contact: "Contact",
       contactText:
-        "For any information, reach out to us via the network of your choice. Visit our",
+        "For any information, message us on Instagram, Facebook, WhatsApp, or email. Visit our",
       contactLink: "contact page",
       crafting: "Crafting",
       craftingText:
@@ -184,10 +183,9 @@ export const messages = {
       delivery: "Delivery",
       deliveryTextBefore: "We deliver your order via:",
       deliveryPost: "Croatian Post",
-      deliveryParcel: "Parcel lockers",
-      deliveryTisak: "Tisak",
-      deliveryAnd: ", and",
-      deliveryPickup: "personal pickup",
+      deliveryParcel: "parcel lockers",
+      deliveryOr: "or",
+      deliveryCourier: "a delivery service by arrangement",
     },
     stats: {
       hours: "hours of work invested",

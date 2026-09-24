@@ -6,7 +6,7 @@ import PriceListFlyerLightbox from "@/components/layout/PriceListFlyerLightbox.v
 
 const { t } = useI18n();
 
-const FLYER_SRC = "/assets/img/site/cjenik-flyer.jpg";
+const FLYER_SRC = "/assets/img/site/cjenik-flyer.png";
 const lightboxOpen = ref(false);
 
 function openLightbox() {
@@ -36,8 +36,8 @@ function closeLightbox() {
           :alt="t('home.flyerAlt')"
           loading="lazy"
           decoding="async"
-          width="720"
-          height="1280"
+          width="3374"
+          height="6000"
         />
       </button>
 
