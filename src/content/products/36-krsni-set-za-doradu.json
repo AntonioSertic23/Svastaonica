@@ -1,0 +1,26 @@
+{
+  "subheading": "Benneton, saten, pamuk, polyester...<br>po našem predlošku ili po vašem dizajnu",
+  "sidrenaCijena": 9,
+  "price": 9,
+  "name": "Krsni set za doradu",
+  "thumbnail": "/assets/img/uploads/20260413_162133.jpeg",
+  "isBundle": false,
+  "badges": [
+    "badge3",
+    "badge6",
+    "badge2"
+  ],
+  "images": [
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260413_162133.jpeg"
+    }
+  ],
+  "declaration": {
+    "showStandardsImage": false
+  },
+  "soldout": false,
+  "id": 36,
+  "comingSoon": false,
+  "description": "Tražite li savršenu bazu za svoje krsne kreacije? 🧵 Naše krsne košuljice i maramice za doradu skrojene su od najkvalitetnijeg, čistog pamuka, satena ili bennetona koji savršeno podnose strojni vez, folije za tisak i dodavanje čipke ili aplikacija. Olakšajte si proces proizvodnje i fokusirajte se na ono što radite najbolje – personalizaciju i kreativnost! ✨ Naručite svoje blanko krsne setove već danas i ponudite svojim kupcima vrhunski proizvod. 🕊️"
+}
