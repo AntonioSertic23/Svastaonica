@@ -1,0 +1,92 @@
+{
+  "subheading": "Prvi dojam vaše proslave počinje s našom pozivnicom",
+  "sidrenaCijena": 1,
+  "price": 1,
+  "name": "Pozivnice s kuvertom",
+  "thumbnail": "/assets/img/uploads/20260128_145521.jpeg",
+  "isBundle": false,
+  "badges": [
+    "badge2",
+    "badge3"
+  ],
+  "images": [
+    {
+      "isActive": true,
+      "path": "/assets/img/uploads/20260128_145521.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260126_095127.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260128_145405.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260128_145841.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260128_145857.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260210_153849.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260205_152402.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260211_094429.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260211_112955.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260218_133710.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260214_114128.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260224_153614.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260224_161238.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260305_142040.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260309_131825.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260311_161506.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260327_095057.jpeg"
+    }
+  ],
+  "declaration": {
+    "showStandardsImage": false
+  },
+  "soldout": false,
+  "id": 27,
+  "categories": [
+    1
+  ],
+  "comingSoon": false,
+  "description": "Plastificirane pozivnice za sve prigode<br> izvrsno se dopunjuju sa zahvanicama iz naše ponude<br> cca 10*15cm<br>*može biti i u vama željenoj veličini,dizajnu,bojama...<br>(sve je uključeno u cijenu)"
+}
