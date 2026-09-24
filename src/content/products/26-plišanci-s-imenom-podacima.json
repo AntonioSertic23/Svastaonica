@@ -1,0 +1,29 @@
+{
+  "subheading": "Podaci o rođenju utkani u najmekši zagrljaj",
+  "sidrenaCijena": 20,
+  "price": 20,
+  "name": "Plišanci s imenom, podacima...",
+  "isBundle": false,
+  "badges": [
+    "badge2",
+    "badge3",
+    "badge6"
+  ],
+  "images": [
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20250903_124627.jpeg"
+    }
+  ],
+  "declaration": {
+    "showStandardsImage": false,
+    "careIcons": []
+  },
+  "soldout": false,
+  "id": 26,
+  "categories": [
+    1
+  ],
+  "comingSoon": false,
+  "description": "Dan kada se beba rodi donosi brojke koje roditelji nikada ne zaboravljaju: datum, točno vrijeme, težinu i dužinu u centimetrima. ⏰👶 <br>Naši personalizirani plišanci čuvaju te dragocjene podatke u najmekšem zagrljaju! <br>Savršen su ukras za dječju sobu, ali i predivna uspomena koja ostaje za cijeli život. <br>Poklonite unikat za babinje ili krštenje koji će svima izmamiti osmijeh na lice. 🧸✨"
+}
