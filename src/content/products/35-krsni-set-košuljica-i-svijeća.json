@@ -1,0 +1,21 @@
+{
+  "subheading": "Svijeća 30cm<br>košuljica cca 30*40cm<br>boje, tekst, križić, sve prilagođavamo željama i to je sve uključeno u cijenu",
+  "sidrenaCijena": 30,
+  "price": 30,
+  "name": "Krsni set košuljica i svijeća",
+  "thumbnail": "/assets/img/uploads/20260414_131046.jpeg",
+  "isBundle": false,
+  "images": [
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260414_131046.jpeg"
+    }
+  ],
+  "declaration": {
+    "showStandardsImage": false
+  },
+  "soldout": false,
+  "id": 35,
+  "comingSoon": false,
+  "description": "Mali set za početak velikog duhovnog putovanja"
+}
