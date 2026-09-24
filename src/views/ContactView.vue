@@ -13,10 +13,6 @@ const { t } = useI18n();
 
       <div class="col col-lg-8 pb-4 py-0 mx-auto">
         <div class="contact-information px-md-4 mb-4">
-          <div class="mb-3 text-center">
-            <p class="contact-description">{{ t("contact.reachUs") }}</p>
-          </div>
-
           <div class="social-media mb-5 row g-3 justify-content-center">
             <a href="http://m.me/svastaonicazabebe" class="">
               <img src="/assets/img/ui/sm-facebook-messenger.png" />
@@ -95,10 +91,6 @@ const { t } = useI18n();
   flex-direction: column;
 }
 
-.contact-description {
-  font-size: 31.25px;
-}
-
 .call-btn {
   color: #222;
   text-decoration: none;
@@ -146,10 +138,6 @@ const { t } = useI18n();
 }
 
 @media (max-width: 991.98px) {
-  .contact-description {
-    font-size: 25px;
-  }
-
   .social-media img {
     width: 48px;
   }

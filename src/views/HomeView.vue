@@ -58,7 +58,7 @@ const { t } = useI18n();
   justify-content: center;
   padding: 0;
   width: 100%;
-  margin-top: 1.75rem;
+  margin-top: 2.5rem;
 }
 
 .section-intro {

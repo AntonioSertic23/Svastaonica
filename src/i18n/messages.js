@@ -66,7 +66,6 @@ export const messages = {
     },
     contact: {
       title: "Kontakt",
-      reachUs: "Obratite nam se putem:",
       glad: "Radujemo se svakom vašem upitu i narudžbi!",
       place: "Lokacija",
       placeValue: "Vatroslava Lisinskog 172, Našice, Hrvatska",
@@ -74,7 +73,6 @@ export const messages = {
       email: "Email",
     },
     footer: {
-      reachUs: "Obratite nam se putem:",
       glad: "Radujemo se svakom vašem upitu i narudžbi!",
       copyright: "© Since 2026 — Svaštaonica",
     },
@@ -203,7 +201,6 @@ export const messages = {
     },
     contact: {
       title: "Contact",
-      reachUs: "Reach us via:",
       glad: "We look forward to every inquiry and order!",
       place: "Location",
       placeValue: "Vatroslava Lisinskog 172, Našice, Croatia",
@@ -211,7 +208,6 @@ export const messages = {
       email: "Email",
     },
     footer: {
-      reachUs: "Reach us via:",
       glad: "We look forward to every inquiry and order!",
       copyright: "© Since 2026 — Svaštaonica",
     },

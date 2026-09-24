@@ -57,14 +57,6 @@ const { t } = useI18n();
 
         <hr class="mt-4 mb-5" />
 
-        <section class="mb-4">
-          <div class="row d-flex justify-content-center">
-            <div class="col-lg-8 px-4">
-              <p class="footer-text m-0">{{ t("footer.reachUs") }}</p>
-            </div>
-          </div>
-        </section>
-
         <section class="my-0 social-media px-3 row g-3 justify-content-center">
           <a href="http://m.me/svastaonicazabebe">
             <img src="/assets/img/ui/sm-facebook-messenger.png" alt="Messenger" />
