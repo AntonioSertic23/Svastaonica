@@ -1,0 +1,61 @@
+{
+  "subheading": "Svijeća 30cm<br>maramica 20*20cm<br>košuljica cca 30*40cm<br>boje, tekst, križić, sve prilagođavamo željama i to je sve uključeno u cijenu",
+  "sidrenaCijena": 35,
+  "price": 35,
+  "name": "Krsni set <br>košuljica, maramica i svijeća",
+  "thumbnail": "/assets/img/uploads/20260130_145558.jpeg",
+  "isBundle": false,
+  "images": [
+    {
+      "isActive": true,
+      "path": "/assets/img/uploads/20260130_145558.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/1000062567.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/1000062571.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/1000053782.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260227_103305.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20260130_145621.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20250714_145944.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20250711_162821.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20250711_162236.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20250630_103330.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20250515_150847.jpg"
+    }
+  ],
+  "declaration": {
+    "showStandardsImage": false
+  },
+  "soldout": false,
+  "id": 34,
+  "comingSoon": false,
+  "description": "Krštenje je jedan od najvažnijih obiteljskih trenutaka, a krsni set – svijeća koja donosi Kristovo svjetlo i bijela haljinica/maramica – ostaje trajna uspomena na taj sveti dan. 🕊️✨ <br>Naši krsni setovi izrađeni su s puno ljubavi, pažnje i najfinijih materijala, uz mogućnost personalizacije imenom i datumom krštenja. Poklonite svom kumčetu unikat koji će s ponosom čuvati cijeli život. 🕯️🤍"
+}
