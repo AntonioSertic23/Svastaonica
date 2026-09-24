@@ -2,15 +2,33 @@
 import sourceData from "@/catalog.js";
 import { RouterLink } from "vue-router";
 import VLazyImage from "v-lazy-image";
-import { ref } from "vue";
+import { computed } from "vue";
 import { useI18n } from "@/i18n/useI18n";
 
 const { t, pt } = useI18n();
-var data = ref(sourceData.data.slice(0, 5));
+
+function shuffle(list) {
+  const a = [...list];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+const data = computed(() => {
+  const pool = sourceData.data.filter((p) => !p.comingSoon);
+  const picked = shuffle(pool).slice(0, 5);
+  // Keep layout stable if fewer than 5 products exist
+  while (picked.length < 5 && pool.length) {
+    picked.push(pool[picked.length % pool.length]);
+  }
+  return picked;
+});
 </script>
 
 <template>
-  <div class="container px-4 mt-lg-5">
+  <div class="container px-4 preview-section">
     <div class="row main-row px-0 px-lg-5">
       <div class="col h-100">
         <RouterLink v-bind:to="/singleitem/ + data[0].id">
@@ -110,6 +128,11 @@ var data = ref(sourceData.data.slice(0, 5));
 </template>
 
 <style scoped>
+.preview-section {
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+}
+
 .main-row {
   height: 550px;
 }

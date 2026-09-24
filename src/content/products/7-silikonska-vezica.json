@@ -9,8 +9,8 @@
       "icon": "/assets/img/ui/medal3.png"
     },
     {
-      "text": "Siguran za vaše dijete",
-      "icon": "/assets/img/ui/badge6.png"
+      "text": "Pažljivo izrađeno",
+      "icon": "/assets/img/ui/handcraft.png"
     },
     {
       "text": "Ručna izrada",
@@ -22,7 +22,6 @@
   "thumbnail": "/assets/img/products/vezice/12.jpg",
   "isBundle": false,
   "badges": [
-    "badge6",
     "badge3"
   ],
   "sizes": null,

@@ -111,13 +111,19 @@ footer {
   font-size: 20px;
 }
 .nav-link:focus,
-.nav-link:hover {
-  color: black;
+.nav-link:hover,
+.nav-link.site-link:hover {
+  color: var(--color-text) !important;
   font-weight: 600;
+}
+
+.nav-link.site-link::after {
+  background: var(--color-lavender-hover);
 }
 
 .footer-text {
   font-size: 25px;
+  color: var(--color-text);
 }
 
 .social-media {
@@ -141,10 +147,12 @@ footer {
 
 .madeineu {
   font-size: 25px;
+  color: var(--color-text);
 }
 
 .footer-copyright-text {
   font-size: 16px;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.12);
+  color: var(--color-text);
 }
 </style>

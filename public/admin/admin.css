@@ -178,6 +178,11 @@ li[class*="GridCard"] [class*="CardBody"] {
   width: 120px;
 }
 
+.sv-product-multiselect__item.is-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 .sv-product-multiselect__img {
   width: 72px;
   height: 72px;

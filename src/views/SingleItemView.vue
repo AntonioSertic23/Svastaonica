@@ -23,13 +23,15 @@ const aBundles = sourceData.data.filter(
 const aItems = [];
 if (data.value?.isBundle) {
   data.value.bundleItems.forEach((id) => {
-    aItems.push(sourceData.data.find((d) => d.id === id));
+    const item = sourceData.data.find((d) => d.id === id);
+    if (item) aItems.push(item);
   });
 }
 
 const aSimilarItems = [];
 data.value?.similarItems?.forEach((id) => {
-  aSimilarItems.push(sourceData.data.find((d) => d.id === id));
+  const item = sourceData.data.find((d) => d.id === id);
+  if (item) aSimilarItems.push(item);
 });
 
 const lightboxOpen = ref(false);
@@ -75,7 +77,6 @@ const currentIndex = ref(
     (data.value?.images?.findIndex((img) => img.isActive) ?? 0) + 1
   )
 );
-const galleryExpanded = ref(false);
 
 function updateNumber(direction) {
   const total = totalImages.value;
@@ -84,10 +85,6 @@ function updateNumber(direction) {
   } else if (direction === "next") {
     currentIndex.value = currentIndex.value >= total ? 1 : currentIndex.value + 1;
   }
-}
-
-function toggleGallery() {
-  galleryExpanded.value = !galleryExpanded.value;
 }
 
 const share = () => {
@@ -136,9 +133,9 @@ const share = () => {
               <p class="sizes-text mb-0">{{ data.sizes }}</p>
             </div>
 
-            <div class="keywords-div my-5" v-if="data.keywords.length > 0">
+            <div class="keywords-div my-5" v-if="data.keywords?.length">
               <div class="row">
-                <div class="col" v-for="word in data.keywords" :key="word.id">
+                <div class="col" v-for="word in data.keywords" :key="word.id || word.text">
                   <VLazyImage class="d-block" v-bind:src="word.icon" />
                   <p class="mt-3">{{ word.text }}</p>
                 </div>
@@ -246,8 +243,8 @@ const share = () => {
               class="my-5 mx-lg-5 px-3 py-4 declaration"
               v-if="
                 pt(data.declaration, 'text') ||
-                data.declaration.showStandardsImage ||
-                data.declaration.careIcons.length
+                data.declaration?.showStandardsImage ||
+                data.declaration?.careIcons?.length
               "
             >
               <div
@@ -258,7 +255,7 @@ const share = () => {
 
               <div
                 class="standards"
-                v-if="data.declaration.showStandardsImage"
+                v-if="data.declaration?.showStandardsImage"
               >
                 <img
                   src="/assets/img/ui/OekoTexStandard100.png"
@@ -268,7 +265,7 @@ const share = () => {
 
               <div
                 class="declaration-icons mt-4 flex-wrap mx-auto"
-                v-if="data.declaration.careIcons.length"
+                v-if="data.declaration?.careIcons?.length"
               >
                 <div
                   class="img-div"
@@ -359,28 +356,11 @@ const share = () => {
 
       <div
         class="all-photos-section px-4 px-lg-5 my-4 my-lg-5"
-        v-if="data.images && data.images.length > 1"
+        v-if="data.images?.length > 1"
       >
-        <button
-          type="button"
-          class="gallery-toggle"
-          @click="toggleGallery"
-          :aria-expanded="galleryExpanded"
-        >
-          <span>
-            {{
-              galleryExpanded ? t("product.hidePhotos") : t("product.allPhotos")
-            }}
-          </span>
-          <span class="gallery-toggle-meta"
-            >{{ totalImages }} {{ t("product.photosCount") }}</span
-          >
-          <span class="gallery-chevron" :class="{ open: galleryExpanded }"
-            >▼</span
-          >
-        </button>
+        <h2 class="gallery-heading">{{ t("product.allPhotos") }}</h2>
 
-        <div v-show="galleryExpanded" class="photo-grid">
+        <div class="photo-grid">
           <button
             v-for="(image, index) in data.images"
             :key="image.id || index"
@@ -439,7 +419,7 @@ const share = () => {
 
       <div
         class="reviews-div px-4 px-lg-5 my-5"
-        v-if="data.reviews && data.reviews.length"
+        v-if="data.reviews?.length"
       >
         <p class="title">{{ t("product.reviews") }}</p>
 
@@ -609,59 +589,19 @@ const share = () => {
   margin-right: auto;
 }
 
-.gallery-toggle {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  border: none;
-  background-color: var(--color-lavender);
-  color: var(--color-text);
-  border-radius: var(--radius);
-  padding: 0.9rem 1.25rem;
-  font-size: 1.15rem;
+.gallery-heading {
+  margin: 0 0 1.25rem;
+  text-align: center;
+  font-size: clamp(1.45rem, 2.5vw, 1.85rem);
   font-weight: 500;
   letter-spacing: 0.02em;
-  box-shadow: var(--shadow-soft);
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.gallery-toggle:hover {
-  background-color: var(--color-lavender-hover);
-}
-
-.gallery-toggle-meta {
-  opacity: 0.75;
-  font-size: 0.95rem;
-  font-weight: 400;
-}
-
-.gallery-chevron {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.75rem;
-  height: 1.75rem;
-  margin-left: 0.15rem;
-  font-size: 0.85rem;
-  line-height: 1;
-  background: rgba(255, 255, 255, 0.45);
-  border-radius: 50%;
-  transition: transform 0.25s ease;
-}
-
-.gallery-chevron.open {
-  transform: rotate(180deg);
+  color: var(--color-text);
 }
 
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-  gap: 0.75rem;
-  margin-top: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
 }
 
 .photo-thumb {

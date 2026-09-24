@@ -1,6 +1,54 @@
 <script setup>
 import { RouterLink } from "vue-router";
-import { onMounted, onUnmounted, ref } from "vue";
+import { computed, onMounted, onUnmounted, ref } from "vue";
+import catalog from "@/catalog.js";
+import homepage from "@/content/site/homepage.json";
+import { useI18n } from "@/i18n/useI18n";
+
+const { pt } = useI18n();
+
+const MEDALS = [
+  "/assets/img/ui/medal1.png",
+  "/assets/img/ui/medal2.png",
+  "/assets/img/ui/medal3.png",
+];
+
+const featured = computed(() => {
+  const ids = Array.isArray(homepage.featuredProducts)
+    ? homepage.featuredProducts.map(Number).filter(Number.isFinite)
+    : [];
+
+  return ids
+    .map((id, rank) => {
+      const product = catalog.data.find((p) => p.id === id);
+      if (!product) return null;
+      return {
+        product,
+        rank,
+        medal: MEDALS[rank] || MEDALS[2],
+      };
+    })
+    .filter(Boolean)
+    .slice(0, 3);
+});
+
+/** Layout: 2nd left, 1st center, 3rd right (medal order). */
+const layoutSlots = computed(() => {
+  const items = featured.value;
+  if (items.length === 0) return [];
+  if (items.length === 1) return [{ item: items[0], side: "middle" }];
+  if (items.length === 2) {
+    return [
+      { item: items[1], side: "side", from: "right" },
+      { item: items[0], side: "middle" },
+    ];
+  }
+  return [
+    { item: items[1], side: "side", from: "right", key: "item2" },
+    { item: items[0], side: "middle", key: "item3" },
+    { item: items[2], side: "side", from: "left", key: "item1" },
+  ];
+});
 
 const visible = ref({ item1: false, item2: false, item3: false });
 let observer;
@@ -33,81 +81,47 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="container top-three">
+  <div class="container top-three" v-if="layoutSlots.length">
     <div class="products-row">
       <div
-        data-item="item2"
-        class="item item--side"
-        :class="{ 'is-visible': visible.item2, 'from-right': true }"
+        v-for="slot in layoutSlots"
+        :key="slot.item.product.id"
+        :data-item="slot.key || 'item3'"
+        class="item"
+        :class="{
+          'item--side': slot.side === 'side',
+          'item--middle': slot.side === 'middle',
+          'is-visible': visible[slot.key || 'item3'],
+          'from-right': slot.from === 'right',
+          'from-left': slot.from === 'left',
+        }"
       >
-        <RouterLink to="/singleitem/8" class="top-card-link">
+        <RouterLink
+          :to="'/singleitem/' + slot.item.product.id"
+          class="top-card-link"
+        >
           <div class="top-card">
             <div class="image-div">
               <img
                 class="image"
-                src="/assets/img/products/slinceki/12.jpg"
-                alt="Slinček"
+                :src="slot.item.product.thumbnail"
+                :alt="pt(slot.item.product, 'name')"
                 loading="lazy"
                 decoding="async"
               />
               <div class="medal-div">
-                <img class="medal" src="/assets/img/ui/medal2.png" alt="" />
+                <img class="medal" :src="slot.item.medal" alt="" />
               </div>
             </div>
-            <div class="shape shape1">
-              <h3>Slinček</h3>
-            </div>
-          </div>
-        </RouterLink>
-      </div>
-
-      <div
-        data-item="item3"
-        class="item item--middle"
-        :class="{ 'is-visible': visible.item3 }"
-      >
-        <RouterLink to="/singleitem/9" class="top-card-link">
-          <div class="top-card">
-            <div class="image-div">
-              <img
-                class="image"
-                src="/assets/img/products/kocke/23.jpg"
-                alt="Didaktička Kocka"
-                loading="lazy"
-                decoding="async"
-              />
-              <div class="medal-div">
-                <img class="medal" src="/assets/img/ui/medal1.png" alt="" />
-              </div>
-            </div>
-            <div class="shape shape2">
-              <h3>Didaktička Kocka</h3>
-            </div>
-          </div>
-        </RouterLink>
-      </div>
-
-      <div
-        data-item="item1"
-        class="item item--side"
-        :class="{ 'is-visible': visible.item1, 'from-left': true }"
-      >
-        <RouterLink to="/singleitem/7" class="top-card-link">
-          <div class="top-card">
-            <div class="image-div">
-              <img
-                class="image"
-                src="/assets/img/products/vezice/10.jpg"
-                alt="Silikonska vezica"
-                loading="lazy"
-                decoding="async"
-              />
-              <div class="medal-div">
-                <img class="medal" src="/assets/img/ui/medal3.png" alt="" />
-              </div>
-            </div>
-            <div class="shape shape3">
-              <h3>Silikonska vezica</h3>
+            <div
+              class="shape"
+              :class="{
+                shape1: slot.from === 'right',
+                shape2: slot.side === 'middle',
+                shape3: slot.from === 'left',
+              }"
+            >
+              <h3>{{ pt(slot.item.product, "name") }}</h3>
             </div>
           </div>
         </RouterLink>
@@ -118,7 +132,7 @@ onUnmounted(() => {
 
 <style scoped>
 .top-three {
-  margin: 2rem auto;
+  margin: 0.25rem auto 1.5rem;
 }
 
 .products-row {
@@ -185,7 +199,6 @@ onUnmounted(() => {
   transform: scale(1.15);
 }
 
-/* Purple bar = title plate under the photo */
 .shape {
   position: relative;
   z-index: 1;
@@ -234,7 +247,7 @@ onUnmounted(() => {
 
 @media (min-width: 992px) {
   .top-three {
-    margin: 3rem auto;
+    margin: 0.35rem auto 2rem;
   }
 
   .products-row {

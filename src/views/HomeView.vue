@@ -12,34 +12,32 @@ const { t } = useI18n();
 
 <template>
   <div class="home">
-    <h1 class="brand-title">Svaštaonica</h1>
-
-    <Hero />
-
-    <div class="container slider-wrap">
-      <Slider />
+    <div class="home-fold">
+      <Hero />
+      <div class="container slider-wrap">
+        <Slider />
+      </div>
     </div>
 
-    <div class="container quote-block">
-      <p class="quote-text">{{ t("home.quote1") }}</p>
+    <div class="container section-intro section-intro--bestsellers">
+      <p class="section-kicker">{{ t("home.bestsellersKicker") }}</p>
+      <h2 class="section-heading">{{ t("home.bestsellersTitle") }}</h2>
     </div>
 
     <TopThreeProducts />
 
-    <div class="container quote-block">
-      <p class="quote-text">{{ t("home.quote2") }}</p>
+    <div class="container section-intro">
+      <p class="section-kicker">{{ t("home.previewKicker") }}</p>
+      <h2 class="section-heading">{{ t("home.previewTitle") }}</h2>
     </div>
 
     <PreviewProducts />
 
-    <div class="container quote-block quote-block--spacious">
-      <p class="quote-text">{{ t("home.quote3") }}</p>
-    </div>
-
     <AboutUs />
 
-    <div class="container quote-block">
-      <p class="quote-text">{{ t("home.quote4") }}</p>
+    <div class="container section-intro section-intro--stats">
+      <p class="section-kicker">{{ t("home.statsKicker") }}</p>
+      <h2 class="section-heading">{{ t("home.statsTitle") }}</h2>
     </div>
 
     <RealNumbers />
@@ -52,44 +50,73 @@ const { t } = useI18n();
   flex-direction: column;
 }
 
-.brand-title {
-  text-align: center;
-  margin: 1.5rem 0 1.25rem;
-  padding: 0 1rem;
-  font-size: clamp(2.5rem, 6vw, 4.75rem);
-  font-family: var(--font-body);
-  font-weight: 300;
-  letter-spacing: -0.02em;
-}
-
 .slider-wrap {
   display: flex;
   justify-content: center;
   padding: 0;
+  width: 100%;
 }
 
-.quote-block {
-  margin: 2rem auto;
+.section-intro {
+  margin: 3.5rem auto 1.75rem;
   padding: 0 1.25rem;
-  max-width: 900px;
+  max-width: 820px;
+  text-align: center;
 }
 
-.quote-block--spacious {
-  margin-top: 3rem;
+.section-intro--stats {
+  margin-top: 4.5rem;
+}
+
+.section-intro--bestsellers {
+  margin-bottom: 0.65rem;
+}
+
+.section-kicker {
+  margin: 0 0 0.55rem;
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-lavender-deep);
+}
+
+.section-heading {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: clamp(2rem, 4.2vw, 2.85rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  line-height: 1.2;
 }
 
 @media (min-width: 992px) {
-  .brand-title {
-    margin: 1.75rem 0 2rem;
+  .home-fold {
+    min-height: calc(100dvh - var(--nav-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 1.25rem;
+    box-sizing: border-box;
   }
 
   .slider-wrap {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0;
+    margin-top: auto;
   }
 
-  .quote-block {
-    margin: 2.5rem auto;
+  .section-intro {
+    margin: 4.5rem auto 2.25rem;
+  }
+
+  .section-intro--bestsellers {
+    margin-bottom: 0.85rem;
+  }
+
+  .section-intro--stats {
+    margin-top: 5.5rem;
   }
 }
 </style>

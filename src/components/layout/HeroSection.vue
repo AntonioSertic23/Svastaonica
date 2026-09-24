@@ -1,27 +1,8 @@
 <script setup>
 import { RouterLink } from "vue-router";
-import { ref } from "vue";
 import { useI18n } from "@/i18n/useI18n";
 
 const { t } = useI18n();
-
-/** false = classic logo.jpg, true = new brand mark */
-const showNewLogo = ref(false);
-const isSpinning = ref(false);
-
-function flipLogo() {
-  if (isSpinning.value) return;
-  isSpinning.value = true;
-
-  // Swap image at mid-spin so the back is never a mirrored copy of the front
-  window.setTimeout(() => {
-    showNewLogo.value = !showNewLogo.value;
-  }, 320);
-
-  window.setTimeout(() => {
-    isSpinning.value = false;
-  }, 650);
-}
 </script>
 
 <template>
@@ -29,45 +10,27 @@ function flipLogo() {
     <div class="container">
       <div class="hero-grid">
         <div class="hero-copy">
-          <h1>{{ t("hero.welcome") }}</h1>
-          <p>{{ t("hero.subtitle") }}</p>
+          <p class="hero-eyebrow">{{ t("hero.welcome") }}</p>
+          <h1 class="hero-brand">Svaštaonica</h1>
+          <p class="hero-subtitle">{{ t("hero.subtitle") }}</p>
           <RouterLink class="btn-cta hero-cta" to="/gallery">{{
             t("hero.cta")
           }}</RouterLink>
         </div>
 
-        <button
-          type="button"
-          class="hero-logo"
-          :class="{ spinning: isSpinning, 'is-brand': showNewLogo }"
-          :aria-pressed="showNewLogo"
-          :aria-label="t('hero.logoFlipHint')"
-          @click="flipLogo"
-        >
-          <span class="logo-stage">
-            <img
-              v-show="!showNewLogo"
-              class="logo-img logo-img--classic"
-              src="/assets/img/brand/logo.jpg"
-              alt="Svaštaonica"
-              width="400"
-              height="364"
-            />
-            <img
-              v-show="showNewLogo"
-              class="logo-img logo-img--brand"
-              src="/assets/img/brand/svastaonica-logo-1.png"
-              alt="Svaštaonica — obrt za rukotvorine"
-              width="400"
-              height="267"
-            />
-          </span>
-        </button>
-
-        <blockquote class="hero-quote">
-          <p>{{ t("hero.quote") }}</p>
-          <footer>Pablo Larrain</footer>
-        </blockquote>
+        <div class="hero-logo">
+          <div class="logo-frame">
+            <div class="logo-frame-inner">
+              <img
+                class="logo-img"
+                src="/assets/img/brand/svastaonica-logo-1.png"
+                alt="Svaštaonica — obrt za rukotvorine"
+                width="400"
+                height="267"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -75,7 +38,7 @@ function flipLogo() {
 
 <style scoped>
 .hero {
-  margin-bottom: 3rem;
+  margin-bottom: 0;
   padding-top: 0.5rem;
 }
 
@@ -88,21 +51,38 @@ function flipLogo() {
 }
 
 .hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   order: 2;
 }
 
-.hero-copy h1 {
-  font-size: clamp(1.95rem, 4vw, 3.05rem);
-  font-weight: 500;
-  margin: 0 0 0.75rem;
+.hero-eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
 }
 
-.hero-copy p {
-  font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+.hero-brand {
+  font-size: clamp(2.6rem, 7vw, 4.25rem);
+  font-family: var(--font-body);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  margin: 0 0 0.85rem;
+  line-height: 1.05;
+  color: var(--color-text);
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 2.1vw, 1.4rem);
   margin: 0 0 1.5rem;
-  line-height: 1.45;
+  line-height: 1.5;
   color: var(--color-text-muted);
+  max-width: 28rem;
 }
 
 .hero-cta {
@@ -112,101 +92,61 @@ function flipLogo() {
 .hero-logo {
   order: 1;
   justify-self: center;
-  width: min(100%, 420px);
-  padding: 0;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
+  width: min(100%, 460px);
 }
 
-.logo-stage {
+.logo-frame {
+  position: relative;
+  padding: 10px;
+  border-radius: calc(var(--radius) + 6px);
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--color-lavender) 55%, white),
+      color-mix(in srgb, var(--color-pink-soft) 40%, white) 48%,
+      color-mix(in srgb, var(--color-blue-soft) 50%, white)
+    );
+  box-shadow: 0 10px 28px rgba(70, 50, 90, 0.12);
+}
+
+.logo-frame-inner {
+  position: relative;
   display: grid;
   place-items: center;
-  width: 100%;
-  aspect-ratio: 400 / 364;
+  aspect-ratio: 400 / 290;
+  padding: 1.35rem 1.5rem;
   border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-soft);
-  background: #fff;
-  transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
-}
-
-.hero-logo.spinning .logo-stage {
-  animation: logo-spin 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
-}
-
-@keyframes logo-spin {
-  0% {
-    transform: rotateY(0deg) scale(1);
-  }
-  45% {
-    transform: rotateY(90deg) scale(0.92);
-  }
-  55% {
-    transform: rotateY(90deg) scale(0.92);
-  }
-  100% {
-    transform: rotateY(0deg) scale(1);
-  }
+  background:
+    radial-gradient(
+      ellipse 80% 70% at 50% 40%,
+      #fff 0%,
+      color-mix(in srgb, var(--color-bg-card) 70%, white) 100%
+    );
 }
 
 .logo-img {
   display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.logo-img--classic {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.logo-img--brand {
   width: 100%;
   height: auto;
   object-fit: contain;
   object-position: center;
 }
 
-.hero-logo:hover .logo-stage {
-  filter: brightness(1.02);
-}
-
-.hero-logo:focus-visible {
-  outline: 3px solid var(--color-lavender-hover);
-  outline-offset: 4px;
-  border-radius: calc(var(--radius) + 2px);
-}
-
-.hero-quote {
-  display: none;
-  margin: 0;
-  text-align: center;
-}
-
-.hero-quote p {
-  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
-  margin: 0 0 0.65rem;
-  line-height: 1.4;
-}
-
-.hero-quote footer {
-  font-style: italic;
-  font-weight: 700;
-  font-size: 1.05rem;
-}
-
 @media (min-width: 992px) {
   .hero {
-    margin-bottom: 4rem;
-    padding-top: 1rem;
+    padding-top: 0.75rem;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero .container {
+    width: 100%;
   }
 
   .hero-grid {
-    grid-template-columns: 1fr minmax(280px, 380px) 1fr;
-    gap: 1.5rem;
+    grid-template-columns: 1fr minmax(320px, 460px);
+    gap: 2.5rem;
     padding: 0;
     align-items: center;
   }
@@ -214,37 +154,22 @@ function flipLogo() {
   .hero-copy {
     order: 1;
     text-align: left;
-    padding-right: 1.5rem;
+    align-items: flex-start;
+    padding-right: 1rem;
+  }
+
+  .hero-subtitle {
+    max-width: 32rem;
   }
 
   .hero-logo {
     order: 2;
   }
-
-  .hero-quote {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    order: 3;
-    padding-left: 1rem;
-    padding-right: 0.25rem;
-    align-self: center;
-  }
-
-  .hero-quote p {
-    font-size: clamp(1.55rem, 1.9vw, 1.95rem);
-  }
 }
 
 @media (max-width: 575.98px) {
-  .hero-copy h1 {
-    font-size: 1.75rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-logo.spinning .logo-stage {
-    animation: none;
+  .hero-brand {
+    font-size: 2.35rem;
   }
 }
 </style>

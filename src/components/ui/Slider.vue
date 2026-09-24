@@ -1,22 +1,41 @@
 <script setup>
-const images = [
-  "/assets/img/products/cizme/1.jpg",
-  "/assets/img/products/gricke/1.jpg",
-  "/assets/img/products/kocke/1.jpg",
-  "/assets/img/products/krun/1.jpg",
-  "/assets/img/products/kugle/1.jpg",
-  "/assets/img/products/okviri/10.jpg",
-  "/assets/img/products/privj/1.jpg",
-  "/assets/img/products/set/6.jpg",
-  "/assets/img/products/shuze/1.jpg",
-  "/assets/img/products/slinceki/12.jpg",
-  "/assets/img/products/trake/1.jpg",
-  "/assets/img/products/vezice/12.jpg",
-];
+import { computed } from "vue";
+import catalog from "@/catalog.js";
+
+function shuffle(list) {
+  const a = [...list];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function collectCatalogImages() {
+  const paths = [];
+  for (const product of catalog.data) {
+    if (product.comingSoon) continue;
+    if (product.thumbnail) paths.push(product.thumbnail);
+    if (Array.isArray(product.images)) {
+      for (const img of product.images.slice(0, 2)) {
+        const path = typeof img === "string" ? img : img?.path;
+        if (path) paths.push(path);
+      }
+    }
+  }
+  return [...new Set(paths)];
+}
+
+const images = computed(() => {
+  const pool = shuffle(collectCatalogImages());
+  // Enough tiles for a smooth marquee; fall back if catalog is tiny
+  const picked = pool.slice(0, Math.max(10, Math.min(14, pool.length)));
+  return picked.length ? picked : collectCatalogImages();
+});
 </script>
 
 <template>
-  <section class="slider">
+  <section class="slider" v-if="images.length">
     <div class="fading-left"></div>
     <article>
       <div>
@@ -77,7 +96,7 @@ const images = [
 img {
   display: block;
   width: 100%;
-  height: 300px;
+  height: 255px;
   object-fit: cover;
 }
 
@@ -85,7 +104,7 @@ article {
   display: flex;
   width: max-content;
   animation: bannermove 40s linear infinite;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 article > div {
@@ -100,11 +119,11 @@ ul {
 }
 
 li {
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 0.85rem;
+  margin-right: 0.85rem;
   border-radius: var(--radius);
   overflow: hidden;
-  width: 220px;
+  width: 280px;
   flex-shrink: 0;
   box-shadow: var(--shadow-soft);
 }
@@ -120,11 +139,11 @@ li {
 
 @media (max-width: 991.98px) {
   img {
-    height: 220px;
+    height: 195px;
   }
 
   li {
-    width: 160px;
+    width: 200px;
   }
 
   article {

@@ -11,9 +11,11 @@ const productsDir = path.join(root, "src/content/products");
 const outDir = path.join(root, "public/cjenici");
 
 const META = {
-  oblikObjekta: "trgovina",
-  adresa: "Nasice",
-  oznakaObjekta: "Svastaonica",
+  oblikObjekta: "Radionica s prodajom na daljinu",
+  adresa: "V.Lisinskog172",
+  mjesto: "Našice",
+  oznakaObjekta: "Svaštaonica",
+  oznakaPoslovnice: "POSL1",
   brojPohrane: "001",
   marka: "Svaštaonica",
   jedinicaMjere: "kom",
@@ -29,7 +31,6 @@ const HEADERS = [
   "poseban_oblik_prodaje",
   "naziv_posebnog_oblika_prodaje",
   "sidrena_cijena",
-  "najniza_cijena_30_dana",
   "barkod",
   "dostupnost",
 ];
@@ -68,12 +69,7 @@ function money(value) {
   return n.toFixed(2);
 }
 
-function isOnSale(product) {
-  return Array.isArray(product.badges) && product.badges.includes("badge4");
-}
-
 function rowFor(product) {
-  const sale = isOnSale(product);
   return [
     product.name,
     `SV-${product.id}`,
@@ -81,10 +77,9 @@ function rowFor(product) {
     META.jedinicaMjere,
     money(product.price),
     money(product.price),
-    sale ? "da" : "ne",
-    sale ? "akcija" : "",
+    "ne",
+    "",
     money(product.sidrenaCijena),
-    money(product.najnizaCijena30dana),
     "",
     product.soldout ? "nedostupno" : "dostupno",
   ];
@@ -98,19 +93,24 @@ function buildCsv(products) {
   return lines.join("\n") + "\n";
 }
 
-function filenameFor(stamp) {
-  const ts = `${stamp.year}${stamp.month}${stamp.day}T${stamp.hour}${stamp.minute}${stamp.second}`;
+function fileStemParts() {
   return [
     META.oblikObjekta,
     META.adresa,
+    META.mjesto,
     META.oznakaObjekta,
+    META.oznakaPoslovnice,
     META.brojPohrane,
-    ts,
-  ].join("_") + ".csv";
+  ];
+}
+
+function filenameFor(stamp) {
+  const ts = `${stamp.year}${stamp.month}${stamp.day}T${stamp.hour}${stamp.minute}${stamp.second}`;
+  return [...fileStemParts(), ts].join("_") + ".csv";
 }
 
 function datePrefix(stamp) {
-  return `${META.oblikObjekta}_${META.adresa}_${META.oznakaObjekta}_${META.brojPohrane}_${stamp.year}${stamp.month}${stamp.day}T`;
+  return `${fileStemParts().join("_")}_${stamp.year}${stamp.month}${stamp.day}T`;
 }
 
 function pruneOld(files, stamp) {
@@ -129,12 +129,16 @@ function pruneOld(files, stamp) {
   }
 }
 
+function fileUrl(file) {
+  return `/cjenici/${encodeURIComponent(file)}`;
+}
+
 function writeListing(stamp, listed) {
   const filesJson = {
     generatedAt: `${stamp.year}-${stamp.month}-${stamp.day}T${stamp.hour}:${stamp.minute}:${stamp.second}+02:00`,
     files: listed.map((file) => ({
       name: file,
-      url: `/cjenici/${file}`,
+      url: fileUrl(file),
     })),
   };
   fs.writeFileSync(
@@ -144,7 +148,10 @@ function writeListing(stamp, listed) {
 
   const listItems = listed.length
     ? listed
-        .map((file) => `    <li><a href="/cjenici/${file}">${file}</a></li>`)
+        .map(
+          (file) =>
+            `    <li><a href="${fileUrl(file)}">${file}</a></li>`
+        )
         .join("\n")
     : "    <li>Cjenik proizvoda bit će objavljen kad se upišu cijene.</li>";
 

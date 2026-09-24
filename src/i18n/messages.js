@@ -13,20 +13,18 @@ export const messages = {
       label: "Jezik",
     },
     hero: {
-      welcome: "Dobrodošli na",
+      welcome: "Dobrodošli u",
       subtitle:
-        "sretno mjesto na internetu gdje se mogu pronaći razni poklončići za bebe!",
+        "radionicu ručnog rada iz Našica — pokloni i rukotvorine izrađeni s pažnjom, za svaku prigodu.",
       cta: "Galerija",
-      quote: "“Svi smo djeca. Jedina razlika je igračka koju imamo.”",
-      logoFlipHint: "Klikni za novi logo Svaštaonica",
     },
     home: {
-      quote1:
-        "Ono što dobijemo od djetinjstva nisu igračke, već uspomene. A sretne uspomene bolje su od bilo koje igračke.",
-      quote2: "Darujte djeci igračke koje pokreće njihova mašta, a ne baterije.",
-      quote3:
-        "Nitko nikada ne zaboravlja igračku koja ga je u djetinjstvu iznimno veselila.",
-      quote4: "Igračke su dječje riječi, a igra njihov jezik.",
+      bestsellersKicker: "Iz radionice",
+      bestsellersTitle: "Najtraženiji ručni radovi",
+      previewKicker: "Pogled u ponudu",
+      previewTitle: "Odabir iz galerije",
+      statsKicker: "U brojkama",
+      statsTitle: "Što smo zajedno stvorili",
       viewAll: "Pogledaj sve",
     },
     order: {
@@ -48,15 +46,14 @@ export const messages = {
     },
     stats: {
       hours: "uloženih sati rada",
-      children: "razveseljene djece",
-      moms: "zadovoljnih mama",
+      customers: "zadovoljnih kupaca",
+      gifts: "poklonjenih rukotvorina",
       products: "izrađenih proizvoda",
     },
     gallery: {
       title: "Galerija",
       trending: "U trendu",
       new: "Novo u ponudi",
-      sale: "Akcija",
       bundles: "Paketi",
       searchPlaceholder: "Pretraži proizvode…",
       empty: "Nažalost nismo pronašli niti jedan proizvod toga imena.",
@@ -73,13 +70,13 @@ export const messages = {
     footer: {
       reachUs: "Obratite nam se putem:",
       glad: "Radujemo se svakom vašem upitu i narudžbi!",
-      copyright: "© Since 2020 — Svaštaonica",
+      copyright: "© Since 2026 — Svaštaonica",
     },
     cjenik: {
       title: "Cjenik",
       intro:
         "Važeći maloprodajni cjenik u strojno čitljivom CSV obliku, javno dostupan za preuzimanje.",
-      note: "Uz aktualnu cijenu ističe se i dodatna (sidrena) cijena s 10. rujna 2026. Cijene su s PDV-om.",
+      note: "Uz aktualnu cijenu ističe se i dodatna (sidrena) cijena s 10. rujna 2026.",
       files: "Objavljene datoteke",
       available30: "Objavljeni cjenici ostaju dostupni 30 dana od objave.",
       empty: "Datoteka cjenika se priprema.",
@@ -87,18 +84,17 @@ export const messages = {
       colName: "Proizvod",
       colPrice: "Maloprodajna cijena",
       colAnchor: "Sidrena cijena",
-      colLowest: "Najniža u 30 dana",
       colStatus: "Dostupnost",
       available: "Dostupno",
       noPrices: "Cjenik proizvoda bit će objavljen kad se upišu cijene.",
+      vatExempt:
+        "*Oslobođeno PDV-a po čl.90 st.1 Zakona o PDV-u",
     },
     product: {
       soldOut: "RASPRODANO",
       comingSoon: "Uskoro u ponudi",
       price: "Cijena",
       anchorPrice: "Dodatna cijena",
-      lowest30: "Najniža cijena u zadnjih 30 dana",
-      sale: "Akcija",
       availableSizes: "Raspoložive veličine",
       partOfBundle: "Ovaj proizvod je dio našeg promo paketa",
       bundleItems: "Proizvodi koji se nalaze u paketu",
@@ -119,6 +115,10 @@ export const messages = {
       handmade: "ručni rad",
       handmadeSuffix:
         ", proizašao iz malene radionice, napravljen s mnoštvom ljubavi i pažnje, te provjeren, poslikan i pojašnjen kupcu prije slanja, kako bi do Vas stigao točno onakav kakvog ste ga i zamislili.",
+      point1: "Rukotvorine s karakterom",
+      point2: "Pokloni za svaku prigodu",
+      closing:
+        "Naše radno vrijeme nema početka ni kraja, jer takvo se stvaralaštvo jednostavno živi, uz trud i pristup svakom kupcu individualno, uz neizostavan „personal touch“, kako bi svaka suradnja bila čim uspješnija, a vi kao kupci zadovoljni, što nas zapravo i motivira u ustrajnosti i daljnjem rastu, razvoju i osvajanju novih tržišta.",
     },
     notFound: {
       title: "Oops!",
@@ -146,19 +146,16 @@ export const messages = {
     hero: {
       welcome: "Welcome to",
       subtitle:
-        "a happy place online where you can find all kinds of little gifts for babies!",
+        "a handmade workshop from Našice — gifts and crafts made with care, for every occasion.",
       cta: "Gallery",
-      quote: "“We are all children. The only difference is the toy we have.”",
-      logoFlipHint: "Click to reveal the new Svaštaonica logo",
     },
     home: {
-      quote1:
-        "What we get from childhood is not toys, but memories. And happy memories are better than any toy.",
-      quote2:
-        "Give children toys powered by their imagination, not by batteries.",
-      quote3:
-        "No one ever forgets a toy that made them extraordinarily happy in childhood.",
-      quote4: "Toys are children's words, and play is their language.",
+      bestsellersKicker: "From the workshop",
+      bestsellersTitle: "Most-loved handmade pieces",
+      previewKicker: "A look at the range",
+      previewTitle: "Gallery highlights",
+      statsKicker: "In numbers",
+      statsTitle: "What we have created together",
       viewAll: "View all",
     },
     order: {
@@ -180,15 +177,14 @@ export const messages = {
     },
     stats: {
       hours: "hours of work invested",
-      children: "happy children",
-      moms: "happy moms",
+      customers: "happy customers",
+      gifts: "handmade gifts given",
       products: "handmade products",
     },
     gallery: {
       title: "Gallery",
       trending: "Trending",
       new: "New in store",
-      sale: "Sale",
       bundles: "Bundles",
       searchPlaceholder: "Search products…",
       empty: "Sorry, we could not find any product with that name.",
@@ -205,13 +201,13 @@ export const messages = {
     footer: {
       reachUs: "Reach us via:",
       glad: "We look forward to every inquiry and order!",
-      copyright: "© Since 2020 — Svaštaonica",
+      copyright: "© Since 2026 — Svaštaonica",
     },
     cjenik: {
       title: "Price list",
       intro:
         "Current retail price list in a machine-readable CSV file, publicly available for download.",
-      note: "Next to the current price we also show the additional (anchor) price from 10 September 2026. Prices include VAT.",
+      note: "Next to the current price we also show the additional (anchor) price from 10 September 2026.",
       files: "Published files",
       available30: "Published price lists remain available for 30 days.",
       empty: "The price list file is being prepared.",
@@ -219,18 +215,17 @@ export const messages = {
       colName: "Product",
       colPrice: "Retail price",
       colAnchor: "Anchor price",
-      colLowest: "Lowest in 30 days",
       colStatus: "Availability",
       available: "Available",
       noPrices: "The product price list will be published once prices are entered.",
+      vatExempt:
+        "*Exempt from VAT pursuant to Art. 90(1) of the Croatian VAT Act",
     },
     product: {
       soldOut: "SOLD OUT",
       comingSoon: "Coming soon",
       price: "Price",
       anchorPrice: "Additional price",
-      lowest30: "Lowest price in the last 30 days",
-      sale: "Sale",
       availableSizes: "Available sizes",
       partOfBundle: "This product is part of our promo bundle",
       bundleItems: "Products included in the bundle",
@@ -251,6 +246,10 @@ export const messages = {
       handmade: "handmade",
       handmadeSuffix:
         ", created in a small workshop with plenty of love and care, then checked, photographed and explained to the customer before shipping, so it arrives exactly as you imagined it.",
+      point1: "Crafts with character",
+      point2: "Gifts for every occasion",
+      closing:
+        "Our working hours have no beginning or end, because this kind of creativity is simply lived — with care and an individual approach to every customer, and an essential “personal touch”, so each collaboration is as successful as possible and you as customers are satisfied, which is what motivates us to keep growing, developing and reaching new markets.",
     },
     notFound: {
       title: "Oops!",

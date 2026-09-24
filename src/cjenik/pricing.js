@@ -20,13 +20,4 @@ export function hasPrice(product) {
   return product != null && hasAmount(product.price);
 }
 
-export function isOnSale(product) {
-  if (!product) return false;
-  return Array.isArray(product.badges) && product.badges.includes("badge4");
-}
-
-export function saleLabel(product) {
-  return isOnSale(product) ? "akcija" : "";
-}
-
 export { cjenikMeta };

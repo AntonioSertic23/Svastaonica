@@ -106,10 +106,10 @@ function closeMobileNavbar() {
   left: 0;
   z-index: 1030;
   padding: 0.55rem 0.85rem;
-  background-color: rgba(237, 228, 242, 0.92);
+  background-color: rgba(241, 236, 244, 0.92);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 1px 0 rgba(80, 50, 100, 0.08);
+  box-shadow: 0 1px 0 rgba(70, 50, 90, 0.08);
 }
 
 .navbar-inner {
@@ -139,7 +139,7 @@ function closeMobileNavbar() {
   width: auto;
   object-fit: contain;
   border-radius: 10px;
-  box-shadow: 0 1px 4px rgba(80, 50, 100, 0.12);
+  box-shadow: 0 1px 4px rgba(70, 50, 90, 0.12);
 }
 
 .navbar-toggler {
@@ -150,7 +150,7 @@ function closeMobileNavbar() {
 }
 
 .navbar-toggler:focus {
-  box-shadow: 0 0 0 0.15rem rgba(205, 180, 219, 0.55);
+  box-shadow: 0 0 0 0.15rem rgba(201, 182, 216, 0.55);
 }
 
 .navbar-collapse {

@@ -17,6 +17,33 @@ public_folder: /assets/img/uploads
 locale: hr
 
 collections:
+  - name: site
+    label: Početna stranica
+    description: >-
+      Postavke sadržaja na početnoj stranici weba (ne proizvodi, već što se
+      ističe posjetiteljima).
+    files:
+      - name: homepage
+        label: Najtraženiji proizvodi
+        file: src/content/site/homepage.json
+        description: >-
+          Ovdje biraš točno 3 proizvoda koji se prikazuju na početnoj stranici
+          u sekciji „Najtraženiji ručni radovi“ (ispod clip-slidera).
+          Redoslijed je važan: 1. = zlatna medalja (sredina), 2. = srebrna
+          (lijevo), 3. = brončana (desno). Ovo nije automatski popis
+          najprodavanijih — ručno odabireš što želiš istaknuti. Promjena se
+          vidi na webu nakon spremanja / objave (Netlify rebuild).
+        fields:
+          - label: Tri istaknuta proizvoda
+            name: featuredProducts
+            widget: product-multiselect
+            required: true
+            max: 3
+            hint: >-
+              Odaberi točno 3 proizvoda. Klikom uključuješ/isključuješ stavku.
+              Ako su već 3 odabrana, prvo makni jednu pa dodaj drugu. Redoslijed
+              odabira = 1. / 2. / 3. mjesto (zlatna / srebrna / brončana).
+
   - name: products
     label: Proizvodi
     label_singular: Proizvod
@@ -82,7 +109,7 @@ collections:
         value_type: float
         required: false
         hint: >-
-          Aktualna cijena s PDV-om. Ako ostane prazno, cijena se ne prikazuje
+          Aktualna cijena. Ako ostane prazno, cijena se ne prikazuje
           na webu niti u CSV cjeniku.
 
       - label: Sidrena / dodatna cijena (€)
@@ -90,16 +117,7 @@ collections:
         widget: number
         value_type: float
         required: false
-        hint: Cijena koja je vrijedila 10. 9. 2026. (bez akcija). Prazno = ne prikazuje se.
-
-      - label: Najniža cijena u zadnjih 30 dana (€)
-        name: najnizaCijena30dana
-        widget: number
-        value_type: float
-        required: false
-        hint: >-
-          Treća cijena (zaštita potrošača kod akcija). Prazno = ne prikazuje se.
-          Upisuje se kad se bude trebalo.
+        hint: Cijena koja je vrijedila 10. 9. 2026. Prazno = ne prikazuje se.
 
       - label: Thumbnail
         name: thumbnail
@@ -184,14 +202,11 @@ collections:
         name: badges
         widget: icon-multiselect
         required: false
-        hint: >-
-          Klikni bedževe na kartici proizvoda. Bedž "Akcija" označava da je
-          proizvod na akciji (i u cjeniku).
+        hint: Klikni bedževe na kartici proizvoda.
         options:
           - { label: "Novo u ponudi", value: badge1 }
           - { label: "U trendu", value: badge2 }
           - { label: "Preporuka", value: badge3 }
-          - { label: "Akcija", value: badge4 }
           - { label: "Paket", value: badge5 }
           - { label: "Sigurnost", value: badge6 }
 
@@ -215,7 +230,6 @@ collections:
         options:
           - { label: "U trendu", value: 1, image: /assets/img/ui/badge2.png }
           - { label: "Novo u ponudi", value: 2, image: /assets/img/ui/badge1.png }
-          - { label: "Akcija", value: 3, image: /assets/img/ui/badge4.png }
           - { label: "Paketi", value: 4, image: /assets/img/ui/box.png }
 
       - label: Ključne riječi / ikone
@@ -254,7 +268,6 @@ collections:
               - { label: "Novo u ponudi", value: "/assets/img/ui/badge1.png", image: "/assets/img/ui/badge1.png" }
               - { label: "U trendu", value: "/assets/img/ui/badge2.png", image: "/assets/img/ui/badge2.png" }
               - { label: "Preporuka", value: "/assets/img/ui/badge3.png", image: "/assets/img/ui/badge3.png" }
-              - { label: "Akcija", value: "/assets/img/ui/badge4.png", image: "/assets/img/ui/badge4.png" }
               - { label: "Paket", value: "/assets/img/ui/badge5.png", image: "/assets/img/ui/badge5.png" }
               - { label: "Sigurnost", value: "/assets/img/ui/badge6.png", image: "/assets/img/ui/badge6.png" }
               - { label: "Kutija", value: "/assets/img/ui/box.png", image: "/assets/img/ui/box.png" }

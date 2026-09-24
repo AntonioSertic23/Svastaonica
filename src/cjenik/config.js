@@ -1,9 +1,11 @@
 /** Metadata for the legally required machine-readable price list. */
 export const cjenikMeta = {
-  oblikObjekta: "trgovina",
-  adresa: "Nasice",
-  adresaPrikaz: "Našice, Hrvatska",
-  oznakaObjekta: "Svastaonica",
+  oblikObjekta: "Radionica s prodajom na daljinu",
+  adresa: "V.Lisinskog172",
+  mjesto: "Našice",
+  adresaPrikaz: "V. Lisinskog 172, Našice, Hrvatska",
+  oznakaObjekta: "Svaštaonica",
+  oznakaPoslovnice: "POSL1",
   brojPohrane: "001",
   marka: "Svaštaonica",
   sidrenaDatum: "10. 9. 2026.",

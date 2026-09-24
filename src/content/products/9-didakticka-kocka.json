@@ -13,8 +13,8 @@
       "icon": "/assets/img/ui/sewing.png"
     },
     {
-      "text": "100% zabavno",
-      "icon": "/assets/img/ui/playtime.png"
+      "text": "Personalizirano",
+      "icon": "/assets/img/ui/handcraft.png"
     }
   ],
   "subheadingEn": "",
@@ -170,6 +170,6 @@
   "categories": [
     1
   ],
-  "description": "Personalizirane zveckave kocke, posebno su dizajnirane u veselim bojama i šarenim uzorcima kako bi odmah privukle pozornost bebinih okica! <br><br> Ispunjene su mekim punjenjem, zveckavcem u sredini, šuškavom stranicom i mnoštvom etiketa i trakica koje pospješuju razvoj fine motorike, ponajprije hvatanja, prepoznavanja boja, vježbe sluha kroz igru, ravnoteže te pokretanje cijelog lokomotornog sustava.<br><br> Kvaliteta tkanina i izrada preduvjet su ovako kvalitetnog i dugotrajnog proizvoda. ",
+  "description": "Personalizirane zveckave kocke, posebno su dizajnirane u veselim bojama i šarenim uzorcima kako bi odmah privukle pozornost. <br><br> Ispunjene su mekim punjenjem, zveckavcem u sredini, šuškavom stranicom i mnoštvom etiketa i trakica. <br><br> Kvaliteta tkanina i izrada preduvjet su ovako kvalitetnog i dugotrajnog proizvoda. ",
   "bundleItems": []
 }

@@ -48,13 +48,15 @@ function normalizeProduct(product) {
     sizes: normalizeSizes(product.sizes),
     declaration: normalizeDeclaration(product.declaration),
     badges: Array.isArray(product.badges) ? product.badges.map(String) : [],
+    keywords: Array.isArray(product.keywords) ? product.keywords : [],
+    reviews: Array.isArray(product.reviews) ? product.reviews : [],
+    images: Array.isArray(product.images) ? product.images : [],
     nameEn: product.nameEn != null ? String(product.nameEn) : "",
     subheadingEn: product.subheadingEn != null ? String(product.subheadingEn) : "",
     descriptionEn:
       product.descriptionEn != null ? String(product.descriptionEn) : "",
     price: optionalMoney(product.price),
     sidrenaCijena: optionalMoney(product.sidrenaCijena),
-    najnizaCijena30dana: optionalMoney(product.najnizaCijena30dana),
   };
 }
 

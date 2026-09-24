@@ -7,7 +7,6 @@ import {
   cjenikMeta,
   formatEuro,
   hasPrice,
-  isOnSale,
 } from "@/cjenik/pricing";
 
 const { t, pt } = useI18n();
@@ -59,7 +58,6 @@ onMounted(async () => {
               <th>{{ t("cjenik.colName") }}</th>
               <th>{{ t("cjenik.colPrice") }}</th>
               <th>{{ t("cjenik.colAnchor") }}</th>
-              <th>{{ t("cjenik.colLowest") }}</th>
               <th>{{ t("cjenik.colStatus") }}</th>
             </tr>
           </thead>
@@ -69,9 +67,6 @@ onMounted(async () => {
                 <RouterLink :to="'/singleitem/' + item.id">
                   {{ pt(item, "name") }}
                 </RouterLink>
-                <span v-if="isOnSale(item)" class="sale-tag">{{
-                  t("product.sale")
-                }}</span>
               </td>
               <td>{{ formatEuro(item.price) }}</td>
               <td>
@@ -79,13 +74,6 @@ onMounted(async () => {
                   {{ formatEuro(item.sidrenaCijena) }}
                   <span class="date">{{ cjenikMeta.sidrenaDatum }}</span>
                 </template>
-              </td>
-              <td>
-                {{
-                  item.najnizaCijena30dana != null
-                    ? formatEuro(item.najnizaCijena30dana)
-                    : ""
-                }}
               </td>
               <td>
                 {{
@@ -98,6 +86,10 @@ onMounted(async () => {
           </tbody>
         </table>
       </div>
+
+      <p class="vat-note text-center mx-auto mt-5 mb-2">
+        {{ t("cjenik.vatExempt") }}
+      </p>
     </div>
   </section>
 </template>
@@ -193,22 +185,17 @@ onMounted(async () => {
   font-weight: 600;
 }
 
-.sale-tag {
-  display: inline-block;
-  margin-left: 0.5rem;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  background: var(--color-pink);
-  border-radius: 999px;
-  padding: 0.15rem 0.5rem;
-}
-
 .date {
   display: block;
   font-size: 0.8rem;
   color: var(--color-text-muted);
+}
+
+.vat-note {
+  max-width: 42rem;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  font-style: italic;
 }
 
 @media (max-width: 991.98px) {

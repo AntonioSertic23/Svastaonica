@@ -6,7 +6,6 @@ import {
   formatEuro,
   hasAmount,
   hasPrice,
-  isOnSale,
 } from "@/cjenik/pricing";
 
 const props = defineProps({
@@ -16,29 +15,20 @@ const props = defineProps({
 const { t } = useI18n();
 
 const visible = computed(() => hasPrice(props.product));
-const sale = computed(() => isOnSale(props.product));
 const current = computed(() => formatEuro(props.product.price));
 const hasAnchor = computed(() => hasAmount(props.product.sidrenaCijena));
-const hasLowest = computed(() => hasAmount(props.product.najnizaCijena30dana));
 </script>
 
 <template>
-  <div v-if="visible" class="product-price" :class="{ sale }">
+  <div v-if="visible" class="product-price">
     <p class="current">
       <span class="label">{{ t("product.price") }}</span>
       <span class="amount">{{ current }}</span>
-      <span v-if="sale" class="sale-tag">{{ t("product.sale") }}</span>
     </p>
     <p v-if="hasAnchor" class="extra">
       {{ t("product.anchorPrice") }}
       ({{ cjenikMeta.sidrenaDatum }}):
       <span class="extra-amount">{{ formatEuro(product.sidrenaCijena) }}</span>
-    </p>
-    <p v-if="hasLowest" class="extra">
-      {{ t("product.lowest30") }}:
-      <span class="extra-amount">{{
-        formatEuro(product.najnizaCijena30dana)
-      }}</span>
     </p>
   </div>
 </template>
@@ -75,16 +65,6 @@ const hasLowest = computed(() => hasAmount(props.product.najnizaCijena30dana));
   font-weight: 700;
   letter-spacing: 0.02em;
   line-height: 1.15;
-}
-
-.sale-tag {
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  background: var(--color-pink);
-  border-radius: 999px;
-  padding: 0.2rem 0.65rem;
 }
 
 .extra {

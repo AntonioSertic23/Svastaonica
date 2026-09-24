@@ -13,23 +13,24 @@
 }
 
 :root {
-  --color-lavender: #cdb4db;
-  --color-lavender-hover: #a375bd;
-  --color-lavender-deep: #b391ca;
-  --color-pink: #ffafcc;
-  --color-pink-hover: #ff85b1;
-  --color-pink-soft: #ffc8dd;
-  --color-blue-soft: #bde0fe;
-  --color-blue: #a2d2ff;
-  --color-bg: #ede4f2;
-  --color-bg-card: #f7f2fa;
-  --color-thistle: #d8bfd8;
-  --color-text: #222;
-  --color-text-muted: #444;
+  /* Soft craft tones — light enough for buttons, dusty rather than nursery candy */
+  --color-lavender: #c9b6d8;
+  --color-lavender-hover: #b09bc2;
+  --color-lavender-deep: #967eac;
+  --color-pink: #e2a9b8;
+  --color-pink-hover: #cc8fa1;
+  --color-pink-soft: #f0d0d9;
+  --color-blue-soft: #c9d8e6;
+  --color-blue: #aec4d8;
+  --color-bg: #f1ecf4;
+  --color-bg-card: #f8f5fa;
+  --color-thistle: #d9cfe3;
+  --color-text: #2a2430;
+  --color-text-muted: #5a5260;
   --color-soldout: crimson;
-  --radius: 15px;
-  --shadow-soft: 0 4px 14px rgba(80, 50, 100, 0.12);
-  --shadow-card: 3px 3px 8px rgba(80, 50, 100, 0.15);
+  --radius: 12px;
+  --shadow-soft: 0 4px 16px rgba(70, 50, 90, 0.1);
+  --shadow-card: 3px 3px 10px rgba(70, 50, 90, 0.12);
   --font-body: "Montserrat", sans-serif;
   --font-display: "Poiret_One", cursive;
   --nav-height: 96px;
@@ -73,7 +74,7 @@ body {
   position: relative;
 }
 
-/* Soft atmospheric wash (includes intentional pink glow under the top of the page) */
+/* Soft lilac wash — gentle, not candy-pink nursery */
 #app::before {
   content: "";
   position: fixed;
@@ -82,18 +83,18 @@ body {
   pointer-events: none;
   background:
     radial-gradient(
-      ellipse 80% 50% at 50% 0%,
-      rgba(255, 200, 221, 0.35),
-      transparent 60%
+      ellipse 85% 55% at 50% -5%,
+      rgba(201, 182, 216, 0.35),
+      transparent 58%
     ),
     radial-gradient(
-      ellipse 60% 40% at 100% 40%,
-      rgba(189, 224, 254, 0.25),
+      ellipse 50% 40% at 100% 50%,
+      rgba(201, 216, 230, 0.28),
       transparent 55%
     ),
     radial-gradient(
-      ellipse 50% 35% at 0% 70%,
-      rgba(205, 180, 219, 0.3),
+      ellipse 45% 35% at 0% 75%,
+      rgba(226, 169, 184, 0.16),
       transparent 50%
     ),
     var(--color-bg);

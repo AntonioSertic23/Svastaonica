@@ -43,12 +43,6 @@ const { t } = useI18n();
 
         <div class="col col-lg-4 section2-left order-2 order-lg-1">
           <VLazyImage v-bind:src="'/assets/img/site/aboutus/4.jpg'" class="image1" />
-
-          <p class="mt-4">
-            „Mašta je važija od znanja. Znanje je ograničeno. Mašta okružuje
-            svijet.“
-          </p>
-          <p class="who"><i>Albert Einstein</i></p>
         </div>
 
         <div
@@ -102,12 +96,12 @@ const { t } = useI18n();
         <div class="section3-1 px-3 col col-lg-5">
           <div class="item">
             <img src="/assets/img/ui/bp1.png" alt="" />
-            <p>Igračke kao umjetnost</p>
+            <p>{{ t("about.point1") }}</p>
           </div>
 
           <div class="item">
             <img src="/assets/img/ui/bp1.png" alt="" />
-            <p>Igračke za moderne obitelji</p>
+            <p>{{ t("about.point2") }}</p>
           </div>
 
           <!--           <div class="item">
@@ -133,12 +127,7 @@ const { t } = useI18n();
       >
         <div class="col col-lg-9 px-4">
           <p class="aboutus-description m-0">
-            Naše radno vijeme nema početka ni kraja, jer takvo se stvaralaštvo
-            jedostavno živi, uz trud i pristup svakom kupcu individualno, uz
-            neizostavan <span class="important">„personal touch“</span>, kako bi
-            svaka suradnja bila čim uspješnija, a vi kao kupci zadovoljni, što
-            nas zapravo i motivira u ustrajnosti i daljnjem rastu, razvoju i
-            osvajanju novih tržišta.
+            {{ t("about.closing") }}
           </p>
         </div>
       </div>
@@ -330,7 +319,7 @@ const { t } = useI18n();
 .background-connector {
   position: absolute;
   height: 180px;
-  background-color: thistle;
+  background-color: var(--color-thistle);
   z-index: 0;
   margin-top: 140px;
 }
@@ -414,7 +403,7 @@ const { t } = useI18n();
 .background-image {
   position: absolute;
   height: 400px;
-  background-color: thistle;
+  background-color: var(--color-thistle);
   left: 0;
 }
 
@@ -462,7 +451,7 @@ const { t } = useI18n();
 .circle4 {
   width: 20px;
   height: 20px;
-  background-color: thistle;
+  background-color: var(--color-thistle);
   position: absolute;
   border-radius: 50%;
   border: 2px solid gray;
@@ -497,7 +486,7 @@ const { t } = useI18n();
 
   .section3-1 {
     width: 90%;
-    background-color: thistle;
+    background-color: var(--color-thistle);
     padding-top: 1rem;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -513,7 +502,7 @@ const { t } = useI18n();
   }
 
   .section3-2 {
-    background-color: thistle;
+    background-color: var(--color-thistle);
     width: 90%;
     margin-left: auto;
     justify-content: center;
@@ -608,7 +597,7 @@ const { t } = useI18n();
 }
 
 .section5 .section5-card {
-  background-color: thistle;
+  background-color: var(--color-thistle);
   border-radius: 15px;
   height: 100%;
   padding-left: 2rem;

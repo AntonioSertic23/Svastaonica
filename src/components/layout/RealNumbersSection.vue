@@ -13,28 +13,25 @@ const stats = [
     icons: [{ src: "/assets/img/ui/clock.png", rotate: 0 }],
   },
   {
-    id: "children",
-    target: 2800,
-    suffix: "+",
-    labelKey: "stats.children",
-    icons: [
-      { src: "/assets/img/ui/baby.png", rotate: -15 },
-      { src: "/assets/img/ui/baby-girl.png", rotate: 15 },
-    ],
-  },
-  {
-    id: "moms",
+    id: "customers",
     target: 2600,
     suffix: "+",
-    labelKey: "stats.moms",
-    icons: [{ src: "/assets/img/ui/mother.png", rotate: 0 }],
+    labelKey: "stats.customers",
+    icons: [{ src: "/assets/img/ui/give-love.png", rotate: 0 }],
+  },
+  {
+    id: "gifts",
+    target: 2800,
+    suffix: "+",
+    labelKey: "stats.gifts",
+    icons: [{ src: "/assets/img/ui/gift.png", rotate: 0 }],
   },
   {
     id: "products",
     target: 180,
     suffix: "+",
     labelKey: "stats.products",
-    icons: [{ src: "/assets/img/ui/gift.png", rotate: 0 }],
+    icons: [{ src: "/assets/img/ui/sewing.png", rotate: 0 }],
   },
 ];
 
@@ -85,7 +82,7 @@ onUnmounted(() => {
     ref="sectionEl"
     class="container mb-5 px-3 px-lg-5 d-flex flex-column stats-section"
   >
-    <div class="real-numbers-div g-4 mx-1 mx-lg-4 row mt-3 mt-lg-5">
+    <div class="real-numbers-div g-4 mx-1 mx-lg-4 row mt-3 mt-lg-4">
       <div
         class="col-12 col-sm-6 col-lg-3"
         v-for="(stat, i) in stats"
@@ -120,9 +117,9 @@ onUnmounted(() => {
   text-align: center;
   background: linear-gradient(
     165deg,
-    #c9a8d8 0%,
+    #d4c4e0 0%,
     var(--color-thistle) 45%,
-    #b894c9 100%
+    #c4b0d4 100%
   );
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
@@ -132,13 +129,13 @@ onUnmounted(() => {
 
 .rn-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 22px rgba(80, 50, 100, 0.18);
+  box-shadow: 0 8px 22px rgba(70, 50, 90, 0.14);
 }
 
 .rn-card .image-div {
   display: flex;
   justify-content: center;
-  background-color: var(--color-bg);
+  background-color: var(--color-bg-card);
   border-radius: var(--radius);
   padding: 0.85rem;
 }

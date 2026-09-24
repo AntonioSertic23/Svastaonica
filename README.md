@@ -1,6 +1,6 @@
 # Svaštaonica
 
-Website for **Svaštaonica** — handmade baby gifts. Vue 3 SPA (Composition API) + Bootstrap 5, hosted on Netlify.
+Website for **Svaštaonica** — handmade gifts and crafts from Našice. Vue 3 SPA (Composition API) + Bootstrap 5, hosted on Netlify.
 
 Live site: [https://svastaonica.netlify.app/](https://svastaonica.netlify.app/)
 
@@ -16,9 +16,14 @@ Trailing slash matters. Open **Proizvodi**, pick an item, edit, then **Publish /
 
 On each product you can set:
 
-- **Maloprodajna cijena**, **sidrena/dodatna cijena**, **najniža cijena u 30 dana** — empty fields are not shown on the site
-- **Akcija** — bedž *Akcija*
-- **Rasprodano** — availability
+- **Maloprodajna cijena**, **sidrena/dodatna cijena** — empty fields are not shown on the site
+- Badges (Novo, U trendu, Preporuka, …)
+- **Rasprodano** / **Uskoro** — availability flags
+- Bundle flag + related products, gallery, declaration, etc.
+
+### Homepage “Najtraženiji”
+
+Under **Početna stranica → Najtraženiji proizvodi**, pick exactly **3** products for the home bestsellers row (gold / silver / bronze). Stored in `src/content/site/homepage.json`.
 
 Local editor: `npm run dev:cms` then [http://localhost:5173/admin/](http://localhost:5173/admin/)
 
@@ -28,12 +33,12 @@ More detail (OAuth, backups): [`public/admin/README.md`](public/admin/README.md)
 
 ## What’s on the site
 
-- Home: welcome, featured products, order process
-- Gallery with search and grouping
-- Product pages (gallery, sizes, related items, reviews)
+- Home: brand hero, product slider (random catalog photos), featured bestsellers, gallery preview, order process, stats
+- Gallery with search (no category filters)
+- Product pages (open photo gallery, sizes, related items, reviews)
 - About, contact
 - HR / EN
-- **Cjenik** (`/cjenik`) — machine-readable CSV for the price-list decision (NN 101/2026). A CSV is generated at **build time** only after at least one product has a retail price. Files stay public for 30 days.
+- **Cjenik** (`/cjenik`) — machine-readable CSV for the price-list decision (NN 101/2026). Generated at **build time** once at least one product has a retail price. Files stay public for 30 days. Prices are VAT-exempt (Art. 90(1)); filenames use the workshop / remote-sale naming scheme.
 
 ### Daily rebuild (working days before 08:00 Zagreb)
 
@@ -73,4 +78,4 @@ Useful scripts:
 | `npm run build` | Production build (also regenerates CMS index + cjenik CSV) |
 | `npm run backup:products` | Snapshot `src/content/products/` |
 
-Products live in `src/content/products/`. The catalog is assembled in `src/catalog.js`.
+Products live in `src/content/products/`. Homepage featured IDs live in `src/content/site/homepage.json`. The catalog is assembled in `src/catalog.js`.

@@ -1,15 +1,5 @@
 [
   {
-    "value": 1,
-    "label": "Trakice",
-    "image": "/assets/img/products/trake/1.jpg"
-  },
-  {
-    "value": 2,
-    "label": "Pamučne gricke",
-    "image": "/assets/img/products/gricke/1.jpg"
-  },
-  {
     "value": 3,
     "label": "Okvir",
     "image": "/assets/img/products/okviri/10.jpg"
@@ -46,13 +36,8 @@
   },
   {
     "value": 10,
-    "label": "Kugle",
+    "label": "Božić",
     "image": "/assets/img/products/kugle/1.jpg"
-  },
-  {
-    "value": 11,
-    "label": "Blagdanske čizme",
-    "image": "/assets/img/products/cizme/1.jpg"
   },
   {
     "value": 12,
@@ -61,12 +46,7 @@
   },
   {
     "value": 13,
-    "label": "Zahvalnice za razne prigode",
+    "label": "Zahvalnice ",
     "image": "/assets/img/products/zahvalnice/1.jpg"
-  },
-  {
-    "value": 14,
-    "label": "Test",
-    "image": "/assets/img/uploads/8gfybpf.png"
   }
 ]

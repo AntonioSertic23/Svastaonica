@@ -2,7 +2,6 @@
 import Navbar from "./components/layout/Navbar.vue";
 import Footer from "./components/layout/Footer.vue";
 import ScrollToTop from "./components/ui/ScrollToTop.vue";
-import SideDecorations from "./components/layout/SideDecorations.vue";
 import { ref, watch } from "vue";
 import { useRoute } from "vue-router";
 
@@ -35,7 +34,6 @@ watch(
 </script>
 
 <template>
-  <SideDecorations />
   <Navbar @update-navbar="updateNavbar" />
 
   <div class="body-div">

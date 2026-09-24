@@ -67,14 +67,14 @@ const { locale, setLocale, t } = useI18n();
 
 .lang-btn:hover {
   color: var(--color-text);
-  background-color: rgba(255, 255, 255, 0.28);
+  background-color: rgba(255, 255, 255, 0.35);
 }
 
 .lang-btn.active {
   color: var(--color-text);
   font-weight: 700;
-  background-color: rgba(255, 255, 255, 0.65);
-  box-shadow: 0 1px 4px rgba(80, 50, 100, 0.12);
+  background-color: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 1px 4px rgba(70, 50, 90, 0.12);
 }
 
 .lang-switch.compact {
