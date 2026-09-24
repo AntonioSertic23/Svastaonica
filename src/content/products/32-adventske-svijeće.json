@@ -1,0 +1,30 @@
+{
+  "sidrenaCijena": 13,
+  "price": 13,
+  "subheadingEn": "Četiri nedjelje došašća ispisane mirom i blagoslovom",
+  "name": "Adventske svijeće",
+  "thumbnail": "/assets/img/uploads/20251112_123825.jpeg",
+  "isBundle": false,
+  "badges": [
+    "badge2"
+  ],
+  "sizes": [
+    "M"
+  ],
+  "images": [
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/20251112_123825.jpeg"
+    }
+  ],
+  "declaration": {
+    "showStandardsImage": false
+  },
+  "soldout": false,
+  "id": 32,
+  "categories": [
+    1
+  ],
+  "comingSoon": false,
+  "description": "Set od 4 svijeće<br>visine 7,5cm<br>širine 5,5cm<br>\napliciran 3d reljefni print citata (nije folija naljepnica)"
+}
