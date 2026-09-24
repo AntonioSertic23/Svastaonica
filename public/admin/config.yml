@@ -144,7 +144,10 @@ collections:
             widget: boolean
             default: false
             required: false
-            hint: Samo jedna slika bi trebala biti aktivna.
+            hint: >-
+              Uključi na točno jednoj slici — to je početna u carouselu na
+              stranici proizvoda. Ako nijedna nije aktivna, slika se ne vidi
+              (galerija i dalje koristi Thumbnail).
 
       - label: Veličine
         name: sizes

@@ -71,6 +71,16 @@ onUnmounted(() => {
 });
 
 const totalImages = computed(() => data.value?.images?.length || 1);
+
+function ensureActiveImage() {
+  const images = data.value?.images;
+  if (!Array.isArray(images) || images.length === 0) return;
+  if (!images.some((img) => img.isActive)) {
+    images[0].isActive = true;
+  }
+}
+ensureActiveImage();
+
 const currentIndex = ref(
   Math.max(
     1,
