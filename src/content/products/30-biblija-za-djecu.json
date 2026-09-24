@@ -2,12 +2,12 @@
   "sidrenaCijena": 15,
   "price": 15,
   "name": "Biblija za djecu",
-  "thumbnail": "/assets/img/uploads/biblija_za_djecu.gif",
+  "thumbnail": "/assets/img/uploads/images.jpg",
   "isBundle": false,
   "images": [
     {
       "isActive": false,
-      "path": "/assets/img/uploads/biblija_za_djecu.gif"
+      "path": "/assets/img/uploads/images.jpg"
     }
   ],
   "declaration": {
