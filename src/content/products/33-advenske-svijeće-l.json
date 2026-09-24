@@ -1,0 +1,21 @@
+{
+  "subheading": "Neka vaš adventski vijenac priča priču o Njegovoj ljubavi",
+  "sidrenaCijena": 16,
+  "price": 16,
+  "name": "Advenske svijeće L",
+  "thumbnail": "/assets/img/uploads/1000062926.jpg",
+  "isBundle": false,
+  "images": [
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/1000062926.jpg"
+    }
+  ],
+  "declaration": {
+    "showStandardsImage": false
+  },
+  "soldout": false,
+  "id": 33,
+  "comingSoon": false,
+  "description": "Set adventskih svijeća<br>visina 11,5cm<br>širina 5,5cm<br>\nAplicirani citati iz Biblije, reljefnim 3D tiskom (nisu folija naljepnica)"
+}
