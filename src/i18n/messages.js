@@ -72,10 +72,17 @@ export const messages = {
       placeValue: "Vatroslava Lisinskog 172, Našice, Hrvatska",
       phone: "Telefon",
       email: "Email",
+      impressumTitle: "Podaci o obrtu",
+      registeredWith: "Tijelo kod kojeg je obrt upisan",
     },
     footer: {
       glad: "Radujemo se svakom vašem upitu i narudžbi!",
       copyright: "© Since 2026 — Svaštaonica",
+      impressum: "Podaci o obrtu",
+      terms: "Uvjeti poslovanja",
+    },
+    terms: {
+      title: "Opći uvjeti poslovanja",
     },
     cjenik: {
       title: "Cjenik",
@@ -208,10 +215,17 @@ export const messages = {
       placeValue: "Vatroslava Lisinskog 172, Našice, Croatia",
       phone: "Phone",
       email: "Email",
+      impressumTitle: "Business details",
+      registeredWith: "Authority where the business is registered",
     },
     footer: {
       glad: "We look forward to every inquiry and order!",
       copyright: "© Since 2026 — Svaštaonica",
+      impressum: "Business details",
+      terms: "Terms of business",
+    },
+    terms: {
+      title: "Terms of business",
     },
     cjenik: {
       title: "Price list",

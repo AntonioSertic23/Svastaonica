@@ -84,6 +84,11 @@ const { t } = useI18n();
       </div>
 
       <div class="text-center p-3 footer-copyright-text">
+        <p class="footer-legal">
+          <RouterLink to="/contact#impressum">{{ t("footer.impressum") }}</RouterLink>
+          <span aria-hidden="true"> · </span>
+          <RouterLink to="/uvjeti">{{ t("footer.terms") }}</RouterLink>
+        </p>
         {{ t("footer.copyright") }}
       </div>
     </footer>
@@ -146,5 +151,16 @@ footer {
   font-size: 16px;
   background-color: rgba(0, 0, 0, 0.12);
   color: var(--color-text);
+}
+
+.footer-legal {
+  margin: 0 0 0.35rem;
+  font-size: 0.9rem;
+}
+
+.footer-legal a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 </style>

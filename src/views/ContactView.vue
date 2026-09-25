@@ -66,6 +66,31 @@ const { t } = useI18n();
             </div>
           </div>
         </div>
+
+        <aside id="impressum" class="impressum">
+          <h2>{{ t("contact.impressumTitle") }}</h2>
+          <p>
+            SVAŠTAONICA<br />
+            Obrt za rukotvorine<br />
+            vl. Jelena Sermek<br />
+            Vatroslava Lisinskog 172<br />
+            31500 Našice<br />
+            OIB: 05429065302<br />
+            Matični broj obrta: 99162202
+          </p>
+          <p>
+            {{ t("contact.registeredWith") }}:<br />
+            Upravni odjel za gospodarstvo OBŽ, ispostava Našice
+          </p>
+          <p>
+            IBAN: HR6125000091101597310<br />
+            SWIFT: HAABHR22
+          </p>
+          <p>
+            Tel: 091/937-5976<br />
+            E-mail: svastaonica.rukotvorine@gmail.com
+          </p>
+        </aside>
       </div>
     </div>
   </section>
@@ -135,6 +160,31 @@ const { t } = useI18n();
 
 .short-message p {
   font-size: 25px;
+}
+
+.impressum {
+  margin: 2.5rem auto 1rem;
+  max-width: 28rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid color-mix(in srgb, var(--color-text) 18%, transparent);
+  scroll-margin-top: calc(var(--nav-height, 4.5rem) + 1rem);
+  text-align: center;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+.impressum h2 {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.impressum p {
+  margin: 0 0 0.85rem;
 }
 
 @media (max-width: 991.98px) {

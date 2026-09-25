@@ -35,6 +35,11 @@ const router = createRouter({
       component: () => import("../views/CjenikFlyerView.vue"),
     },
     {
+      path: "/uvjeti",
+      name: "uvjeti",
+      component: () => import("../views/TermsView.vue"),
+    },
+    {
       path: "/singleitem/:id",
       name: "singleitem",
       component: () => import("../views/SingleItemView.vue"),
