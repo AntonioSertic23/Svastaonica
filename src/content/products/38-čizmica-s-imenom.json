@@ -1,0 +1,24 @@
+{
+  "subheading": "U ovu čizmicu stane puno ljubavi, slatkiša i snova.",
+  "sidrenaCijena": 10,
+  "price": 10,
+  "name": "Čizmica s imenom",
+  "thumbnail": "/assets/img/uploads/1000064043.png",
+  "isBundle": false,
+  "images": [
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/1000064048.png"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/1000064043.png"
+    }
+  ],
+  "declaration": {
+    "showStandardsImage": false
+  },
+  "soldout": false,
+  "id": 38,
+  "comingSoon": false
+}
