@@ -38,19 +38,13 @@ More detail (OAuth, backups): [`public/admin/README.md`](public/admin/README.md)
 - Product pages (open photo gallery, sizes, related items, reviews)
 - About, contact
 - HR / EN
-- **Cjenik** (`/cjenik`) — machine-readable CSV for the price-list decision (NN 101/2026). Generated at **build time** once at least one product has a retail price. Files stay public for 30 days. Prices are VAT-exempt (Art. 90(1)); filenames use the workshop / remote-sale naming scheme. A designed flyer also appears on the home page.
+- **Cjenik** (`/cjenik`) — machine-readable CSV for the price-list decision (NN 101/2026). Generated at **build time** once at least one product has a retail price. Dated files are **committed to the repo** and stay public for 30 days. Prices are VAT-exempt (Art. 90(1)); filenames use the workshop / remote-sale naming scheme. A designed flyer also appears on the home page.
 
-### Daily rebuild (working days before 08:00 Zagreb)
+### Daily cjenik (working days before 08:00 Zagreb)
 
-GitHub Action `.github/workflows/daily-cjenik.yml` triggers a Netlify production build Mon–Fri at 05:00 UTC (07:00 in summer / 06:00 in winter).
+GitHub Action `.github/workflows/daily-cjenik.yml` runs Mon–Fri at 05:00 UTC (07:00 in summer / 06:00 in winter): it regenerates the CSV, commits it under `public/cjenici/`, and pushes. Netlify then deploys from that commit, so the archive is not lost between builds.
 
-One-time setup:
-
-1. Netlify → **Site configuration → Build & deploy → Build hooks** → **Add build hook** (name e.g. `Daily cjenik`)
-2. Copy the hook URL
-3. GitHub repo → **Settings → Secrets and variables → Actions** → secret `NETLIFY_BUILD_HOOK`
-
-You can also run it by hand: GitHub → **Actions → Daily cjenik rebuild → Run workflow**. A CMS save still rebuilds immediately.
+You can also run it by hand: GitHub → **Actions → Daily cjenik rebuild → Run workflow**. A CMS save still rebuilds the site immediately (and refreshes today’s CSV in the deploy).
 
 ---
 

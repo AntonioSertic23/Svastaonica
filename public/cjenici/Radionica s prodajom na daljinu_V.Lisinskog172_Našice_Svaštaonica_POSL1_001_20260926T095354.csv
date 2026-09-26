@@ -1,0 +1,24 @@
+naziv,sifra,marka,jedinica_mjere,cijena_za_jedinicu_mjere,maloprodajna_cijena,poseban_oblik_prodaje,naziv_posebnog_oblika_prodaje,sidrena_cijena,barkod,dostupnost
+Okvir,SV-3,Svaštaonica,kom,25.00,25.00,ne,,25.00,,dostupno
+Krunice,SV-4,Svaštaonica,kom,6.00,6.00,ne,,6.00,,dostupno
+Privjesci za ključeve,SV-5,Svaštaonica,kom,2.00,2.00,ne,,2.00,,dostupno
+Patikice za nehodače,SV-6,Svaštaonica,kom,10.00,10.00,ne,,10.00,,dostupno
+Silikonska vezica,SV-7,Svaštaonica,kom,12.00,12.00,ne,,12.00,,dostupno
+Slinček,SV-8,Svaštaonica,kom,5.00,5.00,ne,,5.00,,dostupno
+Kocka,SV-9,Svaštaonica,kom,12.00,12.00,ne,,12.00,,dostupno
+Personalizirana kugla,SV-10,Svaštaonica,kom,4.00,4.00,ne,,5.00,,dostupno
+Zahvalnice ,SV-13,Svaštaonica,kom,2.00,2.00,ne,,2.00,,dostupno
+Desetica,SV-15,Svaštaonica,kom,5.00,5.00,ne,,5.00,,dostupno
+Vezice za dude,SV-23,Svaštaonica,kom,7.00,7.00,ne,,7.00,,dostupno
+"Plišanci s imenom, podacima...",SV-26,Svaštaonica,kom,20.00,20.00,ne,,20.00,,dostupno
+Pozivnice s kuvertom,SV-27,Svaštaonica,kom,1.00,1.00,ne,,1.00,,dostupno
+Biblija - Krizma,SV-28,Svaštaonica,kom,50.00,50.00,ne,,50.00,,dostupno
+Krsna Biblija,SV-29,Svaštaonica,kom,30.00,30.00,ne,,30.00,,dostupno
+Biblija za djecu,SV-30,Svaštaonica,kom,15.00,15.00,ne,,15.00,,dostupno
+Prvopričesnička biblija,SV-31,Svaštaonica,kom,40.00,40.00,ne,,40.00,,dostupno
+Adventske svijeće M,SV-32,Svaštaonica,kom,13.00,13.00,ne,,13.00,,dostupno
+Advenske svijeće L,SV-33,Svaštaonica,kom,16.00,16.00,ne,,16.00,,dostupno
+"Krsni set košuljica, maramica i svijeća",SV-34,Svaštaonica,kom,35.00,35.00,ne,,35.00,,dostupno
+Krsni set košuljica i svijeća,SV-35,Svaštaonica,kom,30.00,30.00,ne,,30.00,,dostupno
+Krsni set za doradu,SV-36,Svaštaonica,kom,9.00,9.00,ne,,9.00,,dostupno
+Čizmica s imenom,SV-38,Svaštaonica,kom,10.00,10.00,ne,,10.00,,dostupno
