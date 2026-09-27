@@ -147,12 +147,6 @@ const { t } = useI18n();
 
         <div class="legal-notices">
           <img
-            src="/assets/img/site/obavijest-racun.jpg"
-            alt="Pozor — obveza izdavanja i čuvanja računa prema Zakonu o fiskalizaciji"
-            width="900"
-            height="1200"
-          />
-          <img
             src="/assets/img/site/zakonsko-jamstvo.png"
             alt="Zakonsko jamstvo — roba prodana u Europskoj uniji zaštićena je najmanje dvije godine"
             width="1200"

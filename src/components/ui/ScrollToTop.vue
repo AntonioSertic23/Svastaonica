@@ -81,7 +81,7 @@ onUnmounted(() => {
   cursor: pointer;
   display: block;
   border-radius: 50px;
-  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.15);
   z-index: 10000;
   opacity: 0;
   visibility: hidden;
@@ -100,7 +100,7 @@ onUnmounted(() => {
 }
 
 .progress-wrap svg.progress-circle path {
-  stroke: rgba(0, 0, 0, 0.6);
+  stroke: var(--color-lavender-deep);
   stroke-width: 4;
   box-sizing: border-box;
   transition: stroke-dashoffset 10ms linear;
