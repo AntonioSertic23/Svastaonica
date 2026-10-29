@@ -1,0 +1,19 @@
+{
+  "sidrenaCijena": 5,
+  "price": 5,
+  "name": "Natpisi za adventske svijeće",
+  "thumbnail": "/assets/img/uploads/1000067663.png",
+  "isBundle": false,
+  "images": [
+    {
+      "isActive": true,
+      "path": "/assets/img/uploads/1000067663.png"
+    }
+  ],
+  "declaration": {
+    "showStandardsImage": false
+  },
+  "soldout": false,
+  "id": 39,
+  "comingSoon": false
+}
