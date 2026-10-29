@@ -1,8 +1,8 @@
 {
   "subheading": "fi 8 cm",
   "descriptionEn": "",
-  "sidrenaCijena": 5,
-  "price": 4,
+  "sidrenaCijena": 3,
+  "price": 3,
   "keywords": [],
   "subheadingEn": "",
   "name": "Personalizirana kugla",
@@ -89,6 +89,82 @@
     },
     {
       "path": "/assets/img/products/kugle/31.jpg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/1000067682.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/1000067683.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/1000066925.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/1000066924.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/1000066923.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/1000066920.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/1000066919.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/1000066918.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/1000066913.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/1000066912.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/1000066911.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/1000066910.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/1000066908.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/1000066907.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/1000066906.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/1000066905.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/1000066904.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/1000066903.jpeg"
+    },
+    {
+      "isActive": false,
+      "path": "/assets/img/uploads/1000066902.jpeg"
     }
   ],
   "declaration": {
