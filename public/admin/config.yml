@@ -103,21 +103,32 @@ collections:
         hint: >-
           Engleski opis (HTML kao i gore). Prazno = prikaži hrvatski opis.
 
-      - label: Maloprodajna cijena (€)
+      - label: Cijena (€)
         name: price
         widget: number
         value_type: float
         required: false
         hint: >-
-          Aktualna cijena. Ako ostane prazno, cijena se ne prikazuje
+          Aktualna cijena za kupca. Ako ostane prazno, cijena se ne prikazuje
           na webu niti u CSV cjeniku.
 
-      - label: Sidrena / dodatna cijena (€)
+      - label: Cijena na dan 10. 9. 2026. (€)
         name: sidrenaCijena
         widget: number
         value_type: float
         required: false
-        hint: Cijena koja je vrijedila 10. 9. 2026. Prazno = ne prikazuje se.
+        hint: >-
+          Cijena koja je vrijedila 10. 9. 2026. Ako je proizvod ušao u ponudu
+          kasnije, upiši cijenu s tog prvog dana i datum ispod.
+          Prazno = ne prikazuje se.
+
+      - label: Datum te cijene
+        name: baznaDatum
+        widget: string
+        required: false
+        hint: >-
+          Prazno = 10. 9. 2026. Upiši samo ako je proizvod ušao u ponudu
+          kasnije, u obliku 15. 10. 2026.
 
       - label: Thumbnail
         name: thumbnail
@@ -218,7 +229,7 @@ collections:
         widget: boolean
         default: false
         required: false
-        hint: Uključi ako proizvod trenutno nije dostupan. U cjeniku piše "nedostupno".
+        hint: Uključi ako proizvod trenutno nije dostupan. Na stranici Cjenik piše "rasprodano".
 
       - label: Uskoro
         name: comingSoon

@@ -4,13 +4,14 @@ import { RouterLink } from "vue-router";
 import sourceData from "@/catalog.js";
 import { useI18n } from "@/i18n/useI18n";
 import {
-  cjenikMeta,
+  cijenaDatum,
   formatEuro,
   hasPrice,
 } from "@/cjenik/pricing";
 
 const { t, pt } = useI18n();
 const files = ref([]);
+const stableUrl = ref("");
 
 const products = computed(() =>
   sourceData.data.filter((p) => !p.comingSoon && hasPrice(p))
@@ -22,6 +23,7 @@ onMounted(async () => {
     if (res.ok) {
       const data = await res.json();
       files.value = Array.isArray(data.files) ? data.files : [];
+      stableUrl.value = typeof data.stableUrl === "string" ? data.stableUrl : "";
     }
   } catch {
     files.value = [];
@@ -38,7 +40,10 @@ onMounted(async () => {
 
       <div v-if="files.length" class="files-card mx-auto mb-5">
         <h2 class="files-heading">{{ t("cjenik.files") }}</h2>
-        <p class="files-hint">{{ t("cjenik.available30") }}</p>
+        <p class="files-hint">{{ t("cjenik.available15") }}</p>
+        <p v-if="stableUrl" class="stable-link">
+          <a :href="stableUrl">{{ t("cjenik.stable") }}</a>
+        </p>
         <ul class="file-list">
           <li v-for="file in files" :key="file.name">
             <a :href="file.url">{{ file.name }}</a>
@@ -72,7 +77,7 @@ onMounted(async () => {
               <td>
                 <template v-if="item.sidrenaCijena != null">
                   {{ formatEuro(item.sidrenaCijena) }}
-                  <span class="date">{{ cjenikMeta.sidrenaDatum }}</span>
+                  <span class="date">{{ cijenaDatum(item) }}</span>
                 </template>
               </td>
               <td>
@@ -130,6 +135,16 @@ onMounted(async () => {
 .files-hint {
   color: var(--color-text-muted);
   margin-bottom: 1rem;
+}
+
+.stable-link {
+  margin: 0 0 1rem;
+}
+
+.stable-link a {
+  color: var(--color-text);
+  font-weight: 600;
+  word-break: break-all;
 }
 
 .file-list {

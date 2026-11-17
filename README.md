@@ -16,7 +16,7 @@ Trailing slash matters. Open **Proizvodi**, pick an item, edit, then **Publish /
 
 On each product you can set:
 
-- **Maloprodajna cijena**, **sidrena/dodatna cijena** — empty fields are not shown on the site
+- **Cijena**, **cijena na dan 10. 9. 2026.** — empty fields are not shown on the site. For a product added after that day, set **Datum te cijene** to the first day it was offered (for example `15. 10. 2026.`)
 - Badges (Novo, U trendu, Preporuka, …)
 - **Rasprodano** / **Uskoro** — availability flags
 - Bundle flag + related products, gallery, declaration, etc.
@@ -38,13 +38,9 @@ More detail (OAuth, backups): [`public/admin/README.md`](public/admin/README.md)
 - Product pages (open photo gallery, sizes, related items, reviews)
 - About, contact
 - HR / EN
-- **Cjenik** (`/cjenik`) — machine-readable CSV for the price-list decision (NN 101/2026). Generated at **build time** once at least one product has a retail price. Dated files are **committed to the repo** and stay public for 30 days. Prices are VAT-exempt (Art. 90(1)); filenames use the workshop / remote-sale naming scheme. A designed flyer also appears on the home page.
+- **Cjenik** (`/cjenik`) — machine-readable CSV under the price-list rules (NN 132/2026, in force 17 Nov 2026). Generated at **build time** when the price or the priced assortment changes. The current file is also at `/cjenici/vazeci.csv`. A replaced file stays public for 15 days. Prices are VAT-exempt (Art. 90(1)). A designed flyer also appears on the home page.
 
-### Daily cjenik (working days before 08:00 Zagreb)
-
-GitHub Action `.github/workflows/daily-cjenik.yml` runs Mon–Fri at 05:00 UTC (07:00 in summer / 06:00 in winter): it regenerates the CSV, commits it under `public/cjenici/`, and pushes. Netlify then deploys from that commit, so the archive is not lost between builds.
-
-You can also run it by hand: GitHub → **Actions → Daily cjenik rebuild → Run workflow**. A CMS save still rebuilds the site immediately (and refreshes today’s CSV in the deploy).
+A CMS save rebuilds the site. If no price changed, the CSV is left as it is. There is no daily republish.
 
 ---
 

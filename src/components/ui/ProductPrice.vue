@@ -2,7 +2,7 @@
 import { computed } from "vue";
 import { useI18n } from "@/i18n/useI18n";
 import {
-  cjenikMeta,
+  cijenaDatum,
   formatEuro,
   hasAmount,
   hasPrice,
@@ -17,6 +17,7 @@ const { t } = useI18n();
 const visible = computed(() => hasPrice(props.product));
 const current = computed(() => formatEuro(props.product.price));
 const hasAnchor = computed(() => hasAmount(props.product.sidrenaCijena));
+const anchorDate = computed(() => cijenaDatum(props.product));
 </script>
 
 <template>
@@ -26,8 +27,7 @@ const hasAnchor = computed(() => hasAmount(props.product.sidrenaCijena));
       <span class="amount">{{ current }}</span>
     </p>
     <p v-if="hasAnchor" class="extra">
-      {{ t("product.anchorPrice") }}
-      ({{ cjenikMeta.sidrenaDatum }}):
+      {{ t("product.anchorPrice") }} {{ anchorDate }}:
       <span class="extra-amount">{{ formatEuro(product.sidrenaCijena) }}</span>
     </p>
   </div>

@@ -57,6 +57,7 @@ function normalizeProduct(product) {
       product.descriptionEn != null ? String(product.descriptionEn) : "",
     price: optionalMoney(product.price),
     sidrenaCijena: optionalMoney(product.sidrenaCijena),
+    baznaDatum: product.baznaDatum != null ? String(product.baznaDatum) : "",
   };
 }
 

@@ -1,6 +1,11 @@
 {
-  "generatedAt": "2026-11-16T14:20:33+02:00",
+  "generatedAt": "2026-11-17T11:23:40+01:00",
+  "stableUrl": "/cjenici/vazeci.csv",
   "files": [
+    {
+      "name": "05429065302_Radionica_s_prodajom_na_daljinu_V.Lisinskog172_Našice_Svaštaonica_POSL1_ROBA_001_20261117_1123.csv",
+      "url": "/cjenici/05429065302_Radionica_s_prodajom_na_daljinu_V.Lisinskog172_Na%C5%A1ice_Sva%C5%A1taonica_POSL1_ROBA_001_20261117_1123.csv"
+    },
     {
       "name": "Radionica s prodajom na daljinu_V.Lisinskog172_Našice_Svaštaonica_POSL1_001_20261116T142033.csv",
       "url": "/cjenici/Radionica%20s%20prodajom%20na%20daljinu_V.Lisinskog172_Na%C5%A1ice_Sva%C5%A1taonica_POSL1_001_20261116T142033.csv"
@@ -48,10 +53,6 @@
     {
       "name": "Radionica s prodajom na daljinu_V.Lisinskog172_Našice_Svaštaonica_POSL1_001_20261030T120948.csv",
       "url": "/cjenici/Radionica%20s%20prodajom%20na%20daljinu_V.Lisinskog172_Na%C5%A1ice_Sva%C5%A1taonica_POSL1_001_20261030T120948.csv"
-    },
-    {
-      "name": "Radionica s prodajom na daljinu_V.Lisinskog172_Našice_Svaštaonica_POSL1_001_20261029T210659.csv",
-      "url": "/cjenici/Radionica%20s%20prodajom%20na%20daljinu_V.Lisinskog172_Na%C5%A1ice_Sva%C5%A1taonica_POSL1_001_20261029T210659.csv"
     }
   ]
 }
